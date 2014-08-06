@@ -3,7 +3,7 @@ tzd
 Important notice:
 
 1. Do not change the CSS before chatting with me, except Kyle.
-2. Do not change the URL.
+2. Do not change any URL within the html pages.
 3. When inserting item, use the file template-item.html. Do not overwrite it!
 4. consult item-01.html and item-02.html when inserting item into the item template.
 5. Kyle: template-with-filter.html is for you, not the inventory.html! Don't touch the inventory.html
