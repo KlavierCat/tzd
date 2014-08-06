@@ -1,4 +1,4 @@
-/*last modified: Aug 05, by Panpan*/
+ /*last modified: Aug 06, by Panpan*/
 /*current support browser size: no smaller than 597 / 686 * 387, 
 which basically means support tablets but not phones */
 
@@ -68,10 +68,14 @@ div{
     background-image:url(../images/icon-mute-false-hover.png);
     -ms-transform:translate(5px,-5px);
     -webkit-transform:translate(5px,-5px);
+	-moz-transform:translate(5px,-5px);
+	-o-transform:translate(5px,-5px);
     transform:translate(5px,-5px);
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
+	-ms-transition:all 0.3s ease;
     -o-transition: all 0.3s ease;
+	transition:all 0.3s ease;
 }
 
 #corner-mute-true{
@@ -87,10 +91,14 @@ div{
     background-image:url(../images/icon-mute-true-hover.png);
     -ms-transform:translate(5px,-5px);
     -webkit-transform:translate(5px,-5px);
+	-moz-transform:translate(5px,-5px);
+	-o-transform:translate(5px,-5px);
     transform:translate(5px,-5px);
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	transition:all 0.3s ease;
 }
 
 @media only screen and (min-width:1280px){
@@ -181,6 +189,8 @@ footer{
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	transition:all 0.3s ease;
 }
 /* ============ end of footer ========== */
 
@@ -260,10 +270,14 @@ footer{
 .middle div:hover{
    -webkit-transform:scale(1.1);
     -ms-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-o-transform:scale(1.1);
     transform:scale(1.1);
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	transition:all 0.3s ease;
 }
 
 #inventory-corner{
@@ -313,6 +327,10 @@ footer{
     border-bottom:32px solid transparent;
     
     border-left:33px solid rgba(88,88,88,0.5);
+	-ms-transform:rotate(32deg);
+	-webkit-transform:rotate(32deg);
+	-moz-transform:rotate(32deg);
+	-o-transform:rotate(32deg);
     transform:rotate(32deg);
 }
 
@@ -323,6 +341,10 @@ footer{
     border-bottom:32px solid transparent;
     
     border-left:33px solid rgba(88,88,88,0.5);
+	-ms-transform:rotate(32deg);
+	-webkit-transform:rotate(32deg);
+	-moz-transform:rotate(32deg);
+	-o-transform:rotate(32deg);
     transform:rotate(32deg);
 }
 
@@ -333,6 +355,10 @@ footer{
     border-bottom:32px solid transparent;
     
     border-right:33px solid rgba(88,88,88,0.5);
+	-ms-transform:rotate(-32deg);
+	-webkit-transform:rotate(-32deg);
+	-moz-transform:rotate(-32deg);
+	-o-transform:rotate(-32deg);
     transform:rotate(-32deg);
 }
 
