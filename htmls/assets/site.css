@@ -1,4 +1,4 @@
- /*last modified: Aug 06, by Panpan*/
+/*last modified: Aug 10, by Panpan*/
 /*current support browser size: no smaller than 597 / 686 * 387, 
 which basically means support tablets but not phones */
 
@@ -616,11 +616,14 @@ footer{
 /*end of Google map basic setting*/
 
 
-/* Leaflet map no-icon*/
+/* Leaflet map basic setting*/
 .leaflet-bottom{
     visibility: hidden;
 }
-/* end of Leaflet map no-icon*/
+.leaflet-container{
+	background:#000000;
+}
+/* end of Leaflet map basic setting*/
 
 #map{
   position:absolute; 
