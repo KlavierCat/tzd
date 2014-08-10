@@ -5,7 +5,7 @@ which basically means support tablets but not phones */
 /* ========================== Touch these and you will die!!!!! ======================== */
 
 /* ============================ universal ==========================*/
-html { height: 100% }
+//html { height: 100% }
 
 body{
   height:100%;
@@ -748,93 +748,297 @@ footer{
 /* ============ end of map ============*/
 /* ============================ end of touch these and you will die!!!!! =========================*/
 
+/*-----------------------------------------------------------------------------------------------------*/
+/*NO ONE CROSSES THIS LINE WITHOUT MY SAY SO. THAT INCLUDES YOU PANPAN*/
+/*-----------------------------------------------------------------------------------------------------*/
 
 
 /*beginning of Kyle's code - Inventory styling*/
 
-.container {
+
+#timeline{
+
+    height: 500px;
+    overflow:hidden;
+    //border-radius: 5px;
+    list-style-type:none;
+    float: left;
+    width: auto;
+    margin-left: 10em;
+    margin-top: 4em;
+    padding: 1.5rem;
+    //background: rgb(80,80,80);
+    pointer-events: none;
+   
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+  }
+
+
+
+
+/*
+#timeline li.selected{
+ 
+
+}*/
+
+#timeline li{
+
+  padding: 2.5em 0;
+  //margin-top: 5em;
+ line-height: 1.5em;
+}
+
+
+
+.flag-wrapper{
+  //background: rgba(255,255,255,0.5);
+  position: relative;
+  width: 25rem;
+  margin-left: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 2.5em;
+  border-radius: 5px;
+  //margin-bottom: 2em;
+  //margin-right: 2.5em;
+  margin: auto;
+  clear:both;
+  float: left;
+}
+
+.flag{
+  position: relative;
+  //background: rgb(248, 248, 248);
+  background: rgba(255,255,255,0.5);
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  //margin-left: 1em;
+  text-shadow: 1px 1px #ccc;
+}
+
+.flag:hover{
+  cursor: pointer;
+}
+
+.desc{
+  text-align: center;
+}
+
+.desc h3{
+  font-weight: 300;
+  font-size: 32px;
+  color: #ccc;
+  text-shadow: 2px 2px rgb(0,0,0);
+}
+
+.desc h3:hover{
+  cursor: pointer;
+}
+
+.time{
+  display:inline;
+  line-height: 1em;
+  font-size: 0.66666em;
+  color: rgb(250,80,80);
+  vertical-align: middle;
+}
+
+
+#carousel_container {
   width: 100%;
-  height: 100%;
+  height: 500px;
   position: absolute;
   overflow: hidden;
   //border: 3px solid #CCC;
   z-index: -1;
-  /*piss yellow*/
-  //background: linear-gradient(-15deg, #FFC200 1%, #808000 30%, #000000 100%);
-  /*blueish background*/
-  //background: linear-gradient(-15deg, #6495ED 1%, #C6E2FF 30%, #000000 100%);
-  /*grey*/
-  background: linear-gradient(-15deg, #CDC8B1 1%, #CDCDC1 10%, #000000 100%);
-  opacity: 0.7;
+  background: -webkit-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
+  //background: radial-gradient(to bottom, #000000, #45484d);
+ /* more codepen gradients 
+ background: rgb(244,226,156);
+background: -moz-linear-gradient(-45deg, rgba(244,226,156,0) 0%, rgba(59,41,58,1) 100%), -moz-linear-gradient(left, rgba(244,226,156,1) 0%, rgba(130,96,87,1) 100%);
+background: -webkit-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -webkit-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -ms-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
+background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), linear-gradient(to right, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
+*/
+  /*opacity: 0.7;*/
   }
 
 
-/*
-.container:before{
 
-	content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: #FFC200 url("http://i.imgur.com/inAhQCX.png") no-repeat top center;
-    background-size: cover;
-    -webkit-filter: blur(10px);
-}
-*/
 
-  .container .carousel {
-    height: 350px;
-    width: 100%;
-    margin-top: 20%;
-    margin: 10% auto; 
-    //border: 3px solid #CCC;}
-    .container .carousel ul {
+    
+
+   #carousel{
+      height: 350px;
       list-style-type: none;
       margin-top: 4px;
-      width: 7000px;
+      float: left;
+      width: 3000em;
+      z-index: -5;
       overflow: hidden;
-      height: 100%;
-      margin-left: 0;
-      left: 0;
-      padding-left: 1px; }
-      .container .carousel ul li {
+      margin-top: 3.5em;
+       }
+ #carousel li {
         display: inline;
+
         width: 180px;
-        height: 90%;
+        height: 300px;
         float: left;
        //border: 3px solid #CCC; 
-        border-radius: 10px;
-        margin-right: 25px;
+        border-radius: 5px;
+        margin-right: 2em;
         /*yellow*/
         //background: #CCA300;
         /*blue*/
-        background: #B0C4DE;
+        cursor: pointer;
+        opacity: 0.7;
+        //background-image: url("images/Found_Letter.jpg");
         
-        //opacity: 0.3;
-        box-shadow: inset 0 0 1px #54958A, inset 0 0 20px #465468;
+   background: #34495e;
+
+        }
+      #carousel li:hover{
+        -webkit-animation: glow 0.2s;
+  -moz-animation: glow 0.2s;
+  animation: glow 0.2s;
+  animation-fill-mode: forwards;
+animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
       }
 
-.container .carousel ul li a{
+
+@-webkit-keyframes glow {
+  0% {
+    opacity:0.7;
+  }
+  100% {
+    opacity: 1;
+    background-color: #5e4934;
+  }
+}
+#carousel li a{
     text-decoration: none;
     top: 20px;
     opacity: 0;
   }
 
 
-.navPrev{
-  float: left;
+#button_wrapper{
+  width: 100%;
+  margin: 0 auto; 
+  padding: .5rem;
+  bottom: 15rem;
+  position: relative;
+  
+}
+.nav-buttons{
+
+  opacity:0.3;
+  border-radius: 10rem;
   cursor: pointer;
-
+  padding: 1.5rem;
+  background: #8b9da9;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   }
 
-.navNext{
-  float: right;
-  cursor: pointer; 
-  }
+#navPrev{
+  
+  float: left;
+}
 
+#navNext{
+   float:right;
+}
+
+.nav-buttons:hover{
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+#side-nav{
+  width: auto;
+  margin-left: 35%;
+  margin-right: 35%;
+  bottom: 1.5em;
+  position: relative;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  //background-color: red;
+}
+
+
+@media all and (max-width: 699px) and (min-width: 520px){
+#side-nav{
+  width: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  bottom: 1.5em;
+  position: relative;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  //background-color: red;
+}
+
+}
+
+
+#side-nav li{
+  border: 6px solid #ccc; 
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: left;
+  margin-right: 1em;
+}
+
+#side-nav li:hover{
+  border: 6px solid red; 
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  text-align: left;
+  margin-right: 1em;
+}
+
+.year{
+ position: relative;
+color: red;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box; 
+}
+
+.selected{
+ 
+    display: inline-block;
+      -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+}
+
+.notSelected{
+  display: none;}

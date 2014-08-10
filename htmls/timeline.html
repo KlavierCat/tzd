@@ -1,39 +1,21 @@
 <!DOCTYPE html>
-<html lang=en>
-
+<html>
 <head>
-	<meta charset=utf-8 />
-	<title>Inventory - TZD</title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1.2'/>
-    <meta name="description" content="Trinity Zombie Dublin - Inventory"/>
-    <meta name="Keywords" content="TCD, Zombie, TZD, Trinity, Trinity College Dublin"/>
-    <meta name="author" content="Kenny Fergus, Ben Hardy, Panpan Lin, Kyle Murphy"/>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<link href='assets/site.css' rel="stylesheet"/>
-	<script src="assets/carousel.js"></script>
-</head>
+<link rel="stylesheet" href="assets/site.css" />
 
+<script src="assets/jquery-1.11.1.min.js"></script>
+ <script src="assets/carousel.js"></script>
+</head>
 <body>
 
-<!--beginning of header and footer in template-->		
-	<div id="corner-logo">
-	  <a href="#"><img src="images/logo-trans.png" alt="TZD logo"></a>
-	</div>
-	  
-	<div id="corner-mute">
-        <div id="corner-mute-false"></div>
-	  <!--<img src="images/icon-mute-false.png" alt="sound control">-->
-	</div>
 
-	<div class="corner" id="corner-footer">
-	  <footer>
-		<a href="https://www.facebook.com/trinityzombiedublin"><div class="footer-icon" id="icon-facebook"></div></a>
-		&nbsp;
-		<a href="https://twitter.com/TZDwebsite"><div class="footer-icon" id="icon-twitter"></div></a>
-	  </footer>
-	</div>
-	
+ <div class="corner" id="corner-logo">
+    <a href="#"><img src="images/logo-trans.png" alt="TZD logo"></a>
+  </div>
+    
+  <div class="corner" id="corner-mute">
+    <img src="images/icon-mute.png" alt="sound control">
+  </div>
 
 <div id="timeline_container">
 
@@ -184,43 +166,36 @@ Overtime, more people become infected and violent upheavals breakout. Trinity Co
   
 </div>
 
-	
-	<div class="corner" id="corner-view">
-		<div id="view">
-            View:
-			<select id="filter" name="filter">
-                <option value="0" selected="selected">All</option>
-                <option value="1">Unlocked</option>
-                <option value="2">Locked</option>
-            </select>
-		</div>
-        <a href="about.html"><div class="footer-icon" id="icon-about"></div></a>
-	</div>
 
-    <div class="footer-wrapper">
-     <div class="icon-menu-background">    
-        
-	  <div class="middle">
+  <div class="corner" id="corner-footer">
+    <footer>
+      <a href="#">About</a>
+      &nbsp;
+      <a href="#"><img src="images/ficon-6.png" alt="Facebook"></a>
+      &nbsp;
+      <a href="#"><img src="images/ticon-6.png" alt="Twitter"></a>
+    </footer>
+  </div>
 
-        <a href="map.html">
-            <div id="map-corner"></div>  
-        </a>
-          
-        <a href="inventory.html">
-            <div id="inventory-corner"></div>
-        </a>
-          
-	  </div>
-         
-     </div>
-    </div>    
 
-	<div class="diagonal-line" id="southWest"></div>
-	<div class="diagonal-line" id="southEastFilter"></div>
-    <div class="nav-arrow" id="nav-arrow-left-filter"></div>
-    <div class="nav-arrow" id="nav-arrow-right"></div>
-<!--end of header and footer in template-->	    
-    
+  <div class="corner" id="corner-nav">
+    <div class="view-nav" id="map-nav">
+      <a href="#">
+        <img src="images/icon-map-3.png" alt="map-view">
+      </a>
+    </div>
+    <div class="view-nav" id="inv-nav">
+      <a href="#">
+        <img src="images/icon-inventory-6.png" alt="inventory-view">
+      </a>
+    </div>
+    <nav>
+      Categories: &nbsp; &#9711; All
+    </nav>
+  </div>
+  
+
+
+
 </body>
-
 </html>
