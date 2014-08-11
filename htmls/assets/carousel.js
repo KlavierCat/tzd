@@ -50,22 +50,14 @@ function panCarousel(e){
 			marginLeft: '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 		
-		//changeTimeline();
-
-		
-
 		}else{
 		
-		//fixed an issue, when array resets to itemCount it should take 1 off of it, because
-		//compooters count from 0, not 1
 		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-1);
 		$('#carousel').animate(		
 		{
 		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 
-
-		//changeTimeline();
 }
 	
 }
@@ -83,44 +75,37 @@ $('#navPrev').bind('click', {direction: 'backward',
 
 $('#side-nav li').bind('click', {type: 'quicknav'}, panCarousel);
 
-$('#carousel').bind('mouseover', doShit);
+$('#carousel').bind('mouseover', changeYear);
 
 
-function doShit(e){
+function changeYear(e){
 
-	if(e.target.className == '2015')
+	switch(e.target.className){
+		case '2015':
 			timelineSelection = 0;
-			
-		else if(e.target.className == '2018')
+			break;
+		case '2018':
 			timelineSelection = 1;
-		
-		else if(e.target.className == '2019')
+			break;
+		case '2019':
 			timelineSelection = 2;
-
-		else if(e.target.className == '2020')
+			break;
+		case '2020':
 			timelineSelection = 3;
-		
-		else if(e.target.className == '2021')//it's 2021
+			break;
+		case '2021':
 			timelineSelection = 4;
-		else
-			return;
+			break;
+		default:
+			break;
+	}
 
 		if($('#timeline li').eq(timelineSelection).className != 'selected')
 		{
-
-			/*
-		$(this).siblings('li').addClass('notSelected').removeClass('selected').fadeOut(10);	
-		$(this).addClass('selected').removeClass('notSelected').fadeIn(400);*/
-		
-		
 		$('#timeline li').eq(timelineSelection).siblings()
-		.addClass('notSelected').removeClass('selected')
-		.fadeOut(10);	
-		$('#timeline li').eq(timelineSelection).addClass('selected').removeClass('notSelected').fadeIn(400);
+		.addClass('notSelected').removeClass('selected');	
+		$('#timeline li').eq(timelineSelection).addClass('selected').removeClass('notSelected');
 		
 		}
-		//$("timeline li:not(this)").addClass('notSelected');
-//			.css('display', 'none');
-		
 	}
 });
