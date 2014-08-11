@@ -859,6 +859,10 @@ footer{
   //border: 3px solid #CCC;
   z-index: -1;
   background: -webkit-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
+background: radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
+background: -moz-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
+background: -ms-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
+
   //background: radial-gradient(to bottom, #000000, #45484d);
  /* more codepen gradients 
  background: rgb(244,226,156);

@@ -10,8 +10,35 @@ $(function(){
     $itemWidth = elems.css('width').split('px')[0];
 
 
+
 function panCarousel(e){
 	
+	if(e.data.type == 'quicknav'){
+		//do this
+		var incrementIndex = 0;
+		switch(e.target.className){
+			case '2015':
+				incrementIndex = 0;
+				break;
+			case '2018':
+				incrementIndex = 5;
+				break;
+			case '2019':
+				incrementIndex = 10;
+				break;
+			case '2020':
+				incrementIndex = 15;
+				break;
+			default:
+				incrementIndex = 20;
+				break;
+		}
+		currentSelection = (incrementIndex)%$itemCount;
+		$('#carousel').animate({
+			marginLeft: '-' +(currentSelection*$itemWidth) + 'px'
+		}, speed);
+	}
+	else{
 	//e.data is the object which holds and processes passed in arguments
 	//e.data.direction holds the direction : forward key-value pair
 
@@ -39,7 +66,7 @@ function panCarousel(e){
 
 
 		//changeTimeline();
-
+}
 	
 }
 	
@@ -48,8 +75,13 @@ function panCarousel(e){
 }
 
 
-$('#navNext').bind('click', {direction: 'forward'}, panCarousel);
-$('#navPrev').bind('click', {direction: 'backward'}, panCarousel);
+$('#navNext').bind('click', {direction: 'forward',
+							 type: 'standardnav'}, panCarousel);
+
+$('#navPrev').bind('click', {direction: 'backward',
+								 type: 'standardnav'}, panCarousel);
+
+$('#side-nav li').bind('click', {type: 'quicknav'}, panCarousel);
 
 $('#carousel').bind('mouseover', doShit);
 
