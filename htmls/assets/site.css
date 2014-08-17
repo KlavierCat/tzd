@@ -773,7 +773,7 @@ footer{
     float: left;
     width: auto;
     margin-left: 10em;
-    margin-top: 4em;
+    margin-top: 7em;
     padding: 1.5rem;
     //background: rgb(80,80,80);
     pointer-events: none;
@@ -864,6 +864,7 @@ footer{
   height: 500px;
   position: absolute;
   overflow: hidden;
+  margin-top: 3em;
   //border: 3px solid #CCC;
   z-index: -1;
   background: -webkit-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
