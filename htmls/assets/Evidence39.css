@@ -1,0 +1,28 @@
+* {
+    -webkit-touch-callout: none;
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;
+    /* prevent webkit from resizing text to fit */
+    /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    /* -webkit-tap-highlight-color: rgba(0,0,0,0); */
+}
+
+#robot {
+
+    z-index: 1;
+ position: absolute;
+    top: -2.5%;
+    left: 10%;
+    
+}
+#redux {
+  position: absolute;
+  top:2%;
+  left: 10%;
+    
+    
+    z-index: 2;
+}
