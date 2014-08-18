@@ -45,13 +45,7 @@ function getViewedEvidence()
 
 //function which updates evidence one item at a time
 //parameter is number of evidence item
-function setViewedEvidence(evidenceID)
-{
-	var evidence = getViewedEvidence();
-	evidence[evidenceID] = true;
-	localStorage["evidence"] = JSON.stringify(evidence);
 
-}
 
 //function returns stage number
 function getStage()
@@ -63,4 +57,21 @@ function getStage()
 function setStage()
 {
 
+}
+
+function parseUrl(){
+	var pathname = {};
+	pathname = location.pathname.split("/");
+	pathname.reverse();
+	return pathname[0].substring(0, 2);
+}
+
+
+function setViewedEvidence()
+{
+	var evidenceID = parseUrl();
+	var evidence = getViewedEvidence();
+	evidence[evidenceID] = true;
+	localStorage["evidence"] = JSON.stringify(evidence);
+	alert(evidenceID);
 }
