@@ -1,15 +1,33 @@
 $(function(){
-
   
     var elems = $('#carousel li'),
     speed = 400,
+    evidence = getViewedEvidence(),
+    carousel = [],
     currentSelection = 0,
     timelineSelection = 0,
     $itemCount = elems.length,
     $timeline = $('#timeline li'),
     $itemWidth = elems.css('width').split('px')[0];
+    buildCarousel(evidence);
 
+function buildCarousel(evidence){
 
+	for(var i = 0, i<=evidence.length; i++)
+	{
+		carousel.unshift(evidence[i]);
+		if(carousel[i]===true)
+			//update with appropriate image
+			updateElement(carousel[i]);
+		else
+			//as above
+			updateElement(carousel[i]);
+	}
+}
+
+function updateElement(index){
+
+}
 
 function panCarousel(e){
 	
