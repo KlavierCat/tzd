@@ -70,6 +70,7 @@ function parseUrl(){
 function setViewedEvidence()
 {
 	var evidenceID = parseUrl();
+	evidenceID = parseInt(evidenceID);
 	var evidence = getViewedEvidence();
 	evidence[evidenceID] = true;
 	localStorage["evidence"] = JSON.stringify(evidence);
