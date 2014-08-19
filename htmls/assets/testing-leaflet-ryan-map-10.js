@@ -2,14 +2,14 @@
 var map = new L.Map('map',{
 	zoomControl:false,
 	maxZoom:20,
-	minZoom:16
+//	minZoom:16
 });
 
 //Disable zoom handlers, disable dragging function;
 //map.dragging.disable();
 map.touchZoom.disable();
 map.doubleClickZoom.disable();
-//map.scrollWheelZoom.disable();
+map.scrollWheelZoom.disable();
 
 // Disable tap handler, if present.
 if (map.tap) map.tap.disable();
@@ -118,7 +118,7 @@ function add_marker(targetBounds){
 		["p59", 14, 53.34246, -6.25402, "evidence/59_virus.html", "image"],
 		["p69", 14, 53.34292, -6.25456, "evidence/69_research_report_stage2.html", "image"],
 		["p70", 14, 53.34277, -6.2548, "evidence/70_Experimental_Trial2.html", "image"],
-		["p74", 14, 53.34285, -6.25449, "evidence/74_biohazard.html", "image"],
+		["p74", 14, 53.34284, -6.25381, "evidence/74_biohazard.html", "image"],
 		["p04", 22, 53.34272, -6.25069, "evidence/04_newsreport_research_start.html", "film"],
 		["p16", 22, 53.34267, -6.25114, "evidence/16_test_results_formula.html", "image"],
 		["p51", 22, 53.34263, -6.25092, "evidence/51_Stage2.html", "image"],
@@ -173,6 +173,13 @@ function add_marker(targetBounds){
 		if (targetBounds.contains([points[i][2], points[i][3]])){
 			marker[i] = new L.marker([points[i][2], points[i][3]],{icon:redIcon,win_url:points[i][4]});
 			marker[i].addTo(map);
+			marker[i].bindPopup('<img src="images/evidence-icon-' + points[i][5] + '.png"/>');
+			marker[i].on('mouseover', function(e){
+			this.openPopup();
+			});
+			marker[i].on('mouseout', function(e){
+				this.closePopup();
+			});
 			marker[i].on('click',markerClick);
 			};
 	};
@@ -252,14 +259,14 @@ var featureLayer = L.geoJson(boundaries, {
 });
 
 //for testing
-		var popup = L.popup();
-		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked the map at " + e.latlng.toString())
-				.openOn(map);
-		}
-		map.on('click', onMapClick);
+//		var popup = L.popup();
+//		function onMapClick(e) {
+//			popup
+//				.setLatLng(e.latlng)
+//				.setContent("You clicked at " + e.latlng.toString())
+//				.openOn(map);
+//		}
+//		map.on('click', onMapClick);
 //end of for testing
 
 map.addLayer(featureLayer);

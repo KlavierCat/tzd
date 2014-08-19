@@ -613,26 +613,6 @@ footer{
 
 /* ================ map ============= */
 
-/*Google map basic setting, including hiding Google map logo*/
-
-#map-canvas { height: 100% }
-
-.gm-style a{
-    visibility:hidden;
-}
-.gmnoprint{
-    visibility:hidden;
-}
-.gmnoprint gm-style-cc{
-    visibility:hidden;
-}
-.gm-style-cc{
-    visibility:hidden;
-}
-
-/*end of Google map basic setting*/
-
-
 /* Leaflet map basic setting*/
 .leaflet-bottom{
     visibility: hidden;
@@ -706,34 +686,48 @@ footer{
 /*beginning of custom popup for material*/
 
 .leaflet-popup-content-wrapper{
-	background:rgba(255,255,255,0.5);
+	background:rgba(0,0,0,0);
 	color:#fff;
-	width:700px;
+/*	width:700px;
 	height:100%;
 	font-size:16px;
-	line-height:24px;
+	line-height:24px;*/
+}
+
+.leaflet-popup-content-wrapper{
+	padding:0px;
 }
 
 .leaflet-popup-content-wrapper img{
-	max-width:80%;
-	max-height:80%;
+	max-width:100%;
+	max-height:100%;
 }
 
-/*.leaflet-popup-tip-container{
-	height:-250px;
-}*/
+.leaflet-popup-content{
+	margin:0px;
+}
+
+/*
+.leaflet-popup-tip-container{
+	height:-25px;
+}
+*/
 
 .leaflet-popup-tip{
-	opacity:0;
-	border-left:15px solid transparent;
+	visibility:hidden;
+/*	border-left:15px solid transparent;
 	border-right:15px solid transparent;
-	border-top:15px solid transparent;
+	border-top:15px solid transparent;*/
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+	visibility:hidden;
 }
 
 /*end of custom popup for material*/
 
 
-/*beginning of light-box*/
+/*beginning of light-box
 #lightbox{
 	position:fixed;
 	top:0;
@@ -742,7 +736,7 @@ footer{
 	height:100%;
 	background:rgba(0,0,0,0.7);
 /*another option for older browser with 1x1 PNG: 
-	background: url(overlay.png) repeat*/
+	background: url(overlay.png) repeat
 	text-align:center;
 }
 
@@ -761,7 +755,7 @@ footer{
 	max-height:80%;
 }
 
-/*end of light-box*/
+end of light-box*/
 /* ============ end of map ============*/
 /* ============================ end of touch these and you will die!!!!! =========================*/
 
