@@ -13,19 +13,21 @@ $(function(){
 
 function buildCarousel(evidence){
 
-	for(var i = 0, i<=evidence.length; i++)
+	for(var i = 0; i< evidence.length; i++)
 	{
-		carousel.unshift(evidence[i]);
-		if(carousel[i]===true)
-			//update with appropriate image
-			updateElement(carousel[i]);
-		else
-			//as above
-			updateElement(carousel[i]);
+		carousel.push(evidence[i]);
+		updateElement(i, carousel[i]);
 	}
-}
+alert(carousel);
+	}
 
-function updateElement(index){
+function updateElement(key, value){
+
+	if(value == true){
+		elems.eq(key).css("background-color", "red");
+	}else{
+		elems.eq(key).css("background-color", "yellow");
+	}
 
 }
 
