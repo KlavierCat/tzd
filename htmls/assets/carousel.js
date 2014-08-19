@@ -12,7 +12,7 @@ $(function(){
     buildCarousel(evidence);
 
 function buildCarousel(evidence){
-	alert("h");
+
 	for(var i = 0; i< evidence.length; i++)
 	{
 		updateElement(i, evidence[i]);
@@ -26,10 +26,9 @@ function updateElement(key, value)
 		
 		if(value == true)
 		{
-			elems.eq(key).css('background-image', 'url("timeline-previews/' + index + '.jpg")' );
-			alert("ohoh");
+			elems.eq(key).css('background-image' , 'url("timeline-previews/' + index + '.jpg")' );
 		}else{
-			elems.eq(key).css('background-image', 'url("timeline-previews/lock.png"' + ')');
+			elems.eq(key).css('background-image' , 'url("timeline-previews/lock_v2.png"' + ')' );
 		}	
 }
 
@@ -106,7 +105,7 @@ $('#navNext').bind('click', {direction: 'forward',
 $('#navPrev').bind('click', {direction: 'backward',
 								 type: 'standardnav'}, panCarousel);
 
-$('#side-nav li').bind('click', {type: 'quicknav'}, panCarousel);
+$('#quicknav li').bind('click', {type: 'quicknav'}, panCarousel);
 
 $('#carousel').bind('mouseover', changeYear);
 
