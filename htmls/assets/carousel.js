@@ -3,7 +3,7 @@ $(function(){
     var elems = $('#carousel li'),
     speed = 400,
     evidence = getViewedEvidence(),
-    carousel = [],
+    
     currentSelection = 0,
     timelineSelection = 0,
     $itemCount = elems.length,
@@ -12,15 +12,28 @@ $(function(){
     buildCarousel(evidence);
 
 function buildCarousel(evidence){
-
+	alert("h");
 	for(var i = 0; i< evidence.length; i++)
 	{
-		carousel.push(evidence[i]);
-		updateElement(i, carousel[i]);
+		updateElement(i, evidence[i]);
 	}
-alert(carousel);
 	}
 
+function updateElement(key, value)
+{
+		
+		var index = key.toString();
+		
+		if(value == true)
+		{
+			elems.eq(key).css('background-image', 'url("timeline-previews/' + index + '.jpg")' );
+			alert("ohoh");
+		}else{
+			elems.eq(key).css('background-image', 'url("timeline-previews/lock.png"' + ')');
+		}	
+}
+
+/*
 function updateElement(key, value){
 
 	if(value == true){
@@ -29,7 +42,7 @@ function updateElement(key, value){
 		elems.eq(key).css("background-color", "yellow");
 	}
 
-}
+}*/
 
 function panCarousel(e){
 	

@@ -73,5 +73,4 @@ function setViewedEvidence()
 	var evidence = getViewedEvidence();
 	evidence[evidenceID] = true;
 	localStorage["evidence"] = JSON.stringify(evidence);
-	alert(evidenceID);
 }
