@@ -1,12 +1,14 @@
 
 var map = new L.Map('map',{
-	zoomControl:false
+	zoomControl:false,
+	maxZoom:20,
+	minZoom:16
 });
 
 //Disable zoom handlers, disable dragging function;
 //map.dragging.disable();
-//map.touchZoom.disable();
-//map.doubleClickZoom.disable();
+map.touchZoom.disable();
+map.doubleClickZoom.disable();
 //map.scrollWheelZoom.disable();
 
 // Disable tap handler, if present.
@@ -21,7 +23,6 @@ var imageUrl='https://www.scss.tcd.ie/~plin/zombie/images/map-big-new-black.jpg'
 	imageBounds = [[53.346836,-6.262141],[53.340691,-6.247056]]; //northWest, southEast
 	
 L.imageOverlay(imageUrl,imageBounds).addTo(map);
-
 
 //window.addEventListener('resize', function(event){
 //	var width=document.documentElement.clientWidth;	
@@ -68,7 +69,7 @@ var enteredStyle = {
 }
 
 //add markers: [pointID{str}, buildingID{int}, Lat, Lng, url{str}, fileType{str}]
-function add_marker(){
+function add_marker(targetBounds){
 	var points = [
 		["p83", 0, 53.34447, -6.25895, "evidence/83_newsreport_outbreak.html", "image"],
 		["p86", 3, 53.34453, -6.2585, "evidence/86_howtokill3.html", "image"],
@@ -80,7 +81,7 @@ function add_marker(){
 		["p48", 2, 53.34423, -6.25816, "evidence/48_rivera_id.html", "image"],
 		["p08", 4, 53.34469, -6.25795, "evidence/08_axel_lab.html", "image"],
 		["p93", 4, 53.3447, -6.25816, "evidence/93_aegis_report1.html", "image"],
-		["p73", 4, 53.34496, -6.25797, "evidence/73_this_is_the_end.html", "image"],
+		["p73", 4, 53.34484, -6.25798, "evidence/73_this_is_the_end.html", "image"],
 		["p94", 19, 53.34435, -6.25205, "evidence/94_aegis_report2.html", "image"],
 		["p40", 19, 53.34413, -6.25206, "evidence/40_newsreport_quarantine.html", "film"],
 		["p15", 19, 53.34419, -6.25176, "evidence/15_benAudio.html", "audio"],
@@ -102,7 +103,7 @@ function add_marker(){
 		["p79", 16, 53.34422, -6.25236, "", "film"],
 		["p02", 1, 53.34374, -6.25877, "", "image"],
 		["p03", 1, 53.34358, -6.25864, "evidence/03_deposit_receipt.html", "image"],
-		["p22", 1, 53.34377, -6.25878, "evidence/22_Fire_Report.html", "image"],
+		["p22", 1, 53.34389, -6.25879, "evidence/22_Fire_Report.html", "image"],
 		["p26", 1, 53.34361, -6.25874, "", "image"],
 		["p57", 1, 53.34347, -6.2588, "evidence/57_classified_book_of_kells.html", "image"],
 		["p58", 1, 53.3438, -6.25869, "evidence/58_kyleAudio.html", "audio"],
@@ -138,9 +139,9 @@ function add_marker(){
 		["p18", 20, 53.34367, -6.25122, "", "image"],
 		["p19", 20, 53.34379, -6.25094, "", "image"],
 		["p43", 20, 53.34391, -6.25108, "evidence/43_avoid_direct_contact.html", "image"],
-		["p24", 17, 53.34229, -6.25317, "", "image"],
+		["p24", 17, 53.34212, -6.25313, "", "image"],
 		["p38", 17, 53.34223, -6.25363, "evidence/38_press_conference.html", "film"],
-		["p44", 17, 53.3424, -6.25307, "evidence/44_auth_personnel.html", "image"],
+		["p44", 17, 53.34214, -6.25348, "evidence/44_auth_personnel.html", "image"],
 		["p81", 17, 53.34217, -6.25323, "evidence/81_cctv1.html", "image"],
 		["p27", 5, 53.34384, -6.25776, "evidence/27_boarding_card.html", "image"],
 		["p41", 5, 53.34388, -6.25757, "", "image"],
@@ -155,23 +156,25 @@ function add_marker(){
 		["p66", 13, 53.34419, -6.25525, "evidence/66_evac_med_centre.html", "image"],
 		["p84", 13, 53.34419, -6.2557, "evidence/84_berkeley_cctv.html", "film"],
 		["p71", 13, 53.34434, -6.25572, "evidence/71_classified_rivera.html", "image"],
-		["p45", 18, 53.34268, -6.25305, "evidence/45_zombru.html", "image"],
-		["p61", 18, 53.34261, -6.25303, "", "image"],
-		["p85", 18, 53.3426, -6.25298, "evidence/85_CCTVToilet.html", "film"],
-		["p88", 11, 53.34333, -6.25586, "evidence/88_how_to_kill1.html", "image"],
-		["p75", 11, 53.34334, -6.25616, "evidence/75_Faulkner3.html", "image"],
+		["p45", 18, 53.34275, -6.25283, "evidence/45_zombru.html", "image"],
+		["p61", 18, 53.3427, -6.25289, "", "image"],
+		["p85", 18, 53.3426, -6.25289, "evidence/85_CCTVToilet.html", "film"],
+		["p88", 11, 53.34369, -6.25608, "evidence/88_how_to_kill1.html", "image"],
+		["p75", 11, 53.34341, -6.25616, "evidence/75_Faulkner3.html", "image"],
 		["p80", 11, 53.3434, -6.25584, "evidence/80_Infirmary.html", "film"],
 		["p20", 11, 53.34361, -6.25589, "evidence/20_explosionvid.html", "film"],
 		["p13", 21, 53.34243, -6.25123, "", "image"],
 		["p06", 21, 53.34222, -6.251, "evidence/06_pic_of_team.html", "image"],
-		["p64", 21, 53.34247, -6.25091, "evidence/64_bloodsample.html", "image"]
+		["p64", 21, 53.34231, -6.25123, "evidence/64_bloodsample.html", "image"]
 	];
 	var marker = [];
 	var i;
 	for (i=0;i<points.length;i++){
-		marker[i] = new L.marker([points[i][2], points[i][3]],{icon:redIcon,win_url:points[i][4]});
-		marker[i].addTo(map);
-		marker[i].on('click',markerClick);
+		if (targetBounds.contains([points[i][2], points[i][3]])){
+			marker[i] = new L.marker([points[i][2], points[i][3]],{icon:redIcon,win_url:points[i][4]});
+			marker[i].addTo(map);
+			marker[i].on('click',markerClick);
+			};
 	};
 }
 
@@ -204,12 +207,15 @@ var onEachFeature = function(feature, layer) {
 			popup.appendTo("#map");
 
 			layer.on("click",function(e){
-				map.fitBounds(e.target.getBounds());
+				var targetBounds = e.target.getBounds()
+				map.fitBounds(targetBounds);
 
+				add_marker(targetBounds);				
+				
 				map.removeLayer(featureLayer);
 				$("#popup-"+properties.ID).remove();
 
-				add_marker();
+
 				
 //Todo: the marker should be loaded via GeoJson or a list!
 				//location [53.34258,-6.25125]
