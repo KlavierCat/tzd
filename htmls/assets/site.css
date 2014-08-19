@@ -560,6 +560,10 @@ footer{
   width: 100%;
 }
 
+.item-content-holder audio{
+  margin-top: 40%;
+}
+
 
 /* ====== graceful degradation ======*/
 @media only screen and (max-width:574px){
