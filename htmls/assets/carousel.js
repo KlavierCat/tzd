@@ -48,21 +48,38 @@ function panCarousel(e){
 	if(e.data.type == 'quicknav'){
 		//do this
 		var incrementIndex = 0;
-		switch(e.target.className){
-			case '2015':
+		switch(e.target.id){
+			case 'First':
 				incrementIndex = 0;
 				break;
-			case '2018':
-				incrementIndex = 5;
-				break;
-			case '2019':
+			case 'Second':
 				incrementIndex = 10;
 				break;
-			case '2020':
-				incrementIndex = 15;
-				break;
-			default:
+			case 'Third':
 				incrementIndex = 20;
+				break;
+			case 'Fourth':
+				incrementIndex = 30;
+				break;
+			case 'Fifth':
+				incrementIndex = 40;
+				break;
+			case 'Sixth':
+				incrementIndex = 50;
+				break;
+			case 'Seventh':
+				incrementIndex = 60;
+				break;
+			case 'Eight':
+				incrementIndex = 70;
+				break;
+			case 'Ninth':
+				incrementIndex = 80;
+				break;
+			case 'Tenth':
+				incrementIndex = 90;
+				break;
+			default: 
 				break;
 		}
 		currentSelection = (incrementIndex)%$itemCount;
@@ -75,6 +92,7 @@ function panCarousel(e){
 	//e.data.direction holds the direction : forward key-value pair
 
 	if(e.data.direction == 'forward'){
+
 		currentSelection = (currentSelection+1)%$itemCount;
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$('#carousel').animate({
