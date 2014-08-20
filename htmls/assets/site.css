@@ -897,14 +897,13 @@ background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%
 
  #carousel li {
         width: 100px;
-        height: 280px;
+        height: 250px;
         float: left;
         margin-top: 1em;
+        
         border-radius: 5px;
         margin-right: 0.5em;
         cursor: pointer;
-        opacity: 0.6;
-        z-index: 3;
         background: #34495e;
         }
 
@@ -916,6 +915,8 @@ background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%
   animation-fill-mode: forwards;
 animation-fill-mode:forwards;
     -webkit-animation-fill-mode: forwards;
+
+
       }
 
 @-webkit-keyframes glow {
@@ -925,6 +926,7 @@ animation-fill-mode:forwards;
   100% {
     opacity: 1;
     background-color: #5e4934;
+      -webkit-filter : sepia(0);
   }
 }
 #carousel li a{
@@ -932,8 +934,6 @@ animation-fill-mode:forwards;
     top: 20px;
     opacity: 0;
   }
-
-
 
 .nav-buttons{
   opacity:0.5;
@@ -972,7 +972,7 @@ animation-fill-mode:forwards;
 
 #quicknav{
   position: absolute;
-  top: 7em;
+  top: 2em;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
@@ -984,7 +984,7 @@ animation-fill-mode:forwards;
   #quicknav{
   width: auto;
   left: 28%;
-  bottom: 12%;
+  top: 12%;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
@@ -1015,14 +1015,15 @@ animation-fill-mode:forwards;
 @media all and (max-width: 699px) and (min-width: 520px){
 #quicknav{
   width: auto;
-  left: 35%;
-  bottom: 12%;
+  left: 30%;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
-  //background-color: red;
+  top: 1.2em;
+  left: 30%;
 }
+
 
 #timeline{
   margin-left: 1em;
@@ -1061,24 +1062,24 @@ animation-fill-mode:forwards;
 
 
 #quicknav li{
-  border: 6px solid #ccc; 
-  width: 12px;
-  height: 12px;
+  border: 9px solid #ccc; 
+  width: 15px;
+  height: 15px;
   position: relative;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 8px;
   text-align: left;
   margin-right: 1em;
 }
 
 #quicknav li:hover{
-  border: 6px solid red; 
-  width: 12px;
-  height: 12px;
+  border: 9px solid red; 
+  width: 15px;
+  height: 15px;
   cursor: pointer;
   position: relative;
   display: inline-block;
-  border-radius: 5px;
+  border-radius: 8px;
   text-align: left;
   margin-right: 1em;
 }

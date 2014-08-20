@@ -11,9 +11,12 @@ $(function(){
     $itemWidth = elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
-	$('#carousel li:even').css({'margin-top' : '100px',
-								'z-index' : '1'});
+	$('#carousel li:even').css({'margin-top' : '120px',
+								'z-index' : '3',
+								'opacity' : '0.6'});
 
+	$('#carousel li:odd').css({'z-index' : '2',
+								'opacity' : '0.6'});
 
 
 function buildCarousel(evidence){
@@ -31,11 +34,14 @@ function updateElement(key, value)
 		
 		if(value == true)
 		{
-			elems.eq(key).css('background-image' , 'url("timeline-previews/' + index + '.jpg")' );
+			elems.eq(key).css({'background-image' : 'url("timeline-previews/' + index + '.jpg")',
+									'-webkit-filter' : 'sepia(100%)'} );
 		}else{
 			elems.eq(key).css('background-image' , 'url("timeline-previews/lock_v2.png"' + ')' );
 		}	
 }
+
+
 
 /*
 function updateElement(key, value){
