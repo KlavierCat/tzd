@@ -94,8 +94,6 @@ function panCarousel(e){
 	
 }
 	
-	
-
 }
 
 
@@ -116,17 +114,32 @@ function changeYear(e){
 		case '2015':
 			timelineSelection = 0;
 			break;
-		case '2018':
+		case '2018-a':
 			timelineSelection = 1;
 			break;
-		case '2019':
+		case '2018-b':
 			timelineSelection = 2;
 			break;
-		case '2020':
+		case '2019':
 			timelineSelection = 3;
 			break;
-		case '2021':
+		case 'disaster':
 			timelineSelection = 4;
+			break;
+		case 'IDM':
+			timelineSelection = 5;
+			break;
+		case 'Outbreak':
+			timelineSeleciton = 6;
+			break;
+		case 'Quarantine':
+			timelineSeleciton = 7;
+			break;
+		case 'Evac':
+			timelineSelection = 8;
+			break;
+		case 'End':
+			timelineSelection = 9
 			break;
 		default:
 			break;

@@ -773,7 +773,7 @@ end of light-box*/
     overflow:hidden;
     list-style-type:none;
     float: left;
-    width: auto;
+    width: 400px;
     margin-left: 10em;
     position: absolute;
     pointer-events: none;
@@ -806,10 +806,7 @@ end of light-box*/
 .flag-wrapper{
   position: relative;
   width: 300px;
-  margin-left: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
+  margin-left: 18%;
   border-radius: 5px;
   float: left;
 }
@@ -819,9 +816,9 @@ end of light-box*/
   border:0;
   font-size:18px;
   text-shadow:2px 2px rgba(217,0,0,0.7);
-  position: relative;
+  position: absolute;
   background: rgba(255,255,255,0.5);
-  padding: 5px 5px;
+  padding: 10px 10px;
   border-radius: 5px;
   font-weight: 600;
   text-shadow: 1px 1px #ccc;
@@ -836,6 +833,7 @@ end of light-box*/
   font-family: "Verdana", Serif;
   font-weight:bold;
   border:0;
+  margin-top: 3em;
   font-size:18px;
   text-shadow:2px 2px rgba(217,0,0,0.7);
 }
@@ -843,18 +841,16 @@ end of light-box*/
 .desc h2{
   font-weight: 300;
   font-size: 24px;
+  clear:both;
   color: #ccc;
-  float: right;
   text-shadow: 2px 2px rgb(0,0,0);
-  border: 3px solid #ccc;
 }
 
 .desc h1{
-  border: 3px solid #ccc;
   font-weight: 200;
   font-size: 24px;
   color: #ccc;
-  float: left;
+  clear: both;
   text-shadow: 2px 2px rgb(0,0,0);
 }
 
@@ -1004,15 +1000,18 @@ animation-fill-mode:forwards;
   }
 
 
+
   .flag{
-    font-size: 13px;
-    padding: 1em;
+    font-size: 18px;
+    padding: 0.5em;
   }
 
   .desc h3{
-    font-size: 22px;
+    font-size: 20px;
   }
-
+  .desc h2{
+    font-size: 20px;
+  }
 }
 
 @media all and (max-width: 699px) and (min-width: 520px){
