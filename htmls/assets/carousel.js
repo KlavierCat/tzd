@@ -67,7 +67,7 @@ function panCarousel(e){
 		}
 		currentSelection = (incrementIndex)%$itemCount;
 		$('#carousel').animate({
-			marginLeft: '-' +(currentSelection*$itemWidth) + 'px'
+			left: '-' +(currentSelection*$itemWidth) + 'px'
 		}, speed);
 	}
 	else{
@@ -79,7 +79,7 @@ function panCarousel(e){
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$('#carousel').animate({
 			
-			marginLeft: '-' + (currentSelection*$itemWidth) + 'px'
+			left: '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 		
 		}else{
@@ -87,7 +87,7 @@ function panCarousel(e){
 		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-1);
 		$('#carousel').animate(		
 		{
-		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
+		left : '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 
 }

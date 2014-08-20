@@ -31,7 +31,7 @@ function alreadyPlayed()
 //function to reset the game to the beginning
 function resetGame()
 {
-	var a = new Array(94);
+	var a = new Array(95);
 	for (var i = 0; i < a.length; ++i) { a[i] = false; }
 	localStorage["evidence"] = JSON.stringify(a);
 }
