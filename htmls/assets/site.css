@@ -769,15 +769,13 @@ end of light-box*/
 
 #timeline{
 
-       height: 160px;
+    height: 160px;
     overflow:hidden;
     list-style-type:none;
     float: left;
     width: auto;
     margin-left: 10em;
     position: absolute;
-    top: 2px;
-    //background: rgb(80,80,80);
     pointer-events: none;
    
   -webkit-animation:fadein 1s; /*Safari and Chrome*/
@@ -800,39 +798,32 @@ end of light-box*/
 #timeline li{
 
   padding: 2.5em 0;
-  //margin-top: 5em;
- line-height: 1.5em;
+ line-height: 1.2em;
 }
 
 
 
 .flag-wrapper{
-  //background: rgba(255,255,255,0.5);
   position: relative;
-  width: 350px;
+  width: 300px;
   margin-left: 1em;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 2.5em;
+  padding-bottom: 1em;
   border-radius: 5px;
-  margin: auto;
   float: left;
 }
 
 .flag{
   font-family: "Verdana", Serif;
-  //font-weight:bold;
   border:0;
-  font-size:22px;
+  font-size:18px;
   text-shadow:2px 2px rgba(217,0,0,0.7);
   position: relative;
-  //background: rgb(248, 248, 248);
   background: rgba(255,255,255,0.5);
-  padding: 6px 6px;
+  padding: 5px 5px;
   border-radius: 5px;
   font-weight: 600;
-  //margin-left: 1em;
-
   text-shadow: 1px 1px #ccc;
 }
 
@@ -845,27 +836,30 @@ end of light-box*/
   font-family: "Verdana", Serif;
   font-weight:bold;
   border:0;
-  font-size:22px;
+  font-size:18px;
   text-shadow:2px 2px rgba(217,0,0,0.7);
 }
 
-.desc h3{
+.desc h2{
   font-weight: 300;
-  font-size: 32px;
+  font-size: 24px;
   color: #ccc;
+  float: right;
+  text-shadow: 2px 2px rgb(0,0,0);
+  border: 3px solid #ccc;
+}
+
+.desc h1{
+  border: 3px solid #ccc;
+  font-weight: 200;
+  font-size: 24px;
+  color: #ccc;
+  float: left;
   text-shadow: 2px 2px rgb(0,0,0);
 }
 
 .desc h3:hover{
   cursor: pointer;
-}
-
-.time{
-  display:inline;
-  line-height: 1em;
-  font-size: 0.66666em;
-  color: rgb(250,80,80);
-  vertical-align: middle;
 }
 
 
@@ -902,8 +896,8 @@ background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%
       overflow: hidden;
       margin-top: 2em;
        }
+
  #carousel li {
-        display: inline;
         width: 100px;
         height: 280px;
         float: left;
@@ -946,9 +940,6 @@ animation-fill-mode:forwards;
   }
 
 
-#button_wrapper{
-  position: relative;  
-}
 
 .nav-buttons{
   opacity:0.5;
@@ -994,6 +985,35 @@ animation-fill-mode:forwards;
   left: 40%;
 }
 
+@media all and (max-width: 519px) and (min-width: 300px)
+{
+  #quicknav{
+  width: auto;
+  left: 28%;
+  bottom: 12%;
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  }
+
+  .navButtons{
+    border: 3px solid #ccc;
+    position: absolute;
+    top: 10px;
+  }
+
+
+  .flag{
+    font-size: 13px;
+    padding: 1em;
+  }
+
+  .desc h3{
+    font-size: 22px;
+  }
+
+}
 
 @media all and (max-width: 699px) and (min-width: 520px){
 #quicknav{
@@ -1006,7 +1026,35 @@ animation-fill-mode:forwards;
   z-index: 4;
   //background-color: red;
 }
+}
 
+@media all and (max-width: 1000px) and (min-width: 700px){
+  #quicknav
+  {
+  width: auto;
+  left: 35%;
+  bottom: 12%;
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  //background-color: red;
+}
+
+
+}
+
+@media all and (max-width: 1365px) and (min-width: 1001px){
+  #quicknav{
+  width: auto;
+  left: 40%;
+  bottom: 15%;
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  //background-color: red;
+  }
 }
 
 
