@@ -1036,12 +1036,11 @@ animation-fill-mode:forwards;
   {
   width: auto;
   left: 35%;
-  bottom: 12%;
+  top: 3%;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
-  //background-color: red;
 }
 
 
@@ -1051,7 +1050,7 @@ animation-fill-mode:forwards;
   #quicknav{
   width: auto;
   left: 40%;
-  bottom: 15%;
+  top: 1em;
   position: absolute;
   list-style-type: circle;
   display: inline-block;

@@ -168,7 +168,7 @@ function changeYear(e){
 			timelineSelection = 8;
 			break;
 		case 'End':
-			timelineSelection = 9
+			timelineSelection = 9;
 			break;
 		default:
 			break;
