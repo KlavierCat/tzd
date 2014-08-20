@@ -11,6 +11,11 @@ $(function(){
     $itemWidth = elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
+	$('#carousel li:even').css({'margin-top' : '100px',
+								'z-index' : '1'});
+
+
+
 function buildCarousel(evidence){
 
 	for(var i = 0; i< evidence.length; i++)
