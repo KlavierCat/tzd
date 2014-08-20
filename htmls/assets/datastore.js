@@ -34,6 +34,9 @@ function resetGame()
 	var a = new Array(95);
 	for (var i = 0; i < a.length; ++i) { a[i] = false; }
 	localStorage["evidence"] = JSON.stringify(a);
+	
+	var stage = 0;
+	localStorage["stage"] = JSON.stringify(stage);
 }
 
 //function that returns array of evidence in order
@@ -43,20 +46,59 @@ function getViewedEvidence()
 	return evidence;
 }
 
-//function which updates evidence one item at a time
-//parameter is number of evidence item
-
-
 //function returns stage number
 function getStage()
 {
-
+	var stage = parseInt(JSON.parse(localStorage["stage"]));
+	return stage;
+	
 }
 
 //function checks stage and updates as necessary
 function setStage()
 {
-
+	var stage = getStage();
+	var evidence = getViewedEvidence();
+	
+	switch (stage)
+	{
+		case 0:
+			if(evidence[83] == true)
+			{
+				stage = 1;
+				localStorage["stage"] = JSON.stringify(stage);
+			}
+			break;
+		case 1:
+			if(evidence[92]==true && evidence[78]==true && evidence[73]==true)
+			{
+				stage = 2;
+				localStorage["stage"] = JSON.stringify(stage);
+			}
+			break;
+		case 2:
+			if(evidence[40]==true && evidence[9]==true && evidence[28]==true && evidence[0]==true && evidence[50]==true)
+			{
+				stage = 3;
+				localStorage["stage"] = JSON.stringify(stage);
+			}
+			break;
+		case 3:
+			if(evidence[22]==true && evidence[34]==true && evidence[59]==true && evidence[16]==true && evidence[52]==true
+			&& evidence[21]==true && evidence[53]==true && evidence[38]==true && evidence[63]==true && evidence[84]==true)
+			{
+				stage = 4;
+				localStorage["stage"] = JSON.stringify(stage);
+			}
+			break;
+		case 4:
+			if(evidence[75]==true && evidence[13]==true && evidence[64]==true)
+			{
+				stage = 5;
+				localStorage["stage"] = JSON.stringify(stage);
+			}
+			break;
+	}
 }
 
 function parseUrl(){
@@ -69,8 +111,21 @@ function parseUrl(){
 
 function setViewedEvidence()
 {
-	var evidenceID = parseInt(parseUrl());
-	var evidence = getViewedEvidence();
-	evidence[evidenceID] = true;
-	localStorage["evidence"] = JSON.stringify(evidence);
+	//try
+	//{
+		var evidenceID = parseInt(parseUrl());
+		var evidence = getViewedEvidence();
+		evidence[evidenceID] = true;
+		localStorage["evidence"] = JSON.stringify(evidence);
+		
+		setStage();
+	//}
+	//catch(e)
+	//{
+		//i think this gets called if the user has gone straight to
+		//an evidence page without passing through the home page
+		//we need them to go to the home page so we might need a 
+		//redirect here
+	
+	//}
 }
