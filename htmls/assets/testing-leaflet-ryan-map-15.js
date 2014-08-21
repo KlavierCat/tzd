@@ -224,12 +224,12 @@ function changeColor(points, boundaries, layer){
 	var buildingCounter = Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
 	for (i=0; i<points.length; i++){
 		if (evidence[i] === true){
-			console.log("evidence", i, "is viewed. It is housed in Building ID", points[i][1]);
+			console.log("evidence #", i, "is viewed. It is housed in Building #", points[i][1]);
 			buildingCounter[points[i][1]]++;
 			console.log("Number of evidences housed within Building #", points[i][1], "and viewed are", buildingCounter[points[i][1]]);
-			console.log(buildingCounter);
 		}
 	};
+		console.log(buildingCounter);
 	for (x=0; x<buildingCounter.length; x++){
 	//get the relevant polygon/building in the geojson
 		var targetBuilding = boundaries.features[x];
