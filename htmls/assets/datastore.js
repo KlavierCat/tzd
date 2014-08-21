@@ -109,11 +109,11 @@ function parseUrl(){
 }
 
 
-function setViewedEvidence()
+function setViewedEvidence(evidenceID)
 {
 	try
 	{
-		var evidenceID = parseInt(parseUrl());
+		//var evidenceID = parseInt(parseUrl());
 		var evidence = getViewedEvidence();
 		evidence[evidenceID] = true;
 		localStorage["evidence"] = JSON.stringify(evidence);

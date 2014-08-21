@@ -1,6 +1,12 @@
 window.onload=function()
 { 
-	setViewedEvidence(); 
+	var evidence = getViewedEvidence();
+	
+	var evidenceID = parseInt(parseUrl());
+	
+	if(evidence[evidenceID] != true)
+	{
+	setViewedEvidence(evidenceID); 
 			
     document.getElementById("animation").className += " load";
 	//$("#animation").toggleClass( "load" );
@@ -14,6 +20,8 @@ window.onload=function()
 	
 	//document.getElementById("inventory-corner").className += "afteranimation";
 	//$("#inventory-corner").toggleClass( "afteranimation" );
+	
+	}
 };
 	
 function flashIcon(flashon)
