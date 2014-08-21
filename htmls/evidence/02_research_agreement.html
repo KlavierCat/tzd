@@ -11,9 +11,10 @@
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <link href='../assets/site.css' rel="stylesheet"/>
     <script src='../assets/datastore.js'></script>
-    <script>
-    window.onload = setViewedEvidence();
-    </script>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	
+	<link href='assets/evidence.css' rel="stylesheet"/>
+   
 </head>
 
 <body>
@@ -50,9 +51,40 @@
     </div>
 <!-- end of the item part in tempalte-->    
     
+	<div class="item-wrapper" id="animation">
+        <div class="item-description">
+            <table>
+                <thead><th colspan='2'>EVIDENCE #02</th></thead>
+                    <tr>
+                        <td>LOCATION:</td>
+                        <td>Provost's House</td>
+                    </tr>
+                    <tr>
+                        <td>DATE:</td>
+                        <td>Apr 18 2018</td>
+                    </tr>
+            </table>
+        </div>
+
+        <div class="item-content">
+            <div class='item-content-holder'>
+
+                    
+				<img src="items/agreement.png">
+
+
+
+
+            </div>            
+        </div>
+    </div>
+	
+	
+	
+	
 <!--beginning of header and footer in template-->       
 	<div id="corner-logo-container">
-        <a href="#">
+        <a href="../index.html">
             <div id="corner-logo"></div>
         </a>
     </div>
@@ -83,7 +115,7 @@
             <div id="map-corner"></div>  
         </a>
           
-        <a href="../inventory.html">
+        <a href="../inventory.html#2">
             <div id="inventory-corner"></div>
         </a>
           
@@ -98,6 +130,8 @@
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->   
 
+
+	<script src='assets/evidence.js'></script>
 </body>
 
 </html>

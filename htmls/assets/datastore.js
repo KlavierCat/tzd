@@ -111,21 +111,22 @@ function parseUrl(){
 
 function setViewedEvidence()
 {
-	//try
-	//{
+	try
+	{
 		var evidenceID = parseInt(parseUrl());
 		var evidence = getViewedEvidence();
 		evidence[evidenceID] = true;
 		localStorage["evidence"] = JSON.stringify(evidence);
 		
 		setStage();
-	//}
-	//catch(e)
-	//{
+	}
+	catch(e)
+	{
 		//i think this gets called if the user has gone straight to
 		//an evidence page without passing through the home page
+		//this means the data store was not setup correctly
 		//we need them to go to the home page so we might need a 
 		//redirect here
 	
-	//}
+	}
 }
