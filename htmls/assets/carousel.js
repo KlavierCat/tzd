@@ -1,10 +1,6 @@
 $(function(){
   
-  	if(location.hash)
-  		location = "inventory.html";
- 
-
-    var elems = $('#carousel li'),
+	var elems = $('#carousel li'),
     speed = 400,
     evidence = getViewedEvidence(),
     
@@ -15,6 +11,8 @@ $(function(){
     $itemWidth = elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
+    var a = "This does nothing";
+
 	$('#carousel li:even').css({'margin-top' : '120px',
 								'z-index' : '3',
 								'opacity' : '0.7'});
@@ -22,6 +20,28 @@ $(function(){
 	$('#carousel li:odd').css({'z-index' : '2',
 								'opacity' : '0.7'});
 
+
+
+
+window.onhashchange = function unfuckeverything(){
+	var $top = $('#quicknav');
+	$(document).scrollTop($top);
+	currentSelection =  (parseInt((location.hash).split('#')[1]));
+	console.log(currentSelection);
+	/*
+	var viewportWidth = $(window).width(),
+	el = elems.eq(currentSelection),
+	elWidth = el.width(),
+	elOffset = el.offset();
+
+	$(window).scrollLeft(elOffset.left + (elWidth/2) -
+			(viewportWidth/2));
+
+	$('#carousel').animate(		
+		{
+		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
+		}, 200);*/
+};
 
 
 function buildCarousel(evidence){
@@ -114,23 +134,29 @@ function panCarousel(e){
 	//e.data.direction holds the direction : forward key-value pair
 
 	if(e.data.direction == 'forward'){
-		
+	
 
 		currentSelection = (currentSelection === ($itemCount-1)) ? (currentSelection = 0) : 
-		(currentSelection + 4);
+		(currentSelection + 4)%($itemCount);
+		if(currentSelection < 0)
+			currentSelection = currentSelection+94;
+		console.log(currentSelection);
 		//currentSelection = (currentSelection+4)%$itemCount;
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$('#carousel').animate({
 			
-			left: '-' + (currentSelection*$itemWidth) + 'px'
+			marginLeft: '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 		
 		}else{
 		
-		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4);
+		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4)%($itemCount);
+		if(currentSelection < 0)
+			currentSelection = currentSelection+94;
+		console.log(currentSelection);
 		$('#carousel').animate(		
 		{
-		left : '-' + (currentSelection*$itemWidth) + 'px'
+		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 
 }
@@ -197,3 +223,4 @@ function changeYear(e){
 		}
 	}
 });
+
