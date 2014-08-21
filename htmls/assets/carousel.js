@@ -1,5 +1,9 @@
 $(function(){
   
+  	if(location.hash)
+  		location = "inventory.html";
+ 
+
     var elems = $('#carousel li'),
     speed = 400,
     evidence = getViewedEvidence(),
@@ -17,6 +21,7 @@ $(function(){
 
 	$('#carousel li:odd').css({'z-index' : '2',
 								'opacity' : '0.7'});
+
 
 
 function buildCarousel(evidence){
@@ -37,7 +42,11 @@ function updateElement(key, value)
 			elems.eq(key).css({'background-image' : 'url("timeline-previews/' + index + '.jpg")',
 									'-webkit-filter' : 'sepia(70%)'} );
 		}else{
-			elems.eq(key).css('background-image' , 'url("timeline-previews/lock_v2.png"' + ')' );
+			elems.eq(key).css({'background-image' : 'url("timeline-previews/lock_v2.png"' + ')',
+								'background-size' : '100%',
+								'background-repeat' : 'repeat-x',
+								'background-position' : 'center'
+								} );
 		}	
 }
 
@@ -55,6 +64,7 @@ function updateElement(key, value){
 }*/
 
 function panCarousel(e){
+	
 	
 	/*
 	if(e.data.type == 'quicknav'){
@@ -104,8 +114,11 @@ function panCarousel(e){
 	//e.data.direction holds the direction : forward key-value pair
 
 	if(e.data.direction == 'forward'){
+		
 
-		currentSelection = (currentSelection+1)%$itemCount;
+		currentSelection = (currentSelection === ($itemCount-1)) ? (currentSelection = 0) : 
+		(currentSelection + 4);
+		//currentSelection = (currentSelection+4)%$itemCount;
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$('#carousel').animate({
 			
@@ -114,7 +127,7 @@ function panCarousel(e){
 		
 		}else{
 		
-		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-1);
+		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4);
 		$('#carousel').animate(		
 		{
 		left : '-' + (currentSelection*$itemWidth) + 'px'
@@ -133,7 +146,7 @@ $('#navNext').bind('click', {direction: 'forward',
 $('#navPrev').bind('click', {direction: 'backward',
 								 type: 'standardnav'}, panCarousel);
 
-//$('#quicknav li').bind('click', {type: 'quicknav'}, panCarousel);
+$('#quicknav a').bind('mouseover', changeYear);
 
 $('#carousel').bind('mouseover', changeYear);
 
