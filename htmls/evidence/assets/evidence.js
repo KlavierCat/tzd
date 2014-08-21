@@ -6,21 +6,21 @@ window.onload=function()
 	
 	if(evidence[evidenceID] != true)
 	{
-	setViewedEvidence(evidenceID); 
+		setViewedEvidence(evidenceID); 
+				
+		document.getElementById("animation").className += " load";
+		//$("#animation").toggleClass( "load" );
 			
-    document.getElementById("animation").className += " load";
-	//$("#animation").toggleClass( "load" );
+		setTimeout(function(){flashIcon(false)}, 1500);
+		setTimeout(function(){flashIcon(true)}, 1750);
+		setTimeout(function(){flashIcon(false)}, 2000);
+		setTimeout(function(){flashIcon(true)}, 2250);
+		setTimeout(function(){flashIcon(false)}, 2500);
+		//setTimeout(function(){flashIcon(true)}, 3000);
 		
-	setTimeout(function(){flashIcon(false)}, 1500);
-	setTimeout(function(){flashIcon(true)}, 1750);
-	setTimeout(function(){flashIcon(false)}, 2000);
-	setTimeout(function(){flashIcon(true)}, 2250);
-	setTimeout(function(){flashIcon(false)}, 2500);
-	//setTimeout(function(){flashIcon(true)}, 3000);
-	
-	//document.getElementById("inventory-corner").className += "afteranimation";
-	//$("#inventory-corner").toggleClass( "afteranimation" );
-	
+		//document.getElementById("inventory-corner").className += "afteranimation";
+		//$("#inventory-corner").toggleClass( "afteranimation" );
+		
 	}
 };
 	
