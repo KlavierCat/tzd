@@ -1,3 +1,4 @@
+//TODO: line 292 has a problem
 // basic setting for map
 	var map = new L.Map('map',{
 		zoomControl:false,
@@ -201,7 +202,7 @@
 		window[layerNames[buildCount]] = new L.GeoJSON(boundaries.features[buildCount]); //or new L.GeoJson().addTo(map);
 	};
 	
-	var featureLayer = L.layerGroup(layerNames);
+//	var featureLayer = L.layerGroup(layerNames);
 //end of create layers loaded with polygons/buildings
 
 //dynamically change the color of the polygon / building once it is 'cleared' by the user
@@ -228,8 +229,8 @@
 			if (buildingCounter[x]==targetBuilding.properties.ITEMNUM){
 							console.log("buildingCounter #", x, buildingCounter[x], "=", "targetBuilding.properties.ITEMNUM", targetBuilding.properties.ITEMNUM );
 	//			map._layers[String(x)].setStyle(unlockedStyle); //targetBuilding.setStyle(unlockedStyle);
-				//layer.setStyle(unlockedStyle); //this, unfortunately, will change the style of all the polygons in the layer. the layer needs to be layerName
-				layerNames[x].setStyle(unlockedStyle);
+				layer.setStyle(unlockedStyle); //this, unfortunately, will change the style of all the polygons in the layer. the layer needs to be layerName
+				//layerNames[x].setStyle(unlockedStyle);
 			};
 		};
 	};
@@ -237,8 +238,8 @@
 
 
 //load styles to the layers and dynamically change on hover
-	var onEachFeature = function(feature, layer) { //layer needs to be layerName when called
-
+	var onEachFeature = function(layer, targetID) { //layer needs to be layerName when called
+		var layer = eval(layerNames[targetID]);
 	//add an id to each polygon
 	//	layer.on("featureparse", function(e, properties){
 	//		e.layer._leaflet_id = String(properties.ID);
@@ -271,7 +272,7 @@
 
 					add_marker(targetBounds, points);				
 					
-					map.removeLayer(featureLayer);
+					map.removeLayer(layer);
 					$("#popup-"+properties.ID).remove();
 				
 	//Todo: the marker should be loaded via GeoJson or a list!
@@ -288,7 +289,7 @@
 				$("#popup-"+properties.ID).remove();
 			});
 			
-		})(layer, feature.properties);
+		})(eval(layerNames[targetID]), boundaries.features[targetID].properties);
 	};
 //end of load styles
 
@@ -303,13 +304,19 @@
 //		window[layerNames[buildCount]] = new L.GeoJSON(); //or new L.GeoJson().addTo(map);
 //	};
 
-var featureLayer = L.geoJson(boundaries, {
-	onEachFeature: onEachFeature
-});
+//var featureLayer = L.geoJson(boundaries, {
+//	onEachFeature: onEachFeature
+//});
+
+
+	for (var buildCount=0;buildCount<layerNames.length;buildCount++){
+		window[layerNames[buildCount]] = new L.GeoJSON(boundaries.features[buildCount], {style:onEachFeature(layerNames[buildCount], buildCount)}); //or new L.GeoJson().addTo(map);
+		map.addLayer(layerNames[buildCount]);
+	};
 
 //var featureLayer = L.layerGroup(layerNames, {onEachFeature: onEachFeature});
 
-map.addLayer(featureLayer);
+
 
 
 //for testing
