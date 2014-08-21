@@ -1,4 +1,5 @@
-//TODO: line 218 - function changeColor(points, pointsInPolygon)
+//TODO: line 236 - function changeColor(points, pointsInPolygon); line 308 or 259 - how to call the function
+//You've got to fix line 241, which is causing troubles.
 
 // basic setting for map
 var map = new L.Map('map',{
@@ -156,7 +157,7 @@ var filmIcon = L.icon({
 	];
 
 //number of evidences within each building
-	var pointsInPolygon = [1, 6, 3, 4, 3, 3, 6, 4, 5, 3, 3, 4, 6, 4, 8, 4, 4, 4, 3, 4, 4, 3, 3, 3];
+//	var pointsInPolygon = [1, 6, 3, 4, 3, 3, 6, 4, 5, 3, 3, 4, 6, 4, 8, 4, 4, 4, 3, 4, 4, 3, 3, 3];
 		
 //end of load data
 
@@ -215,32 +216,51 @@ function markerClick(e){
 }
 
 
-function changeColor(points, pointsInPolygon){
+function changeColor(points, boundaries, layer){
 	evidence = getViewedEvidence();
+	console.log("evidence viewed:", evidence);
+	console.log("total number of evidences:", evidence.length);
 	var i;
-	var buildingCounter = new Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
+	var buildingCounter = Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
 	for (i=0; i<points.length; i++){
 		if (evidence[i] === true){
+			console.log("evidence", i, "is viewed. It is housed in Building ID", points[i][1]);
 			buildingCounter[points[i][1]]++;
+			console.log("Number of evidences housed within Building #", points[i][1], "and viewed are", buildingCounter[points[i][1]]);
+			console.log(buildingCounter);
 		}
 	};
 	for (x=0; x<buildingCounter.length; x++){
-		if (buildingCounter[x]==pointsInPolygon[x]){
-//TODO: get the relevant Polygon in the geoJson
-//      Polygon.setStyle(unlockedStyle);			
+	//get the relevant polygon/building in the geojson
+		var targetBuilding = boundaries.features[x];
+		console.log("targetBuilding:", targetBuilding);
+					console.log(buildingCounter[x], "items in Building #", x, "viewed, vs. total amount of items in the building:", targetBuilding.properties.ITEMNUM );
+	//if the number of evidences held within the building is the same as the number of evidences viewed by the user, change the colour of the polygon
+		if (buildingCounter[x]==targetBuilding.properties.ITEMNUM){
+						console.log("buildingCounter #", x, buildingCounter[x], "=", "targetBuilding.properties.ITEMNUM", targetBuilding.properties.ITEMNUM );
+//			map._layers[String(x)].setStyle(unlockedStyle); //targetBuilding.setStyle(unlockedStyle);
+			layer.setStyle(unlockedStyle); //this, unfortunately, will change the style of all the polygons in the layer
 		};
 	};
 };
 
+var onEachFeature = function(feature, layer) { //add points?
 
-var onEachFeature = function(feature, layer) {
+//add an id to each polygon
+//	layer.on("featureparse", function(e, properties){
+//		e.layer._leaflet_id = String(properties.ID);
+//		console.log("polygon id:", e.layer._leaflet_id);
+//	})
+
 	layer.setStyle(defaultStyle);
-
+	
+	changeColor(points, boundaries, layer);		
+	
 	(function(layer, properties){
 		layer.on("mouseover",function(e){
 		
 			layer.setStyle(highlightStyle);
-
+						
 			var popup = $("<div></div>", {
 				id:"popup-" + properties.ID,
 				class:"popup-map",
@@ -251,7 +271,7 @@ var onEachFeature = function(feature, layer) {
 			}).appendTo(popup);
 
 			popup.appendTo("#map");
-
+			
 			layer.on("click",function(e){
 				var targetBounds = e.target.getBounds()
 				map.fitBounds(targetBounds);
@@ -260,8 +280,7 @@ var onEachFeature = function(feature, layer) {
 				
 				map.removeLayer(featureLayer);
 				$("#popup-"+properties.ID).remove();
-
-
+			
 //Todo: the marker should be loaded via GeoJson or a list!
 //might be useful in the future:
 //				map.addLayer(marker);
@@ -272,9 +291,10 @@ var onEachFeature = function(feature, layer) {
 		//create a mouseover event that undoes the mouseover changes
 		layer.on("mouseout",function(e){
 			layer.setStyle(defaultStyle);
+			changeColor(points, boundaries, layer);	
 			$("#popup-"+properties.ID).remove();
 		});
-
+		
 	})(layer, feature.properties);
 };
 
@@ -285,6 +305,8 @@ var featureLayer = L.geoJson(boundaries, {
 });
 
 map.addLayer(featureLayer);
+
+
 
 //for testing
 //		var popup = L.popup();

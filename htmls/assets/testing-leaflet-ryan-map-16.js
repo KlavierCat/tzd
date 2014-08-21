@@ -155,10 +155,56 @@ var filmIcon = L.icon({
 		[94, 19, 53.34435, -6.25205, "evidence/94_aegis_report2.html", imageIcon],
 	];
 
+//polygon = [BuildingID{int}, pointsInPolygon{int}, Lat{float}, Lng{float}, BuildingName{str}]
+	var polygons = [
+		[0, 1],
+		[1, 6],
+		[2, 3],
+		[3, 4],
+		[4, 3],
+		[5, 3],
+		[6, 6],
+		[7, 4],
+		[8, 5],
+		[9, 3],
+		[10, 3],
+		[11, 4],
+		[12, 6],
+		[13, 4],
+		[14, 8],
+		[15, 4],
+		[16, 4],
+		[17, 4],
+		[18, 3],
+		[19, 4],
+		[20, 4],
+		[21, 3],
+		[22, 3],
+		[23, 3]
+	];
+	
 //number of evidences within each building
-	var pointsInPolygon = [1, 6, 3, 4, 3, 3, 6, 4, 5, 3, 3, 4, 6, 4, 8, 4, 4, 4, 3, 4, 4, 3, 3, 3];
+//	var pointsInPolygon = [1, 6, 3, 4, 3, 3, 6, 4, 5, 3, 3, 4, 6, 4, 8, 4, 4, 4, 3, 4, 4, 3, 3, 3];
 		
 //end of load data
+
+function changeColor(points, boundaries){
+	evidence = getViewedEvidence();
+//	Polygon.setStyle(unlockedStyle);
+	var i;
+	var buildingCounter = new Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
+	for (i=0; i<points.length; i++){
+		if (evidence[i] === true){
+			buildingCounter[points[i][1]]++;
+		}
+	};
+	for (x=0; x<buildingCounter.length; x++){
+		var targetedBuilding = boundaries.filter(function(feature){return feature.id == x});
+		if (buildingCounter[x]==targetBuilding.properties.ITEMNUM){
+			alert(targetBuilding.properties.ITEMNUM);
+		};
+	};
+};
 
 //Create an empty layer to load the polygon
 var featureLayer = new L.GeoJSON();
@@ -218,7 +264,7 @@ function markerClick(e){
 function changeColor(points, pointsInPolygon){
 	evidence = getViewedEvidence();
 	var i;
-	var buildingCounter = new Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
+	var buildingCounter = Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
 	for (i=0; i<points.length; i++){
 		if (evidence[i] === true){
 			buildingCounter[points[i][1]]++;
@@ -274,6 +320,8 @@ var onEachFeature = function(feature, layer) {
 			layer.setStyle(defaultStyle);
 			$("#popup-"+properties.ID).remove();
 		});
+		
+		changeColor(points, boundaries);
 
 	})(layer, feature.properties);
 };
