@@ -11,7 +11,6 @@ $(function(){
     $itemWidth = elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
-    var a = "This does nothing";
 
 	$('#carousel li:even').css({'margin-top' : '120px',
 								'z-index' : '3',
@@ -21,27 +20,48 @@ $(function(){
 								'opacity' : '0.7'});
 
 
-
-
 window.onhashchange = function unfuckeverything(){
 	var $top = $('#quicknav');
 	$(document).scrollTop($top);
-	currentSelection =  (parseInt((location.hash).split('#')[1]));
-	console.log(currentSelection);
-	/*
-	var viewportWidth = $(window).width(),
-	el = elems.eq(currentSelection),
+	currentSelection = parseInt((location.hash).split('#')[1]);
+
+	console.log("currentSelection is: " + currentSelection);
+
+	var el = elems.eq(currentSelection),
+
+	offset = el.offset(),
+	posXOffset = offset.left - $(window).scrollLeft(),
 	elWidth = el.width(),
-	elOffset = el.offset();
+	viewportWidth = $(window).width();
 
-	$(window).scrollLeft(elOffset.left + (elWidth/2) -
-			(viewportWidth/2));
+	console.log("half the viewport is: " + viewportWidth/2);
+	console.log("posXOffset + elWidth/2 is: " + (posXOffset + (elWidth/2)));
+	console.log("currentSelection is " + currentSelection);
+	el.css('background-color', 'red');
 
-	$('#carousel').animate(		
-		{
-		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
-		}, 200);*/
+	var diff = (posXOffset + (elWidth/2)) - (viewportWidth/2);
+
+	if(diff > 0){
+
+		console.log("difference is: " + diff);
+
+		$('#carousel').animate({
+			marginLeft: '-' + diff + 'px'
+		}, 200);
+	
+	}else if(diff < 0){
+
+		console.log("difference is: " + diff);
+
+		$('#carousel').animate({
+			marginLeft: '-' + diff + 'px'
+		}, 200);
+	}else{
+		//do nothing
+	}
+	
 };
+
 
 
 function buildCarousel(evidence){
