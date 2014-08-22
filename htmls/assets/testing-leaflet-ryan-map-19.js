@@ -194,52 +194,42 @@
 	}
 //end of add markers and marker events
 
-//Create layers loaded with polygons/buildings data
-	//console.log(boundaries.features.length);
-	//var featureLayer = new L.GeoJSON();
-	var layerNames = ["layer0","layer1","layer2","layer3","layer4","layer5","layer6","layer7","layer8","layer9","layer10","layer11","layer12","layer13","layer14","layer15","layer16","layer17","layer18","layer19","layer20","layer21","layer22","layer23"];
-	for (var buildCount=0;buildCount<layerNames.length;buildCount++){
-		window[layerNames[buildCount]] = new L.GeoJSON(boundaries.features[buildCount]); //or new L.GeoJson().addTo(map);
-	};
-	
-//	var featureLayer = L.layerGroup(layerNames);
-//end of create layers loaded with polygons/buildings
+//Create an empty layer to load the polygons
+var featureLayer = new L.GeoJSON();
 
-//dynamically change the color of the polygon / building once it is 'cleared' by the user
-	var changeColor = function(points, boundaries, layer){ //points, boundaries are constant, layer will changed to different layerNames
+//define a function to change color of the building once all evidences within it is checked
+	function changeColor(points, boundaries, layer){
 		evidence = getViewedEvidence();
-	//	console.log("evidence viewed:", evidence);
-	//	console.log("total number of evidences:", evidence.length);
+		console.log("evidence viewed:", evidence);
+		console.log("total number of evidences:", evidence.length);
 		var i;
 		var buildingCounter = Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
 		for (i=0; i<points.length; i++){
 			if (evidence[i] === true){
 				console.log("evidence #", i, "is viewed. It is housed in Building #", points[i][1]);
 				buildingCounter[points[i][1]]++;
-	//			console.log("Number of evidences housed within Building #", points[i][1], "and viewed are", buildingCounter[points[i][1]]);
+				console.log("Number of evidences housed within Building #", points[i][1], "and viewed are", buildingCounter[points[i][1]]);
 			}
 		};
-	//		console.log(buildingCounter);
+			console.log(buildingCounter);
 		for (x=0; x<buildingCounter.length; x++){
 		//get the relevant polygon/building in the geojson
 			var targetBuilding = boundaries.features[x];
-	//		console.log("targetBuilding:", targetBuilding);
-	//		console.log(buildingCounter[x], "items in Building #", x, "viewed, vs. total amount of items in the building:", targetBuilding.properties.ITEMNUM );
+			console.log("targetBuilding:", targetBuilding);
+						console.log(buildingCounter[x], "items in Building #", x, "viewed, vs. total amount of items in the building:", targetBuilding.properties.ITEMNUM );
 		//if the number of evidences held within the building is the same as the number of evidences viewed by the user, change the colour of the polygon
 			if (buildingCounter[x]==targetBuilding.properties.ITEMNUM){
 							console.log("buildingCounter #", x, buildingCounter[x], "=", "targetBuilding.properties.ITEMNUM", targetBuilding.properties.ITEMNUM );
 	//			map._layers[String(x)].setStyle(unlockedStyle); //targetBuilding.setStyle(unlockedStyle);
-				layer.setStyle(unlockedStyle); //this, unfortunately, will change the style of all the polygons in the layer. the layer needs to be layerName
-				//layerNames[x].setStyle(unlockedStyle);
+				layer.setStyle(unlockedStyle); //this, unfortunately, will change the style of all the polygons in the layer
 			};
 		};
 	};
-//end of dynamically change the color of the polygon / building
+//end of the function to change color for checked building
 
+//set the style on the polygon
+	var onEachFeature = function(feature, layer) { //add points?
 
-//load styles to the layers and dynamically change on hover
-	var onEachFeature = function(layer, targetID) { //layer needs to be layerName when called
-		var layer = eval(layerNames[targetID]);
 	//add an id to each polygon
 	//	layer.on("featureparse", function(e, properties){
 	//		e.layer._leaflet_id = String(properties.ID);
@@ -248,10 +238,9 @@
 
 		layer.setStyle(defaultStyle);
 		
-		changeColor(points, boundaries, layer);		//layer needs to be layerName
+		changeColor(points, boundaries, layer);		
 		
-		(function(layer, properties){				//layer needs to be layerName
-		console.log("inside the self-executing function");
+		(function(layer, properties){
 			layer.on("mouseover",function(e){
 			
 				layer.setStyle(highlightStyle);
@@ -273,7 +262,7 @@
 
 					add_marker(targetBounds, points);				
 					
-					map.removeLayer(layer);
+					map.removeLayer(featureLayer);
 					$("#popup-"+properties.ID).remove();
 				
 	//Todo: the marker should be loaded via GeoJson or a list!
@@ -290,42 +279,28 @@
 				$("#popup-"+properties.ID).remove();
 			});
 			
-		})(eval(layerNames[targetID]), boundaries.features[targetID].properties);
+		})(layer, feature.properties);
 	};
-//end of load styles
+//end of set the style on the polygons
 
+//Add the GeoJSON to the layer, which is loaded in the <head>
+	var featureLayer = L.geoJson(boundaries, {
+		onEachFeature: onEachFeature
+	});
 
-
-//add data to geojson layers: layerName.addData(geojsonFeature);
-//add layers to map: layerName.addTo(map); 
-//alternatively, if used new L.GeoJson().addTo+(map) in the step create empty laerys to load polygons/buildings, then
-//here we can use layerName.addData(geojsonFeature);
-
-//for (var buildCount=0;buildCount<layerNames.length;buildCount++){
-//		window[layerNames[buildCount]] = new L.GeoJSON(); //or new L.GeoJson().addTo(map);
-//	};
-
-//var featureLayer = L.geoJson(boundaries, {
-//	onEachFeature: onEachFeature
-//});
-
-
-	for (var buildCount=0;buildCount<layerNames.length;buildCount++){
-		window[layerNames[buildCount]] = new L.GeoJSON(boundaries.features[buildCount], {style:onEachFeature(layerNames[buildCount], buildCount)}); //or new L.GeoJson().addTo(map);
-		map.addLayer(layerNames[buildCount]);
-	};
-
-//var featureLayer = L.layerGroup(layerNames, {onEachFeature: onEachFeature});
-
+	map.addLayer(featureLayer);
 
 
 
 //for testing
-//			marker[i].bindPopup('<p>' + points[i][0] + '</p>');
-//			marker[i].on('mouseover', function(e){
-//			this.openPopup();
-//			});
-//			marker[i].on('mouseout', function(e){
-//				this.closePopup();
-//			});
+//		var popup = L.popup();
+//		function onMapClick(e) {
+//			popup
+//				.setLatLng(e.latlng)
+//				.setContent("You clicked at " + e.latlng.toString())
+//				.openOn(map);
+//		}
+//		map.on('click', onMapClick);
 //end of for testing
+
+
