@@ -15,9 +15,9 @@
         <!-- import plugin script -->
         <script src='assets/Chart.min.js'></script>
         <script src="assets/legend.js"></script>
-    <script>
-    window.onload = setViewedEvidence();
-    </script>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<script src='../assets/datastore.js'></script>
+	<link href='assets/evidence.css' rel="stylesheet"/>
 </head>
 
 <body>
@@ -241,9 +241,243 @@
     </div>
 <!-- end of the item part in tempalte-->    
     
+	
+	
+	<div class="item-wrapper" id="animation">
+        <div class="item-description">
+            <table>
+                <thead><th colspan='2'>EVIDENCE #50</th></thead>
+                    <tr>
+                        <td>LOCATION:</td>
+                        <td>Tennis Court</td>
+                    </tr>
+                    <tr>
+                        <td>DATE:</td>
+                        <td>Unknown</td>
+                    </tr>
+            </table>
+        </div>
+
+        <div class="item-content">
+            <div class='item-content-holder'>
+
+			
+		<canvas id="buyers"></canvas>
+        <div id="divlegend"></div>
+        <!-- pie chart canvas element -->
+         <script>
+            // line chart data
+             
+             Chart.defaults.global.showTooltips = false;
+             
+            var buyerData1 = {
+                labels : ["Mar 13","Mar 20","Mar 27","Apr 3 ","Apr 10","Apr 17"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [10,10,10,10,100,100],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [2,12,36,88,125,157],
+                    title : "Flu Patients"
+                }               
+              
+            ]
+            };
+             
+               var buyerData2 = {
+                labels : ["Mar 20","Mar 27","Apr 3 ","Apr 10","Apr 17","Apr 24"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [10,10,10,100,100,100],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [12,36,88,125,157,168],
+                    title : "Flu Patients"
+                }
+            ]
+            };
+             
+               var buyerData3 = {
+                labels : ["Mar 27","Apr 3 ","Apr 10","Apr 17","Apr 24","May 1"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [10,10,100,100,100,100],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [36,88,125,157,168,229],
+                    title : "Flu Patients"
+                }
+            ]
+            };
+             
+               var buyerData4 = {
+                labels : ["Apr 3","Apr 10","Apr 17","Apr 24","May 1","May 8"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [10,100,100,100,100,250],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [88,125,157,168,229,299],
+                    title : "Flu Patients"
+                }
+            ]
+            };
+             
+               var buyerData5 = {
+                labels : ["Apr 10","Apr 17","Apr 24","May 1","May 8","May 15"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [100,100,100,100,250,250],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [125,157,168,229,299,410],
+                    title : "Flu Patients"
+                }
+            ]
+            };
+             
+             var buyerData6 = {
+                labels : ["Apr 17","Apr 24","May 1","May 8","May 15","May 22"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [100,100,100,250,250,350],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [157,168,229,299,410,666],
+                    title : "Flu Patients"
+                }
+            ]
+            };
+             
+              var buyerData7 = {
+                labels : ["Apr 24","May 1","May 8","May 15","May 22","May 29"],
+                datasets : [
+                {
+                    fillColor : "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    data : [100,100,250,250,350,350],
+                    title : "Space in Infirmary"
+                },    
+                {
+                    fillColor : " rgba(158, 2, 0, 0.2)",
+                    strokeColor : "rgba(215, 42, 42, 0.9)",
+                    data : [168,229,299,410,666,1222],
+                    title : "Flu Patients"
+                }
+            ]
+            };
+             
+           var opts = { pointDot: false, scaleOverride: true,scaleSteps: 6 , scaleStepWidth: 200,scaleStartValue: 0 };
+            var opts1 = { pointDot: false,animationSteps: 1,scaleOverride: true,scaleSteps: 6,scaleStepWidth: 200,scaleStartValue: 0 };
+             
+             // get line chart canvas
+                var buyer = document.getElementById('buyers').getContext('2d');
+                // draw line chart
+                new Chart(buyer).Line(buyerData4, opts);
+                legend(document.getElementById("divlegend"), buyerData4);   
+             
+             
+            function drawCanvas(data)
+            {
+                
+                // get line chart canvas
+                var buyers = document.getElementById('buyers').getContext('2d');
+                // draw line chart
+                new Chart(buyers).Line(data,opts1);
+                legend(document.getElementById("divlegend"), data);      
+            }
+       
+            
+             
+            function showVal(rangeVal)
+            {
+                //document.getElementById("testing").innerHTML = rangeVal;
+                switch (rangeVal)
+                {
+                    case "1":
+                        drawCanvas(buyerData1);
+                        break;
+                    case "2":
+                        drawCanvas(buyerData2);
+                        break;
+                    case "3":
+                        drawCanvas(buyerData3);
+                        break;
+                    case "4":
+                        drawCanvas(buyerData4);
+                        break;
+                    case "5":
+                        drawCanvas(buyerData5);
+                        break;
+                    case "6":
+                        drawCanvas(buyerData6);
+                        break;
+                    case "7":
+                        drawCanvas(buyerData7);
+                        break;
+                }             
+            }
+            
+        </script>
+    <div>  
+        <input type="range" min="1" max="7" step="1" value="4" oninput="showVal(this.value)">
+    </div> 
+	
+	
+	
+                    
+            </div>            
+        </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <!--beginning of header and footer in template-->       
 	<div id="corner-logo-container">
-        <a href="#">
+        <a href="../index.html">
             <div id="corner-logo"></div>
         </a>
     </div>
@@ -262,7 +496,7 @@
     </div>
     
     <div class="corner" id="corner-about-only">
-        <a href="about.html"><div class="footer-icon" id="icon-about"></div></a>
+        <a href="../about.html"><div class="footer-icon" id="icon-about"></div></a>
     </div>
 
     <div class="footer-wrapper">
@@ -270,11 +504,11 @@
         
       <div class="middle">
         
-        <a href="map.html">
+        <a href="../map.html">
             <div id="map-corner"></div>  
         </a>
           
-        <a href="inventory.html">
+        <a href="../inventory.html#50">
             <div id="inventory-corner"></div>
         </a>
           
@@ -288,7 +522,7 @@
     <div class="nav-arrow" id="nav-arrow-left"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->   
-
+	<script src='assets/evidence.js'></script>
 </body>
 
 </html>

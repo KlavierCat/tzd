@@ -859,48 +859,43 @@ end of light-box*/
   cursor: pointer;
 }
 
-
+@media all and (max-height: 1024px){
 #carousel_container {
   width: 100%;
-  height: 490px;
+  height: 690px;
   position: absolute;
   overflow: hidden;
-  margin-top: 9em;
-  //border: 3px solid #CCC;
+  margin-top: 15em;
   z-index: -1;
-  background: -webkit-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
-background: radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
-background: -moz-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
-background: -ms-radial-gradient(#45484d 30%, #141517 50%, #000000 65%);
-
-  //background: radial-gradient(to bottom, #000000, #45484d);
- /* more codepen gradients 
- background: rgb(244,226,156);
-background: -moz-linear-gradient(-45deg, rgba(244,226,156,0) 0%, rgba(59,41,58,1) 100%), -moz-linear-gradient(left, rgba(244,226,156,1) 0%, rgba(130,96,87,1) 100%);
-background: -webkit-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -webkit-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), -ms-linear-gradient(left, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-background: linear-gradient(135deg, rgba(244,226,156,0) 0%,rgba(59,41,58,1) 100%), linear-gradient(to right, rgba(244,226,156,1) 0%,rgba(130,96,87,1) 100%);
-*/
-  /*opacity: 0.7;*/
   }
+}
+
+@media all and (max-height: 768px){
+#carousel_container {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  overflow: hidden;
+  margin-top: 12em;
+  z-index: -1;
+  }
+}
 
    #carousel{
       height: 400px;
       list-style-type: none;
       float: left;
-      width: 3000em;
-      z-index: -5;
+      width: 2000em;
       overflow: hidden;
       margin-top: 2em;
       position: absolute;
-       }
+      }
 
  #carousel li {
         width: 100px;
         height: 250px;
         float: left;
         margin-top: 1em;
-        
         border-radius: 5px;
         margin-right: 0.5em;
         cursor: pointer;
@@ -936,12 +931,12 @@ animation-fill-mode:forwards;
   }
 
 .nav-buttons{
-  opacity:0.5;
+  opacity:0.8;
   border-radius: 20rem;
-  margin: 2em 5em;
+  border: 3px solid #ccc;
   cursor: pointer;
   padding: 1.5rem;
-  background: #34345e;
+  background: #ccc;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -951,14 +946,14 @@ animation-fill-mode:forwards;
 #navPrev{
   float: left;
   position: absolute;
-  left: 10px;
+  left: 5px;
   top: 17em;
 }
 
 #navNext{
    float:right;
    position: absolute;
-   right: 10px;
+   right: 5px;
    top: 17em;
 }
 
@@ -1036,12 +1031,11 @@ animation-fill-mode:forwards;
   {
   width: auto;
   left: 35%;
-  bottom: 12%;
+  top: 3%;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
-  //background-color: red;
 }
 
 
@@ -1051,7 +1045,7 @@ animation-fill-mode:forwards;
   #quicknav{
   width: auto;
   left: 40%;
-  bottom: 15%;
+  top: 1em;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
@@ -1148,3 +1142,4 @@ color: red;
   max-width: 50px;
   max-height: 50px;
 }
+

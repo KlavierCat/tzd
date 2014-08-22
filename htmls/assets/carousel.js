@@ -1,6 +1,6 @@
 $(function(){
   
-    var elems = $('#carousel li'),
+	var elems = $('#carousel li'),
     speed = 400,
     evidence = getViewedEvidence(),
     
@@ -11,12 +11,37 @@ $(function(){
     $itemWidth = elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
+    var a = "This does nothing";
+
 	$('#carousel li:even').css({'margin-top' : '120px',
 								'z-index' : '3',
-								'opacity' : '0.6'});
+								'opacity' : '0.7'});
 
 	$('#carousel li:odd').css({'z-index' : '2',
-								'opacity' : '0.6'});
+								'opacity' : '0.7'});
+
+
+
+
+window.onhashchange = function unfuckeverything(){
+	var $top = $('#quicknav');
+	$(document).scrollTop($top);
+	currentSelection =  (parseInt((location.hash).split('#')[1]));
+	console.log(currentSelection);
+	/*
+	var viewportWidth = $(window).width(),
+	el = elems.eq(currentSelection),
+	elWidth = el.width(),
+	elOffset = el.offset();
+
+	$(window).scrollLeft(elOffset.left + (elWidth/2) -
+			(viewportWidth/2));
+
+	$('#carousel').animate(		
+		{
+		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
+		}, 200);*/
+};
 
 
 function buildCarousel(evidence){
@@ -35,9 +60,13 @@ function updateElement(key, value)
 		if(value == true)
 		{
 			elems.eq(key).css({'background-image' : 'url("timeline-previews/' + index + '.jpg")',
-									'-webkit-filter' : 'sepia(100%)'} );
+									'-webkit-filter' : 'sepia(70%)'} );
 		}else{
-			elems.eq(key).css('background-image' , 'url("timeline-previews/lock_v2.png"' + ')' );
+			elems.eq(key).css({'background-image' : 'url("timeline-previews/lock_v2.png"' + ')',
+								'background-size' : '100%',
+								'background-repeat' : 'repeat-x',
+								'background-position' : 'center'
+								} );
 		}	
 }
 
@@ -56,6 +85,8 @@ function updateElement(key, value){
 
 function panCarousel(e){
 	
+	
+	/*
 	if(e.data.type == 'quicknav'){
 		//do this
 		var incrementIndex = 0;
@@ -98,32 +129,41 @@ function panCarousel(e){
 			left: '-' +(currentSelection*$itemWidth) + 'px'
 		}, speed);
 	}
-	else{
+	else{*/
 	//e.data is the object which holds and processes passed in arguments
 	//e.data.direction holds the direction : forward key-value pair
 
 	if(e.data.direction == 'forward'){
+	
 
-		currentSelection = (currentSelection+1)%$itemCount;
+		currentSelection = (currentSelection === ($itemCount-1)) ? (currentSelection = 0) : 
+		(currentSelection + 4)%($itemCount);
+		if(currentSelection < 0)
+			currentSelection = currentSelection+94;
+		console.log(currentSelection);
+		//currentSelection = (currentSelection+4)%$itemCount;
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$('#carousel').animate({
 			
-			left: '-' + (currentSelection*$itemWidth) + 'px'
+			marginLeft: '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 		
 		}else{
 		
-		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-1);
+		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4)%($itemCount);
+		if(currentSelection < 0)
+			currentSelection = currentSelection+94;
+		console.log(currentSelection);
 		$('#carousel').animate(		
 		{
-		left : '-' + (currentSelection*$itemWidth) + 'px'
+		marginLeft : '-' + (currentSelection*$itemWidth) + 'px'
 		}, speed);
 
 }
 	
 }
 	
-}
+//}
 
 
 $('#navNext').bind('click', {direction: 'forward',
@@ -132,7 +172,7 @@ $('#navNext').bind('click', {direction: 'forward',
 $('#navPrev').bind('click', {direction: 'backward',
 								 type: 'standardnav'}, panCarousel);
 
-$('#quicknav li').bind('click', {type: 'quicknav'}, panCarousel);
+$('#quicknav a').bind('mouseover', changeYear);
 
 $('#carousel').bind('mouseover', changeYear);
 
@@ -168,7 +208,7 @@ function changeYear(e){
 			timelineSelection = 8;
 			break;
 		case 'End':
-			timelineSelection = 9
+			timelineSelection = 9;
 			break;
 		default:
 			break;
@@ -183,3 +223,4 @@ function changeYear(e){
 		}
 	}
 });
+

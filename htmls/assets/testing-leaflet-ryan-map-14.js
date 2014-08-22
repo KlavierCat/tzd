@@ -1,4 +1,6 @@
+//TODO: line 218 - function changeColor(points, pointsInPolygon)
 
+// basic setting for map
 var map = new L.Map('map',{
 	zoomControl:false,
 	maxZoom:20,
@@ -32,6 +34,7 @@ L.imageOverlay(imageUrl,imageBounds).addTo(map);
 //};
 //});
 
+//end of basic setting for map
 
 //set icon for markers
 var imageIcon = L.icon({
@@ -52,7 +55,8 @@ var filmIcon = L.icon({
 	iconAnchor:[20,20]
 })
 
-//load evidences: [evidenceID{int}, hostBuildingID{int}, Lat{float}, Lng{float}, url{str}, fileTypeIcon{object}]
+//load data: 
+// points = [evidenceID{int}, hostBuildingID{int}, Lat{float}, Lng{float}, url{str}, fileTypeIcon{object}]
 	var points = [
 		[0, 8, 53.34399, -6.25714, "evidence/00_bbc.html", imageIcon],
 		[1, 16, 53.34421, -6.2527, "evidence/01_IrishHound.html", imageIcon],
@@ -151,6 +155,10 @@ var filmIcon = L.icon({
 		[94, 19, 53.34435, -6.25205, "evidence/94_aegis_report2.html", imageIcon],
 	];
 
+//number of evidences within each building
+	var pointsInPolygon = [1, 6, 3, 4, 3, 3, 6, 4, 5, 3, 3, 4, 6, 4, 8, 4, 4, 4, 3, 4, 4, 3, 3, 3];
+		
+//end of load data
 
 //Create an empty layer to load the polygon
 var featureLayer = new L.GeoJSON();
@@ -205,6 +213,25 @@ function markerClick(e){
 	console.log(this.options.win_url);
 	window.open(this.options.win_url,"_blank");
 }
+
+
+function changeColor(points, pointsInPolygon){
+	evidence = getViewedEvidence();
+	var i;
+	var buildingCounter = new Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
+	for (i=0; i<points.length; i++){
+		if (evidence[i] === true){
+			buildingCounter[points[i][1]]++;
+		}
+	};
+	for (x=0; x<buildingCounter.length; x++){
+		if (buildingCounter[x]==pointsInPolygon[x]){
+//TODO: get the relevant Polygon in the geoJson
+//      Polygon.setStyle(unlockedStyle);			
+		};
+	};
+};
+
 
 var onEachFeature = function(feature, layer) {
 	layer.setStyle(defaultStyle);

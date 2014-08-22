@@ -10,9 +10,10 @@
     <meta name="author" content="Kenny Fergus, Ben Hardy, Panpan Lin, Kyle Murphy"/>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <link href='../assets/site.css' rel="stylesheet"/>
-	<link type=text/css href=assets/zoomy.css rel=stylesheet />
-	<script src=https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js></script>
-	<script src=assets/zoomy.min.js></script>
+	<link rel="icon" type="image/png" href="../images/favicon.png">
+	<script src='../assets/datastore.js'></script>
+	<link href='assets/evidence.css' rel="stylesheet"/>
+
 	
 </head>
 
@@ -38,15 +39,8 @@
         <div class="item-content" >
         
             <div class='item-content-holder'>
-
-                   
-					
-					<img src="items/polaroid2.png" />
-					
-					
-	
-					  
-										
+				<img src="items/polaroid2.png" />
+								
             </div>  
                      
         </div>
@@ -54,9 +48,41 @@
     </div>
 <!-- end of the item part in tempalte-->    
     
+	
+	<div class="item-wrapper" id="animation">
+        <div class="item-description">
+            <table>
+                <thead><th colspan='2'>EVIDENCE #51</th></thead>
+                    <tr>
+                        <td>LOCATION:</td>
+                        <td>Panoz</td>
+                    </tr>
+                    <tr>
+                        <td>DATE:</td>
+                        <td>Mar 19 2020</td>
+                    </tr>
+            </table>
+        </div>
+		
+		
+        <div class="item-content" >
+        
+            <div class='item-content-holder'>
+				<img src="items/polaroid2.png" />
+								
+            </div>  
+                     
+        </div>
+        
+    </div>
+	
+	
+	
+	
+	
 <!--beginning of header and footer in template-->       
 	<div id="corner-logo-container">
-        <a href="#">
+        <a href="../index.html">
             <div id="corner-logo"></div>
         </a>
     </div>
@@ -75,7 +101,7 @@
     </div>
     
     <div class="corner" id="corner-about-only">
-        <a href="about.html"><div class="footer-icon" id="icon-about"></div></a>
+        <a href="../about.html"><div class="footer-icon" id="icon-about"></div></a>
     </div>
 
     <div class="footer-wrapper">
@@ -83,11 +109,11 @@
         
       <div class="middle">
         
-        <a href="map.html">
+        <a href="../map.html">
             <div id="map-corner"></div>  
         </a>
           
-        <a href="inventory.html">
+        <a href="../inventory.html#51">
             <div id="inventory-corner"></div>
         </a>
           
@@ -102,12 +128,7 @@
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->   
 
-<script defer>
-	$(function(){
-		$('.zoom').zoomy({border:'6px solid #fff',zoomSize:300 });
-	});
-	 
-</script>
+<script src='assets/evidence.js'></script>
 </body>
 
 </html>

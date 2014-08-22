@@ -1,0 +1,16 @@
+.load{
+	-moz-transition-delay: 1s; 
+	-webkit-transition-delay: 1s; 
+	transition-delay: 1s;
+	-moz-transition-duration: .75s; 
+	-webkit-transition-duration: .75s; 
+	transition-duration: .75s;
+	-webkit-transform: translate(0,550px) scale(.1);
+	-o-transform: translate(0,550px) scale(.1); 
+	-moz-transform: translate(0,550px) scale(.1);
+	transform: translate(0,550px) scale(.1);	
+}
+	
+#animation{
+	z-index: -5000;
+}
