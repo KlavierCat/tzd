@@ -197,38 +197,33 @@
 //Create an empty layer to load the polygons
 var featureLayer = new L.GeoJSON();
 
-//define a function to change color of the building once all evidences within it is checked
-	function changeColor(points, boundaries, layer){
+//define a function to change style
+	var changeStyle = function(feature, points){
 		evidence = getViewedEvidence();
-		//console.log("evidence viewed:", evidence);
-		//console.log("total number of evidences:", evidence.length);
 		var i;
-		var buildingCounter = Array.apply(null, new Array(24)).map(Number.prototype.valueOf,0);
+		var buildingCounter = Array.apply(null, new Array(24)).map(Number.prototype.valueOf, 0);
 		for (i=0; i<points.length; i++){
 			if (evidence[i] === true){
-				//console.log("evidence #", i, "is viewed. It is housed in Building #", points[i][1]);
 				buildingCounter[points[i][1]]++;
-				//console.log("Number of evidences housed within Building #", points[i][1], "and viewed are", buildingCounter[points[i][1]]);
 			}
 		};
-			//console.log(buildingCounter);
+		
 		for (x=0; x<buildingCounter.length; x++){
-		//get the relevant polygon/building in the geojson
-			var targetBuilding = boundaries.features[x];
-			//console.log("targetBuilding:", targetBuilding);
-			//console.log(buildingCounter[x], "items in Building #", x, "viewed, vs. total amount of items in the building:", targetBuilding.properties.ITEMNUM );
-		//if the number of evidences held within the building is the same as the number of evidences viewed by the user, change the colour of the polygon
-			if (buildingCounter[x]==targetBuilding.properties.ITEMNUM){
-							console.log("buildingCounter #", x, buildingCounter[x], "=", "targetBuilding.properties.ITEMNUM", targetBuilding.properties.ITEMNUM );
-	//			map._layers[String(x)].setStyle(unlockedStyle); //targetBuilding.setStyle(unlockedStyle);
-				layer.setStyle(unlockedStyle); //this, unfortunately, will change the style of all the polygons in the layer
-			};
+			if (buildingCounter[x] == feature.properties.ITEMNUM){
+				return unlockedStyle;
+			} else {
+				return defaultStyle;
+			}
 		};
 	};
+
+
+//define a function to change color of the building once all evidences within it is checked
 //end of the function to change color for checked building
 
 //set the style on the polygon
 	var onEachFeature = function(feature, layer) { //add points?
+	console.log("layer within onEachFeature", layer);
 
 	//add an id to each polygon
 	//	layer.on("featureparse", function(e, properties){
@@ -236,9 +231,9 @@ var featureLayer = new L.GeoJSON();
 	//		console.log("polygon id:", e.layer._leaflet_id);
 	//	})
 
-		layer.setStyle(defaultStyle);
-		
-		changeColor(points, boundaries, layer);		
+		//layer.setStyle(defaultStyle);
+		changeStyle(feature, points);
+		//changeColor(points, boundaries, layer);		
 		
 		(function(layer, properties){
 			layer.on("mouseover",function(e){
@@ -274,8 +269,9 @@ var featureLayer = new L.GeoJSON();
 			});
 			//create a mouseover event that undoes the mouseover changes
 			layer.on("mouseout",function(e){
-				layer.setStyle(defaultStyle);
-				changeColor(points, boundaries, layer);	
+				//layer.setStyle(defaultStyle);
+				//changeColor(points, boundaries, layer);
+					changeStyle(feature, points);
 				$("#popup-"+properties.ID).remove();
 			});
 			
