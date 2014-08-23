@@ -216,14 +216,14 @@ var featureLayer = new L.GeoJSON();
 
 		(function(layer, properties){
 
-			//define a function to style polygons according to - 1. cleared or not (color change), 2. level (visibility)
+			//define a function to style polygons according to - 1. level (visibility); 2. cleared or not (color change)
 			var stylePolygons = function(){
 				var buildingCounter = countEvidence();
 				var stage = getStage();
 				var itemNum = feature.properties.ITEMNUM;
 				var level = feature.properties.LEVEL;
 				if (level > stage){
-					map.removeLayer(layer)} else {
+					map.removeLayer(layer);} else {
 						if (itemNum == buildingCounter[feature.properties.ID]){
 							layer.setStyle(unlockedStyle);
 						} else {
@@ -236,9 +236,7 @@ var featureLayer = new L.GeoJSON();
 		
 			//mouseover event of polygon - show names of buildings
 			layer.on("mouseover",function(e){
-			
-				layer.setStyle(highlightStyle);
-							
+				layer.setStyle(highlightStyle);			
 				var popup = $("<div></div>", {
 					id:"popup-" + properties.ID,
 					class:"popup-map",
@@ -276,8 +274,7 @@ var featureLayer = new L.GeoJSON();
 
 //Add the GeoJSON to the layer, which is loaded in the <head>
 	var featureLayer = L.geoJson(boundaries, {
-		onEachFeature: onEachFeature
-	});
+		onEachFeature: onEachFeature});
 
 	map.addLayer(featureLayer);
 
