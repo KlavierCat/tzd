@@ -19,6 +19,14 @@ $(function(){
 
 	$('#carousel li:odd').css({'z-index' : '2',
 								'opacity' : '0.7'});
+if(window.location.hash){
+	currentSelection = parseInt((location.hash).split('#')[1]);
+	$carousel.animate({
+		left: '-' + (currentSelection*$itemWidth) + 'px'
+	}, 1);
+}else{
+//do nothing
+}
 
 window.onhashchange = function hashPan(){
 
@@ -33,7 +41,7 @@ window.onhashchange = function hashPan(){
 
 		$carousel.animate({
 			left: '-' + (currentSelection*$itemWidth) + 'px'
-		}, 200);
+		}, 400);
 };
 
 
