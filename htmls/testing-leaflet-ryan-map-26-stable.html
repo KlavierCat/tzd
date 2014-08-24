@@ -3,23 +3,27 @@
 
 <head>
 	<meta charset=utf-8 />
-	<title>Map - TZD</title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1.2'/>
-    <meta name="description" content="Trinity Zombie Dublin - Map"/>
-    <meta name="Keywords" content="TCD, Zombie, TZD, Trinity, Trinity College Dublin"/>
-    <meta name="author" content="Kenny Fergus, Ben Hardy, Panpan Lin, Kyle Murphy, Ryan Yates"/>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<link href='assets/site.css' rel="stylesheet"/>
-        
+	<title>Trinity Zombie Dublin</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=2' />
 	<!--Map stylesheet and script-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-	<script src="assets/markers.geojson"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" rel='stylesheet' />
+	<script src="assets/leaflet-google.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="assets/markers-26.geojson"></script>
+<!--	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" rel='stylesheet' />-->
+	<link rel="stylesheet" href="assets/leaflet.css" rel="stylesheet"/>
 	<!--end of Map stylesheet and script-->
+	<link href='assets/site.css' rel="stylesheet"/>
+	<script src="assets/datastore.js"></script>
+	<script>window.onload = setViewedEvidence()</script>
 </head>
 
 <body>
+
+	<div id='map'></div>
+
+	<script src='assets/testing-leaflet-ryan-map-26.js'></script> <!--CAN NOT be moved to the header section, because it needs the map div to be constructed first-->
+	
 
 <!--beginning of header and footer in template-->		
 	<div id="corner-logo-container">
@@ -27,6 +31,7 @@
             <div id="corner-logo"></div>
         </a>
     </div>
+    
 	  
 	<div id="corner-mute">
         <div id="corner-mute-false"></div>
@@ -35,14 +40,14 @@
 
 	<div class="corner" id="corner-footer">
 	  <footer>
-		<a href="https://www.facebook.com/trinityzombiedublin"><div class="footer-icon" id="icon-facebook"></div></a>
+		<a href="#"><div class="footer-icon" id="icon-facebook"></div></a>
 		&nbsp;
-		<a href="https://twitter.com/TZDwebsite"><div class="footer-icon" id="icon-twitter"></div></a>
+		<a href="#"><div class="footer-icon" id="icon-twitter"></div></a>
 	  </footer>
 	</div>
 	
 	<div class="corner" id="corner-about-only">
-        <a href="about.html"><div class="footer-icon" id="icon-about"></div></a>
+        <a href="#"><div class="footer-icon" id="icon-about"></div></a>
 	</div>
 
     <div class="footer-wrapper">
@@ -50,11 +55,11 @@
         
 	  <div class="middle">
         
-        <a href="map.html">
+        <a href="#">
             <div id="map-corner"></div>  
         </a>
           
-        <a href="inventory.html">
+        <a href="#">
             <div id="inventory-corner"></div>
         </a>
           
@@ -67,8 +72,8 @@
 	<div class="diagonal-line" id="southEast"></div>
     <div class="nav-arrow" id="nav-arrow-left"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
-<!--end of header and footer in template-->	    
-    
+<!--end of header and footer in template-->	   
+
 </body>
 
 </html>
