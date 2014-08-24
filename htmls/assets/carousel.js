@@ -29,10 +29,7 @@ if(window.location.hash){
 
 window.onhashchange = function hashPan(){
 
-	//just in case
-	var $top = $('#quicknav');
-	$(document).scrollTop($top);
-
+	
 	currentSelection = parseInt((location.hash).split('#')[1]);
 
 	var el = $elems.eq(currentSelection);
@@ -69,7 +66,7 @@ function updateElement(key, value)
 								'background-repeat' : 'repeat-x',
 								'background-position' : 'center'} );
 		}	
-				
+
 }
 
 
@@ -117,7 +114,10 @@ $('#navNext').bind('click', {direction: 'forward',
 $('#navPrev').bind('click', {direction: 'backward',
 								 type: 'standardnav'}, panCarousel);
 
-$('#quicknav a').bind('mouseover', changeYear);
+$('#quicknav a li').click(function(e){
+	$(this).toggleClass('activeLink').siblings()
+	.removeClass('activeLink');
+}).bind('mouseover', changeYear);
 
 $carousel.bind('mouseover', changeYear);
 
@@ -161,6 +161,7 @@ function changeYear(e){
 
 		if($timeline.eq(timelineSelection).className != 'selected')
 		{
+		$timeline.eq(timelineSelection).toggleClass('selected').siblings().toggleClass('selected');
 		$timeline.eq(timelineSelection).siblings()
 		.addClass('notSelected').removeClass('selected');	
 		$timeline.eq(timelineSelection).addClass('selected').removeClass('notSelected');
