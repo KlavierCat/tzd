@@ -5,10 +5,13 @@ which basically means support tablets but not phones */
 /* ========================== Touch these and you will die!!!!! ======================== */
 
 /* ============================ universal ==========================*/
-//html { height: 100% }
+
+html{
+  height: 100%;
+}
 
 body{
-  height:100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   border: 0;
@@ -16,8 +19,8 @@ body{
   font-size: 100%;
   line-height:15px;
   vertical-align: baseline;
-  background: #010303;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 50% -100%, white 10%, black, black);
 }
 
 div{
@@ -766,7 +769,6 @@ end of light-box*/
 
 /*beginning of Kyle's code - Inventory styling*/
 
-
 #timeline{
 
     height: 160px;
@@ -774,9 +776,8 @@ end of light-box*/
     list-style-type:none;
     float: left;
     width: 400px;
-    margin-left: 10em;
+    margin-left: 50%;
     position: absolute;
-
     pointer-events: none;
    
   -webkit-animation:fadein 1s; /*Safari and Chrome*/
@@ -787,9 +788,6 @@ end of light-box*/
 
   }
 
-
-
-
 /*
 #timeline li.selected{
  
@@ -798,8 +796,8 @@ end of light-box*/
 
 #timeline li{
 
-  padding: 2.5em 0;
- line-height: 1.2em;
+  padding: 1.5em 0;
+ line-height: 0.7em;
 }
 
 
@@ -815,11 +813,11 @@ end of light-box*/
 .flag{
   font-family: "Verdana", Serif;
   border:0;
-  font-size:18px;
+  font-size:12px;
   text-shadow:2px 2px rgba(217,0,0,0.7);
   position: absolute;
   background: rgba(255,255,255,0.5);
-  padding: 10px 10px;
+  padding: 10px 20px;
   border-radius: 5px;
   font-weight: 600;
   text-shadow: 1px 1px #ccc;
@@ -835,21 +833,21 @@ end of light-box*/
   font-weight:bold;
   border:0;
   margin-top: 3em;
-  font-size:18px;
+  font-size:15px;
   text-shadow:2px 2px rgba(217,0,0,0.7);
 }
 
 .desc h2{
-  font-weight: 300;
-  font-size: 24px;
+  font-weight: 100;
+  font-size: 15px;
   clear:both;
   color: #ccc;
   text-shadow: 2px 2px rgb(0,0,0);
 }
 
 .desc h1{
-  font-weight: 200;
-  font-size: 24px;
+  font-weight: 100;
+  font-size: 15px;
   color: #ccc;
   clear: both;
   text-shadow: 2px 2px rgb(0,0,0);
@@ -859,36 +857,25 @@ end of light-box*/
   cursor: pointer;
 }
 
-@media all and (max-height: 1024px){
+@media all and (max-height: 1200px){
 #carousel_container {
   width: 100%;
-  height: 690px;
+  height: 400px;
   position: absolute;
   overflow: hidden;
   margin-top: 15em;
-  z-index: -1;
+  z-index: 2;
+  margin-bottom: 5em;
   }
-}
 
-@media all and (max-height: 768px){
-#carousel_container {
-  width: 100%;
-  height: 550px;
-  position: absolute;
-  overflow: hidden;
-  margin-top: 12em;
-  z-index: -1;
-  }
-}
-
-   #carousel{
+     #carousel{
       height: 400px;
       list-style-type: none;
       float: left;
       width: 2000em;
       overflow: hidden;
-      margin-top: 2em;
-      position: absolute;
+      position: absolute; 
+
       }
 
  #carousel li {
@@ -913,6 +900,55 @@ animation-fill-mode:forwards;
 
 
       }
+}
+
+@media all and (max-height: 768px){
+#carousel_container {
+  width: 100%;
+  height: 430px;
+  position: absolute;
+  overflow: hidden;
+  margin-top: 8em;
+  z-index: 2;
+  }
+
+   #carousel{
+      height: 400px;
+      list-style-type: none;
+      float: left;
+      width: 2000em;
+      overflow: hidden;
+      margin-top: 2em;
+      position: absolute; 
+      margin-bottom: 2em;
+      }
+
+ #carousel li {
+        width: 100px;
+        height: 250px;
+        float: left;
+        margin-top: 1em;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+
+        }
+
+      
+      #carousel li:hover{   
+    -webkit-animation: glow 0.2s;
+  -moz-animation: glow 0.2s;
+  animation: glow 0.2s;
+  animation-fill-mode: forwards;
+animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+
+
+      }
+
+}
+
 
 @-webkit-keyframes glow {
   0% {
@@ -936,6 +972,7 @@ animation-fill-mode:forwards;
   border: 3px solid #ccc;
   cursor: pointer;
   padding: 1.5rem;
+  z-index: 10;
   background: #ccc;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -967,7 +1004,7 @@ animation-fill-mode:forwards;
 
 #quicknav{
   position: absolute;
-  top: 2em;
+  top: 5em;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
@@ -978,8 +1015,8 @@ animation-fill-mode:forwards;
 {
   #quicknav{
   width: auto;
-  left: 28%;
-  top: 12%;
+  left: 18%;
+  top: 10em;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
@@ -990,8 +1027,12 @@ animation-fill-mode:forwards;
     border: 3px solid #ccc;
     position: absolute;
     top: 10px;
+    z-index: 10;
   }
 
+  #timeline{
+    left: -12em;
+  }
 
 
   .flag{
@@ -1041,16 +1082,35 @@ animation-fill-mode:forwards;
 
 }
 
-@media all and (max-width: 1365px) and (min-width: 1001px){
+@media all and (max-width: 1366px) and (min-width: 1001px){
+
+
+#timeline{
+
+    height: 160px;
+    overflow:hidden;
+    list-style-type:none;
+    float: left;
+    width: 400px;
+    position: absolute;
+    left: -10em;
+    pointer-events: none;
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+  }
+
   #quicknav{
   width: auto;
   left: 40%;
-  top: 1em;
+  top: 8em;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
-  //background-color: red;
   }
 }
 
@@ -1076,6 +1136,11 @@ animation-fill-mode:forwards;
   border-radius: 8px;
   text-align: left;
   margin-right: 1em;
+}
+
+#quicknav li:target{
+  width: 20px;
+  height: 20px;
 }
 
 .year{
@@ -1142,4 +1207,3 @@ color: red;
   max-width: 50px;
   max-height: 50px;
 }
-

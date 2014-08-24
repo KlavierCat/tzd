@@ -12,7 +12,6 @@ $(function(){
     $itemWidth = $elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
-
 	$('#carousel li:even').css({'margin-top' : '120px',
 								'z-index' : '3',
 								'opacity' : '0.7'});
@@ -37,7 +36,6 @@ window.onhashchange = function hashPan(){
 	currentSelection = parseInt((location.hash).split('#')[1]);
 
 	var el = $elems.eq(currentSelection);
-	el.css('background-color', 'red');
 
 		$carousel.animate({
 			left: '-' + (currentSelection*$itemWidth) + 'px'
@@ -62,15 +60,16 @@ function updateElement(key, value)
 		if(value == true)
 		{
 			$elems.eq(key).css({'background-image' : 'url("timeline-previews/' + index + '.jpg")',
-									'-webkit-filter' : 'sepia(70%)'} );
+
+									'background-size' : '110%'} );
 
 		}else{
 			$elems.eq(key).css({'background-image' : 'url("timeline-previews/lock_v2.png"' + ')',
 								'background-size' : '100%',
 								'background-repeat' : 'repeat-x',
-								'background-position' : 'center'
-								} );
+								'background-position' : 'center'} );
 		}	
+				
 }
 
 
