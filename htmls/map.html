@@ -4,22 +4,31 @@
 <head>
 	<meta charset=utf-8 />
 	<title>Map - TZD</title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1.2'/>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=2'/>
     <meta name="description" content="Trinity Zombie Dublin - Map"/>
     <meta name="Keywords" content="TCD, Zombie, TZD, Trinity, Trinity College Dublin"/>
     <meta name="author" content="Kenny Fergus, Ben Hardy, Panpan Lin, Kyle Murphy, Ryan Yates"/>
-    
+
+	<!-- site stylesheet and script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="assets/datastore.js"></script>
 	<link href='assets/site.css' rel="stylesheet"/>
+	<!-- end of site stylesheet and script-->
         
 	<!--Map stylesheet and script-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 	<script src="assets/markers.geojson"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" rel='stylesheet' />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+	<link rel="stylesheet" href="assets/leaflet.css" rel='stylesheet' />
 	<!--end of Map stylesheet and script-->
+	
+	<script>window.onload = setViewedEvidence()</script>
 </head>
 
 <body>
+
+	<div id='map'></div>
+
+	<script src='assets/map.js'></script> <!--CAN NOT be moved to the header section, because it needs the map div to be constructed first-->
 
 <!--beginning of header and footer in template-->		
 	<div id="corner-logo-container">
