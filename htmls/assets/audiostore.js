@@ -34,21 +34,15 @@ $("#corner-mute-true").hide();
 $('#corner-mute-true, #corner-mute-false').on('click',
                           function() 
                        {
-                           $('#corner-mute-true, #corner-mute-false').toggle();
-                           $('#corner-mute-true, #corner-mute-false',opener.document).toggle();
+                          $('#corner-mute-true, #corner-mute-false').toggle();
+                         
                            
-                           
-                           if(window.opener.document.getElementById('song').muted===true){
-								window.opener.document.getElementById('song').muted=false}else{
-								window.opener.document.getElementById('song').muted=true}
+                          
                        }
                        );});
                        
 function toggleMuteAudio(){
-    $("#song").prop("muted",!$("#song").prop("muted"));
-    
-    
-    
+   $("#song").prop("muted",!$("#song").prop("muted"));   
 }
 
 
