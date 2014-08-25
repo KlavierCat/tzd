@@ -21,7 +21,6 @@ body{
   vertical-align: baseline;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: radial-gradient(circle at 50% -100%, white 15%, black, black);
-   background: -webkit-radial-gradient(circle at 50% -100%, white 15%, black, black);
 }
 
 div{
@@ -865,7 +864,6 @@ a.locked {
 }
 
 #carousel_container {
-
   width: 100%;
   height: 400px;
   position: absolute;
@@ -880,7 +878,6 @@ a.locked {
       width: 2000em;
       overflow: hidden;
       position: absolute; 
-
       }
 
  #carousel li {
@@ -905,30 +902,7 @@ animation-fill-mode:forwards;
 
       }
 
-@media all and (min-height: 1024px) and (max-height: 1200px){
-
- #carousel_container{
-  margin: 10% auto 0;
- }
-
- .nav-buttons{
-  margin: 10% auto 0;
-  width: 90px;
-  height: 90px;
- }
-
- .nav-buttons img{
-  margin: 0 auto 0;
-  width: 50px;
-  height: 50px;
- }
-
- #quicknav{
-  margin: 5% 0 auto;
- }
-}      
-
-@media all and (min-height: 768px) and (max-height: 1024px){
+@media all and (min-height: 768px) and (max-height: 1920px){
 
   #timeline_container{
   margin: 0 auto 0;
@@ -1106,29 +1080,14 @@ animation-fill-mode:forwards;
 
 @media all and (max-width: 699px) and (min-width: 520px){
 #quicknav{
-  margin: 50px auto 0;
+  width: auto;
+  margin: 2em auto 0;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
 }
 
-#timeline{
-  margin: 20px auto 0;
-}
-
-.desc h1{
-  font-size: 14px;
-}
-
-.desc h2{
-  font-size: 14px
-}
-
-.flag{
-  font-size: 12px;
-  margin: 0 auto 0;
-}
 
 }
 
@@ -1265,10 +1224,3 @@ color: red;
   pointer-events: none;
   cursor: default;
 }
-
-
- .nav-buttons img{
-  margin: 0 auto 0;
-  width: 40px;
-  height: 40px;
- }
