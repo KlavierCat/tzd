@@ -1,4 +1,4 @@
-//TODO:
+//TODO: NONE - 25/08/2014 - Panpan
  
 //set level
 	var level = getStage();
@@ -97,10 +97,28 @@
 		iconSize:[30,30],
 		iconAnchor:[15,15]
 	})
+	
+	var imageIconFound = L.icon({
+		iconUrl:'images/evidence-icon-image-found.png',
+		iconSize:[30,30],
+		iconAnchor:[15,15]
+	})
+
+	var audioIconFound = L.icon({
+		iconUrl:'images/evidence-icon-audio-found.png',
+		iconSize:[30,30],
+		iconAnchor:[15,15]
+	})
+
+	var filmIconFound = L.icon({
+		iconUrl:'images/evidence-icon-film-found.png',
+		iconSize:[30,30],
+		iconAnchor:[15,15]
+	})
 //end of set icon styles for markers/evidences
 
 //load data for markers/evidences
-	// points = [evidenceID{int}, hostBuildingID{int}, Lat{float}, Lng{float}, url{str}, fileTypeIcon{object}]
+	// points = [evidenceID{int}, hostBuildingID{int}, Lat{float}, Lng{float}, url{str}, fileTypeIcon{object}, title{str}]
 	var points = [
 		[0, 8, 53.34399, -6.25714, "evidence/00_bbc.html", imageIcon, "BBC article"],
 		[1, 16, 53.34421, -6.2527, "evidence/01_IrishHound.html", imageIcon, "newspaper article - Irish hound badger"],
@@ -204,11 +222,37 @@
 	function add_marker(targetBounds, points){
 		var marker = [];
 		var i;
+		
 		for (i=0;i<points.length;i++){
+		
+			//define a function to change the icons based on if the user has viewed the item or not
+			var changeIcon = function(){			
+				var evidence = getViewedEvidence();
+			
+				if (evidence[i] == false){
+					return points[i][5];
+				} else {
+					switch (points[i][5]){
+						case imageIcon:
+							return imageIconFound;
+							break;
+						case audioIcon:
+							return audioIconFound;
+							break;
+						case filmIcon:
+							return filmIconFound;
+							break;
+						};
+				};
+			}
+			//end of function to change icons
+
+			//add icons if points contained in clicked polygon
 			if (targetBounds.contains([points[i][2], points[i][3]])){
-				marker[i] = new L.marker([points[i][2], points[i][3]],{icon:points[i][5],win_url:points[i][4]});
+				marker[i] = new L.marker([points[i][2], points[i][3]],{icon:changeIcon(),win_url:points[i][4]});
 				marker[i].addTo(map);
-	//for testing
+		
+				//if the item is viewed, provide relevant info when the icon is hovered over
 				evidence = getViewedEvidence();
 				if (evidence[i] == true){
 					marker[i].bindPopup('<p>' + "Evidence # " + points[i][0].toString() + ': ' + points[i][6] + '</p>');
@@ -219,9 +263,11 @@
 						this.closePopup();
 					});
 				};
-	//end of for testing
+				//end of providing relevant info for discovered item
+
 				marker[i].on('click',markerClick);
-				};
+			};
+			//end of add icons if in polygons	
 		};
 	}
 
@@ -291,8 +337,6 @@ var featureLayer = new L.GeoJSON();
 					map.removeLayer(featureLayer);
 					$("#popup-"+properties.ID).remove();
 				
-	//Todo: show map according to layer 
-	//Todo: add a back-button which will send the user back to the original setting/map if clicked, and suicide once the original setting/map is achieved.
 				});
 			});
 			
