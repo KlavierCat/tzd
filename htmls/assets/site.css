@@ -997,13 +997,13 @@ animation-fill-mode:forwards;
   }
 
 .nav-buttons{
-  opacity:0.8;
+  opacity:0.5;
   border-radius: 20rem;
-  border: 3px solid #ccc;
+  border: 3px solid #666666;
   cursor: pointer;
-  padding: 1.5rem;
+  padding: 1rem;
   z-index: 10;
-  background: #ccc;
+  background: #666666;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
@@ -1039,6 +1039,7 @@ animation-fill-mode:forwards;
   display: inline-block;
   z-index: 4;
 }
+
 
 @media all and (max-width: 519px) and (min-width: 300px)
 {
