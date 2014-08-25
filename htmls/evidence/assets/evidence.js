@@ -1,4 +1,4 @@
-window.onload=function()
+function test()
 { 
 	var evidence = getViewedEvidence();
 	
