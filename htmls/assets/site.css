@@ -1218,3 +1218,8 @@ color: red;
   max-width: 50px;
   max-height: 50px;
 }
+
+#carousel .locked{
+  pointer-events: none;
+  cursor: default;
+}
