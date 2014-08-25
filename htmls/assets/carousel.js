@@ -82,7 +82,8 @@ function panCarousel(e){
 		(currentSelection + 4)%($itemCount);
 		if(currentSelection < 0)
 			currentSelection = currentSelection+94;
-		
+		if(currentSelection == 93 || currentSelection == 94)
+			currentSelection = 0;
 		//currentSelection = (currentSelection+4)%$itemCount;
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$carousel.animate({
@@ -95,6 +96,8 @@ function panCarousel(e){
 		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4)%($itemCount);
 		if(currentSelection < 0)
 			currentSelection = currentSelection+94;
+		if(currentSelection < 4)
+			currentSelection = 0;
 		
 		$carousel.animate(		
 		{
@@ -119,6 +122,10 @@ $('#quicknav a li').bind('mouseover', changeYear);
 
 $carousel.bind('mouseover', changeYear);
 
+function filter(e){
+
+	elems.hide();
+}
 
 
 function changeYear(e){
