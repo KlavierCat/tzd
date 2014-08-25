@@ -11,18 +11,15 @@
 }
 
 #robot {
-
     z-index: 1;
  position: absolute;
     top: -2.5%;
-    left: 10%;
+    left: 0%;
     
 }
 #redux {
   position: absolute;
   top:2.5%;
-  left: 10%;
-    
-    
+  left: 0%; 
     z-index: 2;
 }
