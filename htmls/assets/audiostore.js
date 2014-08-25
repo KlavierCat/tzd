@@ -7,7 +7,7 @@ song.currentTime = sessionStorage.getItem("store")
 $("#song")[0].volume = 0;
 $("#song").animate({volume: 0.6}, 2000);
 song.play();
-test();
+updateEvidence();
 }
 window.onload= play;
 
