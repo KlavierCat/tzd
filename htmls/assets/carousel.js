@@ -64,7 +64,7 @@ function updateElement(key, value)
 			$elems.eq(key).css({'background-image' : 'url("timeline-previews/lock_v2.png"' + ')',
 								'background-size' : '100%',
 								'background-repeat' : 'repeat-x',
-								'background-position' : 'center'} );
+								'background-position' : 'center'} ).addClass('locked');
 		}	
 
 }
@@ -114,12 +114,11 @@ $('#navNext').bind('click', {direction: 'forward',
 $('#navPrev').bind('click', {direction: 'backward',
 								 type: 'standardnav'}, panCarousel);
 
-$('#quicknav a li').click(function(e){
-	$(this).toggleClass('activeLink').siblings()
-	.removeClass('activeLink');
-}).bind('mouseover', changeYear);
+
+$('#quicknav a li').bind('mouseover', changeYear);
 
 $carousel.bind('mouseover', changeYear);
+
 
 
 function changeYear(e){
@@ -159,13 +158,8 @@ function changeYear(e){
 			break;
 	}
 
-		if($timeline.eq(timelineSelection).className != 'selected')
-		{
-		$timeline.eq(timelineSelection).toggleClass('selected').siblings().toggleClass('selected');
-		$timeline.eq(timelineSelection).siblings()
-		.addClass('notSelected').removeClass('selected');	
-		$timeline.eq(timelineSelection).addClass('selected').removeClass('notSelected');
-		
-		}
+	if($timeline.eq(timelineSelection).className != 'selected')
+		$timeline.eq(timelineSelection).addClass('selected').siblings('li').removeClass('selected');
+	
 	}
 });
