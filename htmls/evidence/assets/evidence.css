@@ -14,3 +14,315 @@
 #animation{
 	z-index: -5000;
 }
+
+#buttons {
+	margin-left: 33%;
+	background-color:#8a8a8a;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	}
+
+.button {
+	background-color:#8a8a8a;
+	-moz-border-radius:20px;
+	-webkit-border-radius:20px;
+	border-radius:20px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+
+	}
+
+.button:hover {
+	background-color:#ff002b;
+}
+	
+#animation{
+	z-index: -5000;
+}
+
+#audioanimation {
+  margin: 10px auto 1px;
+  border-radius: 50%;
+  position: relative;
+  height: 162px;
+  width: 162px;
+ }
+
+/*.bar {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+}
+*/
+#barb1 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: -40.5px;
+    animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+    -moz-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+      -webkit-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+	  -ms-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+	      -o-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb2 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: -13.5px;
+    animation: a1 0.5s linear infinite alternate, a2 0.7s linear infinite alternate;
+    -moz-animation: a1 0.5s linear infinite alternate, a2 0.7s linear infinite alternate;
+      -webkit-animation: a1 0.5s linear infinite alternate, a2 0.7s linear infinite alternate;
+	  -ms-animation: a1 0.5s linear infinite alternate, a2 0.7s linear infinite alternate;
+	      -o-animation: a1 0.5s linear infinite alternate, a2 0.7s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb3 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: 13.5px;
+    animation: a1 0.3s linear infinite alternate, a2 0.5s linear infinite alternate;
+    -moz-animation: a1 0.3s linear infinite alternate, a2 0.5s linear infinite alternate;
+      -webkit-animation: a1 0.3s linear infinite alternate, a2 0.5s linear infinite alternate;
+	  -ms-animation: a1 0.3s linear infinite alternate, a2 0.5s linear infinite alternate;
+	      -o-animation: a1 0.3s linear infinite alternate, a2 0.5s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb4 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: 40.5px;
+     animation: a1 0.7s linear infinite alternate, a2 0.4s linear infinite alternate;
+    -moz-animation: a1 0.7s linear infinite alternate, a2 0.4s linear infinite alternate;
+      -webkit-animation: a1 0.7s linear infinite alternate, a2 0.4s linear infinite alternate;
+	  -ms-animation: a1 0.7s linear infinite alternate, a2 0.4s linear infinite alternate;
+	      -o-animation: a1 0.7s linear infinite alternate, a2 0.4s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#bar#b5 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: 54px;
+    animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+    -moz-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+      -webkit-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+	  -ms-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+	      -o-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb6 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: -54px;
+  animation: a1 0.3s linear infinite alternate, a2 0.2s linear infinite alternate;
+  -moz-animation: a1 0.3s linear infinite alternate, a2 0.2s linear infinite alternate;
+  -webkit-animation: a1 0.3s linear infinite alternate, a2 0.2s linear infinite alternate;
+  -ms-animation: a1 0.3s linear infinite alternate, a2 0.2s linear infinite alternate;
+  -o-animation: a1 0.3s linear infinite alternate, a2 0.2s linear infinite alternate;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb7{
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: 67.5px;
+    animation: a1 0.7s linear infinite alternate, a2 0.6s linear infinite alternate;
+    -moz-animation: a1 0.7s linear infinite alternate, a2 0.6s linear infinite alternate;
+      -webkit-animation: a1 0.7s linear infinite alternate, a2 0.6s linear infinite alternate;
+	  -ms-animation: a1 0.7s linear infinite alternate, a2 0.6s linear infinite alternate;
+	      -o-animation: a1 0.7s linear infinite alternate, a2 0.6s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb8 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: 81px;
+    animation: a1 0.5s linear infinite alternate, a2 0.55s linear infinite alternate;
+    -moz-animation: a1 0.5s linear infinite alternate, a2 0.55s linear infinite alternate;
+      -webkit-animation: a1 0.5s linear infinite alternate, a2 0.55s linear infinite alternate;
+	  -ms-animation: a1 0.5s linear infinite alternate, a2 0.55s linear infinite alternate;
+	      -o-animation: a1 0.5s linear infinite alternate, a2 0.55s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb9 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: 94.5px;
+    animation: a1 0.3s linear infinite alternate, a2 0.25s linear infinite alternate;
+    -moz-animation: a1 0.3s linear infinite alternate, a2 0.25s linear infinite alternate;
+      -webkit-animation: a1 0.3s linear infinite alternate, a2 0.25s linear infinite alternate;
+	  -ms-animation: a1 0.3s linear infinite alternate, a2 0.25s linear infinite alternate;
+	      -o-animation: a1 0.3s linear infinite alternate, a2 0.25s linear infinite alternate;
+		    animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb10 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: -67.5px;
+     animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+    -moz-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+    -webkit-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+  -ms-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+    -o-animation: a1 0.7s linear infinite alternate, a2 0.3s linear infinite alternate;
+	  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb11 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: -81px;
+     animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+    -moz-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+    -webkit-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+  -ms-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+    -o-animation: a1 0.5s linear infinite alternate, a2 0.8s linear infinite alternate;
+	  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#barb12 {
+  width: 27px;
+  height: 90px;
+  background: #ff0000;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform-origin: 100% 100%;
+  margin-left: -94.5px;
+   animation: a1 0.3s linear infinite alternate, a2 0.35s linear infinite alternate;
+  -moz-animation: a1 0.3s linear infinite alternate, a2 0.35s linear infinite alternate;
+  -webkit-animation: a1 0.3s linear infinite alternate, a2 0.35s linear infinite alternate;
+  -ms-animation: a1 0.3s linear infinite alternate, a2 0.35s linear infinite alternate;
+  -o-animation: a1 0.3s linear infinite alternate, a2 0.35s linear infinite alternate;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+
+@keyframes a1 {
+  to {
+    height: 32.5px;
+  }
+}
+@keyframes a2 {
+  to {
+    transform: scale(1, 0.2);
+  }
+}
+
+@-webkit-keyframes a1 {
+  to {
+    height: 32.5px;
+  }
+}
+@-webkit-keyframes a2 {
+  to {
+    transform: scale(1, 0.2);
+  }
+}
+
+@-ms-keyframes a1 {
+  to {
+    height: 32.5px;
+  }
+}
+@-ms-keyframes a2 {
+  to {
+    transform: scale(1, 0.2);
+  }
+}
+
+@-o-keyframes a1 {
+  to {
+    height: 32.5px;
+  }
+}
+@-o-keyframes a2 {
+  to {
+    transform: scale(1, 0.2);
+  }
+}
+
+@-mos-keyframes a1 {
+  to {
+    height: 32.5px;
+  }
+}
+@-mos-keyframes a2 {
+  to {
+    transform: scale(1, 0.2);
+  }
+}
