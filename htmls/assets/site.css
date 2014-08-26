@@ -18,6 +18,8 @@ body{
   vertical-align: baseline;
   background: #010303;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background:radial-gradient(circle at 50% - 100%, white 15%, black, black);
+  background: -webkit-radial-gradient(circle at 50%-100%, white 15%, black, black);
 }
 
 div{
@@ -53,6 +55,7 @@ div{
 	top:20px;
     height:50px;
     width:50px;
+	cursor:pointer; /*gives it a hover cursor to emphasise that it is interactive*/
 }
 
 #corner-mute-false{
@@ -435,7 +438,7 @@ footer{
     }
 }
 
-@media only screen and (max-width:330px){
+@media only screen and  (max-width:330px){
     #southEastFilter{
         visibility: hidden;
     }
@@ -540,12 +543,23 @@ footer{
     width:90%;
     height:95%;
     left:5%;
-    margin-top:2%;
+/*    margin-top:2% */
 }
 
 .item-content-holder img, video{
     max-width:100%;
     max-height:100%;
+	margin-top:1.5em;
+}
+
+.item-content-holder iframe{
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+	width:100%;
+}
+
+.item-content-holder audio{
+	margin-top:40%;
 }
 
 /* ====== graceful degradation ======*/
@@ -596,31 +610,14 @@ footer{
 
 /* ================ map ============= */
 
-/*Google map basic setting, including hiding Google map logo*/
-
-#map-canvas { height: 100% }
-
-.gm-style a{
-    visibility:hidden;
-}
-.gmnoprint{
-    visibility:hidden;
-}
-.gmnoprint gm-style-cc{
-    visibility:hidden;
-}
-.gm-style-cc{
-    visibility:hidden;
-}
-
-/*end of Google map basic setting*/
-
-
-/* Leaflet map no-icon*/
+/* Leaflet map basic setting*/
 .leaflet-bottom{
-    visibility: hidden;
+	visibility: hidden;
 }
-/* end of Leaflet map no-icon*/
+.leaflet-container{
+	background:#000000;
+}
+/* end of Leaflet map basic setting*/
 
 #map{
   position:absolute; 
@@ -638,7 +635,7 @@ footer{
   z-index:1002;
   background-color:transparent;
   color:#ececec;
-  font-family: "Viner Hand ITC", Serif;
+  font-family: Verdana, Serif;
   font-weight:bold;
   border:0;
   font-size:22px;
@@ -686,17 +683,25 @@ footer{
 /*beginning of custom popup for material*/
 
 .leaflet-popup-content-wrapper{
-	background:rgba(255,255,255,0.5);
+	background:rgba(0,0,0,0);
 	color:#fff;
-	width:700px;
+/*	width:700px;
 	height:100%;
 	font-size:16px;
-	line-height:24px;
+	line-height:24px;*/
+}
+
+.leaflet-popup-content-wrapper{
+	padding:0px;
 }
 
 .leaflet-popup-content-wrapper img{
-	max-width:80%;
-	max-height:80%;
+	max-width:100%;
+	max-height:100%;
+}
+
+.leaflet-popup-content{
+	margin:0px;
 }
 
 /*.leaflet-popup-tip-container{
@@ -704,10 +709,14 @@ footer{
 }*/
 
 .leaflet-popup-tip{
-	opacity:0;
-	border-left:15px solid transparent;
+	visibility:hidden;
+/*	border-left:15px solid transparent;
 	border-right:15px solid transparent;
-	border-top:15px solid transparent;
+	border-top:15px solid transparent;*/
+}
+
+.leaflet-container a.leaflet-popup-close-button{
+	visibility:hidden;
 }
 
 /*end of custom popup for material*/
