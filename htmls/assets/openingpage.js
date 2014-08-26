@@ -9,26 +9,33 @@ if(testBrowser == false)
 	document.getElementById('lightbox1').style.display='inline';
 	document.getElementById('submit').style.display='none';
 }
-else{
 
+
+function showStory()
+{
+	document.getElementById('lightbox').style.display='inline';
+	document.getElementById('submit').style.display='none';
 	var playedBefore = alreadyPlayed();
-
 	//playedBefore = true;
 
 	if(playedBefore == true)
 	{
-		document.getElementById('lightbox').style.display='inline';
+			document.getElementById('replay').style.display='inline';
+	}else
+	{
+		document.getElementById('first_play').style.display='inline';
 	}
+			
 }
-
+	
 function continueOn()
 {
-	document.getElementById('linky').innerHTML="CONTINUE";
-	document.getElementById('lightbox').style.display='none';
+	location.href='map.html';
 }
 
 function startOver()
 {
 	resetGame();
-	document.getElementById('lightbox').style.display='none';
+	location.href='map.html';
+	
 }
