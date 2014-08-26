@@ -1,4 +1,4 @@
-//TODO: line 362 / 363 - 26/08/2014 - Panpan
+//TODO: NONE - 25/08/2014 - Panpan
  
 //set level
 	var level = getStage();
@@ -19,9 +19,6 @@
 			boundaries = boundaries3;
 			break;
 		case 4:
-			boundaries = boundaries4;
-			break;
-		case 5:
 			boundaries = boundaries4;
 			break;
 	}
@@ -164,7 +161,7 @@
 		[38, 17, 53.34223, -6.25363, "evidence/38_press_conference.html", filmIcon, "government press conference"],
 		[39, 8, 53.34394, -6.25682, "evidence/39_who_id.html", imageIcon, "WHO ID card"],
 		[40, 19, 53.34413, -6.25206, "evidence/40_newsreport_quarantine.html", filmIcon, "news report on quarantine"],
-		[41, 5, 53.34388, -6.25757, "evidence/41_notification_of_quarantine.html", imageIcon, "notification poster"],
+		[41, 5, 53.34388, -6.25757, "evidence/41_notification_of_quarantine", imageIcon, "notification poster"],
 		[42, 12, 53.34448, -6.25624, "evidence/42_diary1.html", imageIcon, "diary 1"],
 		[43, 20, 53.34391, -6.25108, "evidence/43_avoid_direct_contact.html", imageIcon, "quarantine poster"],
 		[44, 17, 53.34214, -6.25348, "evidence/44_auth_personnel.html", imageIcon, "quarantine poster 2"],
@@ -356,12 +353,9 @@ var featureLayer = new L.GeoJSON();
 //Add the GeoJSON to the layer, which is loaded in the <head>
 	var featureLayer = L.geoJson(boundaries, {
 		onEachFeature: onEachFeature});
-		
+
 	map.addLayer(featureLayer);
 
-//Add explanation 	
-//What to do when get to stage5
-	
 //for testing
 //		var popup = L.popup();
 //		function onMapClick(e) {
@@ -372,4 +366,3 @@ var featureLayer = new L.GeoJSON();
 //		}
 //		map.on('click', onMapClick);
 //end of for testing
-
