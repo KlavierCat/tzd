@@ -13,12 +13,13 @@
   
   <script language="javascript" type="text/javascript" src="assets/datastore.js" defer></script>
   <script language="javascript" type="text/javascript" src="assets/openingpage.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   
 
   
 </head>
 
-<body>
+<body onunload="resume()">
 	
 	<div class = "svg-container">
 
@@ -23300,7 +23301,11 @@ AAAAAAAAAICo/gd73jMvmxY7iwAAAABJRU5ErkJggg==" transform="matrix(0.24 0 0 0.24 0 
    </table>
 </div>
 
-
+<script src='assets/audiostore.js'></script>	  
+<audio id = "song" loop  >
+<source  src="evidence/items/zombie.ogg" type="audio/ogg"></source>
+<source  src="evidence/items/zombie.mp3" type="audio/mp3"></source>
+</audio>
 	
 </body>
 </html>
