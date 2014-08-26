@@ -21,6 +21,9 @@
 		case 4:
 			boundaries = boundaries4;
 			break;
+		case 5:
+			boundaries = boundaries5;
+			break;
 	}
 //end of set level
 
