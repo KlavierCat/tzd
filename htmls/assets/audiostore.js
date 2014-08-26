@@ -9,7 +9,7 @@ if(mute === "false"){
 //sessionStorage.removeItem("mute")
 song.currentTime = sessionStorage.getItem("store")
 $("#song")[0].volume = 0;
-$("#song").animate({volume: 0.2}, 400);
+$("#song").animate({volume: 0.2}, 0);
 console.log(mute)
 song.play();
 updateEvidence();
