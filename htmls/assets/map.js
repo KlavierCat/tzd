@@ -137,7 +137,7 @@
 		[11, 7, 53.34313, -6.25684, "evidence/11_financial_times.html", imageIcon, "Financial Times - share price down"],
 		[12, 23, 53.34319, -6.25074, "evidence/12_axel_meeting_email.html", imageIcon, "Axel meeting email"],
 		[13, 21, 53.34243, -6.25123, "evidence/13_research_notes.html", imageIcon, "notes of formula"],
-		[14, 6, 53.34527, -6.25792, "evidence/14_testing_results_phase4.html", imageIcon, "testing results letter"],
+		[14, 6, 53.34274, -6.25419, "evidence/14_testing_results_phase4.html", imageIcon, "testing results letter"],
 		[15, 19, 53.34419, -6.25176, "evidence/15_benAudio.html", audioIcon, "Axel audio log"],
 		[16, 22, 53.34267, -6.25114, "evidence/16_test_results_formula.html", imageIcon, "test results formula sheet"],
 		[17, 20, 53.34363, -6.25093, "evidence/17_axel_weekend_email.html", imageIcon, "email - working weekend"],
@@ -227,11 +227,10 @@
 		var i;
 		
 		for (i=0;i<points.length;i++){
-		
 			//define a function to change the icons based on if the user has viewed the item or not
 			var changeIcon = function(){			
 				var evidence = getViewedEvidence();
-			
+				
 				if (evidence[i] == false){
 					return points[i][5];
 				} else {
@@ -383,12 +382,12 @@ var featureLayer = new L.GeoJSON();
 //What to do when get to stage5
 
 //for testing
-//		var popup = L.popup();
-//		function onMapClick(e) {
-//			popup
-//				.setLatLng(e.latlng)
-//				.setContent("You clicked at " + e.latlng.toString())
-//				.openOn(map);
-//		}
-//		map.on('click', onMapClick);
+		var popup = L.popup();
+		function onMapClick(e) {
+			popup
+				.setLatLng(e.latlng)
+				.setContent("You clicked at " + e.latlng.toString())
+				.openOn(map);
+		}
+		map.on('click', onMapClick);
 //end of for testing
