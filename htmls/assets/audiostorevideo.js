@@ -3,7 +3,7 @@ function play(){
 console.log(sessionStorage.getItem("mute"))
 var song = document.getElementById("song");
 var mute =	sessionStorage.getItem("mute");
-if(mute === "false"){
+if(mute === "false" || mute === false){
 	song.muted=true}else{song.muted=false};	
 //sessionStorage.removeItem("mute")
 song.currentTime = sessionStorage.getItem("store")
@@ -51,7 +51,18 @@ $('#corner-mute-true, #corner-mute-false').on('click',
                          
                        }
                        
-                       );});
+                       
+                       
+                       
+                       );
+                       
+                       
+                       
+                       
+                       
+                       
+                       
+                       });
                        
 function toggleMuteAudio(){
    $("#song").prop("muted",!$("#song").prop("muted")); 
@@ -60,14 +71,15 @@ function toggleMuteAudio(){
    
 }
 
-$('#vidy').click(function() {
+$(document).ready(function() {
+$('video').click(function() {
   if (this.paused == false) {
       this.pause();
        $("#song")[0].volume = 0;
-    	$("#song").animate({volume: 0.2}, 3000);
+    	$("#song").animate({volume: 1}, 3000);
   } else {
       this.play();
-       $("#song")[0].volume = 0.2;
+       $("#song")[0].volume = 1;
     	$("#song").animate({volume: 0}, 3000);
   }
 });
@@ -75,6 +87,9 @@ $('#vidy').click(function() {
 $('#video').on('ended',function(){
         $("#song").trigger('play');
     });
+});
+
+
 
 
 	
