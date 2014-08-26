@@ -22,6 +22,10 @@ function updateEvidence()
 		//$("#inventory-corner").toggleClass( "afteranimation" );
 		
 	}
+	else
+	{
+		document.getElementById("animation").style.display='none';
+	}
 };
 	
 function flashIcon(flashon)
