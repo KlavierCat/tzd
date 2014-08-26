@@ -192,7 +192,52 @@ function aud_pause() {
 <!-- end of the item part in tempalte-->    
     
 
-	
+
+	<div class="item-wrapper" id="animation">
+        <div class="item-description">
+            <table>
+                <thead><th colspan='2'>EVIDENCE #58</th></thead>
+                    <tr>
+                        <td>LOCATION:</td>
+                        <td>Provost House</td>
+                    </tr>
+                    <tr>
+                        <td>DATE:</td>
+                        <td>Outbreak<br/>Mar - June 2020</td>
+                    </tr>
+            </table>
+        </div>
+
+        <div class="item-content">
+            <div class='item-content-holder'>
+
+                   
+	  <div id ='audioanimation'>
+  <div id='barb1'></div>
+  <div id='barb2'></div>
+  <div id='barb3'></div>
+  <div id='barb4'></div>
+  <div id='barb5'></div>
+  <div id='barb6'></div>
+  <div id='barb7'></div>
+  <div id='barb8'></div>
+  <div id='barb9'></div>
+  <div id='barb10'></div>
+  <div id='barb11'></div>
+  <div id='barb12'></div>
+  </div>                   
+  <audio id = "AudioBar" src="items/fergAud.mp3" style="position:relative; margin-top:5%; margin-left:10%"></audio>
+  <div id = "buttons">
+  <button class="button" onclick="document.getElementById('AudioBar').play();aud_play_pause();">Play</button>
+  <button class="button" onclick="document.getElementById('AudioBar').pause();aud_pause();">Pause</button>
+  <button class="button" onclick="document.getElementById('AudioBar').volume+=0.1">+</button>
+  <button class="button" onclick="document.getElementById('AudioBar').volume-=0.1">-</button>
+  </div>
+  
+      </div>            
+        </div>
+    </div>
+		
 	
 	
 <!--beginning of header and footer in template-->		
