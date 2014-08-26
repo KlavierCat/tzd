@@ -749,89 +749,549 @@ footer{
 
 /*beginning of Kyle's code - Inventory styling*/
 
-.container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  //border: 3px solid #CCC;
-  z-index: -1;
-  /*piss yellow*/
-  //background: linear-gradient(-15deg, #FFC200 1%, #808000 30%, #000000 100%);
-  /*blueish background*/
-  //background: linear-gradient(-15deg, #6495ED 1%, #C6E2FF 30%, #000000 100%);
-  /*grey*/
-  background: linear-gradient(-15deg, #CDC8B1 1%, #CDCDC1 10%, #000000 100%);
-  opacity: 0.7;
+#timeline_container{
+  margin: 0 auto 0;
+  height: 180px;
+  width: 400px;
+}
+
+#timeline{
+    margin: 1.5em auto 0;
+    height: 160px;
+    overflow:hidden;
+    list-style-type:none;
+    width: 400px;
+    position: absolute;
+    pointer-events: none;
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
   }
 
 
-/*
-.container:before{
-
-	content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: #FFC200 url("http://i.imgur.com/inAhQCX.png") no-repeat top center;
-    background-size: cover;
-    -webkit-filter: blur(10px);
+#timeline li{
+  display: none;
 }
-*/
 
-  .container .carousel {
-    height: 350px;
-    width: 100%;
-    margin-top: 20%;
-    margin: 10% auto; 
-    //border: 3px solid #CCC;}
-    .container .carousel ul {
+a.locked {
+   pointer-events: none;
+   cursor: default;
+}
+
+#timeline li.selected{
+   padding: .5em 0;
+  line-height: 0.5em;
+    display: inline-block;
+      -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+}
+
+.flag{
+  font-family: "Verdana", Serif;
+  border:0;
+  font-size:12px;
+  text-shadow:2px 2px rgba(217,0,0,0.7);
+  position: absolute;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 auto 0;
+  font-weight: 600;
+  text-shadow: 1px 1px #ccc;
+
+}
+
+.flag:hover{
+  cursor: pointer;
+}
+
+.desc{
+  text-align: center;
+  font-family: "Verdana", Serif;
+  font-weight:bold;
+  border:0;
+  margin: 50px auto 0;
+  font-size:15px;
+  text-shadow:2px 2px rgba(217,0,0,0.7);
+}
+
+.desc h2{
+  font-weight: 200;
+  font-size: 15px;
+  margin: 0 auto 0;
+  clear:both;
+  color: #ccc;
+  text-shadow: 2px 2px rgb(0,0,0);
+}
+
+.desc h1{
+  font-weight: 100;
+  font-size: 15px;
+  margin: 20px auto 0;
+  color: #ccc;
+  clear: both;
+  text-shadow: 2px 2px rgb(0,0,0);
+}
+
+.desc h3:hover{
+  cursor: pointer;
+}
+
+#carousel_container {
+
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  }
+
+   #carousel{
+      height: 400px;
       list-style-type: none;
-      margin-top: 4px;
-      width: 7000px;
+      float: left;
+      width: 2000em;
       overflow: hidden;
-      height: 100%;
-      margin-left: 0;
-      left: 0;
-      padding-left: 1px; }
-      .container .carousel ul li {
-        display: inline;
-        width: 180px;
-        height: 90%;
-        float: left;
-       //border: 3px solid #CCC; 
-        border-radius: 10px;
-        margin-right: 25px;
-        /*yellow*/
-        //background: #CCA300;
-        /*blue*/
-        background: #B0C4DE;
-        
-        //opacity: 0.3;
-        box-shadow: inset 0 0 1px #54958A, inset 0 0 20px #465468;
+      position: absolute; 
+
       }
 
-.container .carousel ul li a{
+ #carousel li {
+        width: 100px;
+        height: 250px;
+        float: left;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+        }
+
+      
+      #carousel li:hover{   
+    -webkit-animation: glow 0.2s;
+  -moz-animation: glow 0.2s;
+  animation: glow 0.2s;
+  animation-fill-mode: forwards;
+animation-fill-mode:forwards;
+    -webkit-animation-fill-mode: forwards;
+
+
+      }
+
+@media all and (min-height: 1024px) and (max-height: 1200px){
+
+ #carousel_container{
+  margin: 10% auto 0;
+ }
+
+ .nav-buttons{
+  margin: 10% auto 0;
+  width: 90px;
+  height: 90px;
+ }
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 50px;
+  height: 50px;
+ }
+
+ #quicknav{
+  margin: 5% 0 auto;
+ }
+}      
+
+@media all and (min-height: 768px) and (max-height: 1024px){
+
+  #timeline_container{
+  margin: 0 auto 0;
+  height: 180px;
+  width: 400px;
+
+}
+
+#carousel_container {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  }
+
+     #carousel{
+      height: 400px;
+      list-style-type: none;
+      float: left;
+      width: 2000em;
+      overflow: hidden;
+      position: absolute; 
+
+      }
+
+ #carousel li {
+        width: 100px;
+        height: 250px;
+        float: left;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+        }
+
+}
+
+@media all and (min-height: 640px) and (max-height: 768px){
+
+  #timeline_container{
+  margin: 0 auto 2em;
+  height: 180px;
+  width: 400px;
+
+}
+
+#carousel_container {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  }
+
+   #carousel{
+      height: 400px;
+      list-style-type: none;
+      float: left;
+      width: 2000em;
+      overflow: hidden;
+      position: absolute; 
+      }
+
+ #carousel li {
+        width: 100px;
+        height: 250px;
+        float: left;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+        }
+
+}
+
+
+@-webkit-keyframes glow {
+  0% {
+    opacity:0.6;
+  }
+  100% {
+    opacity: 1;
+    background-color: #5e4934;
+
+  }
+}
+
+
+@-moz-keyframes glow {
+  0% {
+    opacity:0.6;
+  }
+  100% {
+    opacity: 1;
+    background-color: #5e4934;
+
+  }
+}
+
+
+@-ms-keyframes glow {
+  0% {
+    opacity:0.6;
+  }
+  100% {
+    opacity: 1;
+    background-color: #5e4934;
+
+  }
+}
+
+
+#carousel li a{
     text-decoration: none;
     top: 20px;
     opacity: 0;
   }
 
-
-.navPrev{
-  float: left;
+.nav-buttons{
+  opacity:0.5;
+  border-radius: 20rem;
+  border: 3px solid #666666;
   cursor: pointer;
+  padding: 1rem;
+  z-index: 10;
+  background: #666666;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  }
+
+#navPrev{
+  float: left;
+  position: absolute;
+  left: 5px;
+  top: 17em;
+}
+
+#navNext{
+   float:right;
+   position: absolute;
+   right: 5px;
+   top: 17em;
+}
+
+.nav-buttons:hover{
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+#quicknav{
+  position: absolute;
+  top: 5em;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+}
+
+
+@media all and (max-width: 519px) and (min-width: 300px)
+{
+  #quicknav{
+  width: auto;
+  left: 18%;
+  top: 10em;
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  }
+
+  .navButtons{
+    border: 3px solid #ccc;
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+  }
+
+  #timeline{
+    left: -12em;
+  }
+
+
+  .flag{
+    font-size: 18px;
+    padding: 0.5em;
+  }
+
+  .desc h3{
+    font-size: 20px;
+  }
+  .desc h2{
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 699px) and (min-width: 520px){
+#quicknav{
+  margin: 50px auto 0;
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+}
+
+#timeline{
+  margin: 20px auto 0;
+}
+
+.desc h1{
+  font-size: 14px;
+}
+
+.desc h2{
+  font-size: 14px
+}
+
+.flag{
+  font-size: 12px;
+  margin: 0 auto 0;
+}
+
+}
+
+@media all and (max-width: 1000px) and (min-width: 700px){
+  #quicknav
+  {
+  width: auto;
+  margin: 0 auto 0;
+  top: 3%;
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+}
+
+
+}
+
+@media all and (max-width: 1366px) and (min-width: 1001px){
+
+
+.desc h2{
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.desc h1{
+  margin: 20px auto 0;
+  width: 100%;
+}
+
+.desc{
+  margin: 0 50px 0;
+}
+
+.flag{
+  margin-left: 10%;
+}
+
+#timeline{
+    height: 160px;
+    overflow:hidden;
+    list-style-type:none;
+    width: 400px;
+    position: absolute;
+    pointer-events: none;
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
 
   }
 
-.navNext{
-  float: right;
-  cursor: pointer; 
+  #quicknav{
+  width: auto;
+  margin: 4em auto 0;
+  
+  position: absolute;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
   }
+}
 
+
+#quicknav li{
+  border: 7px solid #ccc; 
+  width: 12px;
+  height: 12px;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+
+  text-align: left;
+  margin-right: 1em;
+}
+
+#quicknav li:hover{
+  border: 7px solid red; 
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  text-align: left;
+  margin-right: 1em;
+}
+
+.activeLink{
+  color: red;
+   }
+
+.year{
+ position: relative;
+color: red;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+.notSelected{
+  display: none;}
+
+/* LIGHTBOX DEMO */
+
+.lightbox{
+  display: none;
+  position: fixed;
+  z-index: 400;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 2%;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
+}
+
+.close{
+  display: block;
+  position: absolute;
+  top: 1.2em;
+  right: 29em;
+  border: 4px solid red;
+  padding: 2px;
+  border-radius: 30px;
+  z-index: 401;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+#carousel .locked{
+  pointer-events: none;
+  cursor: default;
+}
+
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
