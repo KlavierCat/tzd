@@ -256,16 +256,16 @@
 				marker[i].addTo(map);
 		
 				//if the item is viewed, provide relevant info when the icon is hovered over
-				evidence = getViewedEvidence();
-				if (evidence[i] == true){
-					marker[i].bindPopup('<p>' + "Evidence # " + points[i][0].toString() + ': ' + points[i][6] + '</p>');
-					marker[i].on('mouseover', function(e){
-						this.openPopup();
-					});
-					marker[i].on('mouseout', function(e){
-						this.closePopup();
-					});
-				};
+				//evidence = getViewedEvidence();
+				//if (evidence[i] == true){
+				//	marker[i].bindPopup('<p>' + "Evidence # " + points[i][0].toString() + ': ' + points[i][6] + '</p>');
+				//	marker[i].on('mouseover', function(e){
+				//		this.openPopup();
+				//	});
+				//	marker[i].on('mouseout', function(e){
+				//		this.closePopup();
+				//	});
+				//};
 				//end of providing relevant info for discovered item
 
 				marker[i].on('click',markerClick);
