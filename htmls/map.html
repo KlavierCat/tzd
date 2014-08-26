@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+<body onunload="resume()">
 
 	<div id='map'></div>
 
@@ -40,10 +40,11 @@
         </a>
     </div>
 	  
-	<div id="corner-mute">
-        <div id="corner-mute-false"></div>
-	  <!--<img src="images/icon-mute-false.png" alt="sound control">-->
-	</div>
+	<div id="corner-mute" onclick="toggleMuteAudio()">
+        <div id="corner-mute-false"  ></div>
+      <!--<img src="images/icon-mute-false.png" alt="sound control">-->
+      <div id="corner-mute-true" ></div>
+    </div>
 
 	<div class="corner" id="corner-footer">
 	  <footer>
@@ -79,7 +80,13 @@
 	<div class="diagonal-line" id="southEast"></div>
     <div class="nav-arrow" id="nav-arrow-left"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
-<!--end of header and footer in template-->	    
+<!--end of header and footer in template-->	 
+
+<script src='assets/audiostore.js'></script>	  
+<audio id = "song" loop >
+<source  src="evidence/items/zombie.ogg" type="audio/ogg""></source>
+<source  src="evidence/items/zombie.mp3" type="audio/mp3""></source>
+</audio>   
     
 </body>
 

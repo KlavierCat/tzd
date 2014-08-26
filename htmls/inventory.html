@@ -17,7 +17,7 @@
 	<script src="assets/carousel.js"></script>
 </head>
 
-<body>
+<body onunload="resume()">
 <!--beginning of header and footer in template-->		
 	<div id="corner-logo-container">
         <a href="#">
@@ -25,10 +25,11 @@
         </a>
     </div>
 	  
-	<div id="corner-mute">
-        <div id="corner-mute-false"></div>
-	  <!--<img src="images/icon-mute-false.png" alt="sound control">-->
-	</div>
+	<div id="corner-mute" onclick="toggleMuteAudio()">
+        <div id="corner-mute-false"  ></div>
+      <!--<img src="images/icon-mute-false.png" alt="sound control">-->
+      <div id="corner-mute-true" ></div>
+    </div>
 
 	<div class="corner" id="corner-footer">
 	  <footer>
@@ -546,6 +547,11 @@ Overtime, more people become infected and violent upheavals breakout. Trinity Co
     <div class="nav-arrow" id="nav-arrow-left-filter"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->	
+<script src='assets/audiostore.js'></script>	  
+<audio id = "song" loop >
+<source  src="evidence/items/zombie.ogg" type="audio/ogg""></source>
+<source  src="evidence/items/zombie.mp3" type="audio/mp3""></source>
+</audio>
 </body>
 
 </html>

@@ -8,19 +8,19 @@
     <meta name="description" content="Trinity Zombie Dublin - Evidence #51"/>
     <meta name="Keywords" content="TCD, Zombie, TZD, Trinity, Trinity College Dublin"/>
     <meta name="author" content="Kenny Fergus, Ben Hardy, Panpan Lin, Kyle Murphy, Ryan Yates"/>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href='../assets/site.css' rel="stylesheet"/>
-<<<<<<< HEAD
+<!--<<<<<<< HEAD-->
 	
 =======
 	<link rel="icon" type="image/png" href="../images/favicon.png">
 	<script src='../assets/datastore.js'></script>
 	<link href='assets/evidence.css' rel="stylesheet"/>
->>>>>>> FETCH_HEAD
+<!-->>>>>>> FETCH_HEAD-->
 	
 </head>
 
-<body>
+<body onunload="resume()">
 
 <!-- beginning of the item part in template-->
     <div class="item-wrapper">
@@ -104,9 +104,10 @@
         </a>
     </div>
       
-    <div id="corner-mute">
-        <div id="corner-mute-false"></div>
+    <div id="corner-mute" onclick="toggleMuteAudio()">
+        <div id="corner-mute-false"  ></div>
       <!--<img src="images/icon-mute-false.png" alt="sound control">-->
+      <div id="corner-mute-true" ></div>
     </div>
 
     <div class="corner" id="corner-footer">
@@ -145,6 +146,11 @@
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->   
 	<script src='assets/evidence.js'></script>
+	<script src='../assets/audiostore.js'></script>	  
+	<audio id = "song" loop>
+<source  src="items/zombie.ogg" type="audio/ogg""></source>
+<source  src="items/zombie.mp3" type="audio/mp3""></source>
+</audio>
 </body>
 
 </html>
