@@ -1,4 +1,4 @@
-//TODO: line 362 / 363 - 26/08/2014 - Panpan
+//TODO: line 258 / 362 / 363 - 26/08/2014 - Panpan
  
 //set level
 	var level = getStage();
@@ -22,7 +22,7 @@
 			boundaries = boundaries4;
 			break;
 		case 5:
-			boundaries = boundaries5;
+			boundaries = boundaries4;
 			break;
 	}
 //end of set level
@@ -207,7 +207,7 @@
 		[81, 17, 53.34217, -6.25323, "evidence/81_cctv1.html", imageIcon, "CCTV 1"],
 		[82, 6, 53.34505, -6.25737, "evidence/82_zombie_pic.html", imageIcon, "zombie photo"],
 		[83, 0, 53.34447, -6.25895, "evidence/83_newsreport_outbreak.html", imageIcon, "news report of outbreak"],
-		[84, 13, 53.34419, -6.2557, "evidence/84_berkeley_cctv.html", filmIcon],
+		[84, 13, 53.34419, -6.2557, "evidence/84_berkeley_cctv.html", filmIcon, "CCTV 3"],
 		[85, 18, 53.3426, -6.25289, "evidence/85_CCTVToilet.html", filmIcon, "CCTV 2"],
 		[86, 3, 53.34453, -6.2585, "evidence/86_howtokill3.html", imageIcon, "how to kill - step 3"],
 		[87, 15, 53.34481, -6.25415, "evidence/87_howtokill2.html", imageIcon, "how to kill - step 2"],
@@ -267,6 +267,26 @@
 				//	});
 				//};
 				//end of providing relevant info for discovered item
+				
+				//solution 2 - not working
+//				evidence = getViewedEvidence();
+//				if (evidence[i] == true){
+//					showText = "Evidence #" + points[i][0].toString() + ": " + points[i][6];					
+//					marker[i].on('mouseover', function(e){
+//						var popup = $("<div></div>", {
+//							id:"popup-evidence",
+//							class:"popup-map",
+//						});	
+//						var hed = $("<div></div>",{
+//							text:showText
+//						}).appendTo(popup);
+//						popup.appendTo("#map");
+//					});
+					
+//					marker[i].on('mouseout', function(e){
+//						$("#popup-evidence").remove();
+//					});
+//				};
 
 				marker[i].on('click',markerClick);
 			};
