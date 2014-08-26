@@ -10,7 +10,7 @@ function play(){
 console.log(sessionStorage.getItem("mute"))
 var song = document.getElementById("song");
 var mute =	sessionStorage.getItem("mute");
-if(mute === "false"){
+if(mute === "false" || mute === false){
 	song.muted=true}else{song.muted=false};	
 //sessionStorage.removeItem("mute")
 song.currentTime = sessionStorage.getItem("store")
