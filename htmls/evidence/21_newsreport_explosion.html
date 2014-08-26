@@ -62,7 +62,7 @@
 
         <div class="item-content">
             <div class='item-content-holder'>
-            <video  controls>
+            <video id="vidy" controls>
             	<source  src='items/news2.mp4' type="video/mp4" >
             	<source  src='items/news2.ogv' type="video/ogg">
             </video>
@@ -80,7 +80,7 @@
     </div>
 	  
 	 <div id="corner-mute" onclick="toggleMuteAudio()">
-        <div id="corner-mute-false"  ></div>
+      
       <!--<img src="images/icon-mute-false.png" alt="sound control">-->
       <div id="corner-mute-true" ></div>
     </div>
@@ -121,7 +121,7 @@
 <!--end of header and footer in template-->	  
 	<script src='assets/evidence.js'></script>
 	<script src='../assets/audiostorevideo.js'></script>	  
-<audio id = "song" loop controls>
+<audio id = "song" loop muted>
 <source  src="items/zombie.ogg" type="audio/ogg""></source>
 <source  src="items/zombie.mp3" type="audio/mp3""></source>
 </audio>

@@ -10,7 +10,7 @@ song.currentTime = sessionStorage.getItem("store")
 $("#song")[0].volume = 0;
 $("#song").animate({volume: 0.2}, 0);
 console.log(mute)
-song.play();
+
 updateEvidence();
 }
 
@@ -36,25 +36,25 @@ if (typeof(Storage) != "undefined") {
 }
 
 //mute and unmute evidence and map page
-$( document ).ready(function() {
-var soundOn = false
-var soundOff = true
-$("#corner-mute-true").hide();
+//$( document ).ready(function() {
+//var soundOn = false
+//var soundOff = true
+//$("#corner-mute-true").hide();
 
-$('#corner-mute-true, #corner-mute-false').on('click',
-                          function() 
-                       {
-                          $('#corner-mute-true, #corner-mute-false').toggle();   
+//$('#corner-mute-true, #corner-mute-false').on('click',
+                        //  function() 
+                      // {
+                        //  $('#corner-mute-true, #corner-mute-false').toggle();   
                          //console.log(document.getElementById("song").muted)
-                         sessionStorage.setItem("mute", document.getElementById("song").muted);
-                         console.log(sessionStorage.getItem("mute"))
+                         //sessionStorage.setItem("mute", document.getElementById("song").muted);
+                       //  console.log(sessionStorage.getItem("mute"))
                          
-                       }
+                       //}
                        
                        
                        
                        
-                       );
+                       //);
                        
                        
                        
@@ -62,7 +62,7 @@ $('#corner-mute-true, #corner-mute-false').on('click',
                        
                        
                        
-                       });
+                      // });
                        
 function toggleMuteAudio(){
    $("#song").prop("muted",!$("#song").prop("muted")); 
@@ -71,23 +71,7 @@ function toggleMuteAudio(){
    
 }
 
-$(document).ready(function() {
-$('video').click(function() {
-  if (this.paused == false) {
-      this.pause();
-       $("#song")[0].volume = 0;
-    	$("#song").animate({volume: 1}, 3000);
-  } else {
-      this.play();
-       $("#song")[0].volume = 1;
-    	$("#song").animate({volume: 0}, 3000);
-  }
-});
 
-$('#video').on('ended',function(){
-        $("#song").trigger('play');
-    });
-});
 
 
 
