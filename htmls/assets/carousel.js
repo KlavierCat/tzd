@@ -28,11 +28,11 @@ if(window.location.hash){
 }
 
 window.onhashchange = function hashPan(){
-
 	
 	currentSelection = parseInt((location.hash).split('#')[1]);
 
 	var el = $elems.eq(currentSelection);
+
 
 		$carousel.animate({
 			left: '-' + (currentSelection*$itemWidth) + 'px'
@@ -77,13 +77,13 @@ function panCarousel(e){
 	
 	if(e.data.direction == 'forward'){
 	
-
-		currentSelection = (currentSelection === ($itemCount-1)) ? (currentSelection = 0) : 
-		(currentSelection + 4)%($itemCount);
-		if(currentSelection < 0)
-			currentSelection = currentSelection+94;
-		if(currentSelection == 93 || currentSelection == 94)
+		if(currentSelection == 92 || currentSelection == 93 || currentSelection == 94)
 			currentSelection = 0;
+		else if(currentSelection < 0)
+			currentSelection = $itemCount-1;
+		else
+			currentSelection = (currentSelection === ($itemCount-1)) ? (currentSelection = 0) : 
+			(currentSelection + 4)%($itemCount);
 		//currentSelection = (currentSelection+4)%$itemCount;
 		//modulos operator makes it so that currentSelection resets to 0 if it reaches end of array
 		$carousel.animate({
@@ -92,12 +92,11 @@ function panCarousel(e){
 		}, speed);
 		
 		}else{
-		
-		currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4)%($itemCount);
-		if(currentSelection < 0)
-			currentSelection = currentSelection+94;
-		if(currentSelection < 4)
+		if(currentSelection < 4 && currentSelection > 0)
 			currentSelection = 0;
+		else
+			currentSelection = (currentSelection===0) ? ($itemCount-1) : (currentSelection-4)%($itemCount);
+		
 		
 		$carousel.animate(		
 		{
@@ -124,7 +123,7 @@ $carousel.bind('mouseover', changeYear);
 
 function filter(e){
 
-	elems.hide();
+	var locked = document.querySelectorAll('.locked');
 }
 
 
