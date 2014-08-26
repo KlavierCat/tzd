@@ -1,5 +1,11 @@
 
 function play(){
+
+
+
+
+
+
 //console.log(sessionStorage.getItem("mute"))
 console.log(sessionStorage.getItem("mute"))
 var song = document.getElementById("song");

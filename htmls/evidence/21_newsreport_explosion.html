@@ -35,7 +35,10 @@
 
         <div class="item-content">
             <div class='item-content-holder'>
-                <video src='items/news2.mp4' controls></video>
+                <video id="vidy" controls>
+            	<source  src='items/news2.mp4' type="video/mp4" >
+            	<source  src='items/news2.ogv' type="video/ogg">
+            </video>
             </div>            
         </div>
     </div>    
@@ -59,7 +62,10 @@
 
         <div class="item-content">
             <div class='item-content-holder'>
-                <video src='items/news2.mp4' controls></video>
+            <video  controls>
+            	<source  src='items/news2.mp4' type="video/mp4" >
+            	<source  src='items/news2.ogv' type="video/ogg">
+            </video>
             </div>            
         </div>
     </div> 
@@ -114,7 +120,7 @@
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->	  
 	<script src='assets/evidence.js'></script>
-	<script src='../assets/audiostore.js'></script>	  
+	<script src='../assets/audiostorevideo.js'></script>	  
 <audio id = "song" loop>
 <source  src="items/zombie.ogg" type="audio/ogg""></source>
 <source  src="items/zombie.mp3" type="audio/mp3""></source>
