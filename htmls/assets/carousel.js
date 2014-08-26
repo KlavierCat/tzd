@@ -9,14 +9,16 @@ $(function(){
     timelineSelection = 0,
     $itemCount = $elems.length,
     $timeline = $('#timeline li'),
+    $even = $('#carousel li:even'),
+    $odd = $('#carousel li:odd'),
     $itemWidth = $elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
-	$('#carousel li:even').css({'margin-top' : '120px',
+	$even.css({'margin-top' : '120px',
 								'z-index' : '3',
 								'opacity' : '0.7'});
 
-	$('#carousel li:odd').css({'z-index' : '2',
+	$odd.css({'z-index' : '2',
 								'opacity' : '0.7'});
 if(window.location.hash){
 	currentSelection = parseInt((location.hash).split('#')[1]);

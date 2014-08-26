@@ -1013,9 +1013,35 @@ animation-fill-mode:forwards;
   100% {
     opacity: 1;
     background-color: #5e4934;
-      -webkit-filter : sepia(0);
+
   }
 }
+
+
+@-moz-keyframes glow {
+  0% {
+    opacity:0.6;
+  }
+  100% {
+    opacity: 1;
+    background-color: #5e4934;
+
+  }
+}
+
+
+@-ms-keyframes glow {
+  0% {
+    opacity:0.6;
+  }
+  100% {
+    opacity: 1;
+    background-color: #5e4934;
+
+  }
+}
+
+
 #carousel li a{
     text-decoration: none;
     top: 20px;
