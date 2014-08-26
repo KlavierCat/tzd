@@ -135,3 +135,14 @@ var boundaries4={
 ,
 {"type":"Feature", "id":21, "properties": {"ID": 21, "BUILDING": "Smurfit Institute of Genetics", "LEVEL":4, "ITEMNUM":3}, "geometry": { "type": "Polygon", "coordinates":[[[-6.2508,53.34245], [-6.25096, 53.34218], [-6.25121, 53.34222], [-6.25121, 53.34223], [-6.25143, 53.34228], [-6.251285, 53.34254], [-6.2508,53.34245]]]}}
 ]};
+
+var points = {
+"type":"",
+"features": [
+{},
+{},
+{},
+{},
+
+]
+};
