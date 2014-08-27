@@ -133,18 +133,11 @@ $quicknav.click(function(){
 
 $elems.bind('mouseover', changeIndex);
 
-/*
-function filter(e){
-
-	var locked = document.querySelectorAll('.locked');
-}*/
-
 function changeIndex(e){
 
 	var temp = e.target.id,
 	el = temp.substring(1,3);
-	var inject = document.getElementById("evidenceIndex");
-	$(inject).text('Evidence #' + el);
+	
 }
 
 
