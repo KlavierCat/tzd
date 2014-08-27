@@ -1,0 +1,87 @@
+	<style>
+	body {background-image: url("U.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Tennis.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("SamuelBeckett.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Rubric.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Reading.jpg");} 
+	</style>
+	
+			<style>
+	body {background-image: url("PubTheatre.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Provost.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Pav.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("FrontGate.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Arts.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Buttery.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Chapel.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("CivilEng.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("CollegePark.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Hamilton.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Lloyd.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Luce.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Moyne.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("NewSquare.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("OldLibrary.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Panoz.jpg");} 
+	</style>
+	
+		<style>
+	body {background-image: url("Parliament.jpg");} 
+	</style>
