@@ -156,7 +156,7 @@
 		[30, 3, 53.34443, -6.25854, "evidence/30_pamphlet.html", imageIcon, "pamplet on flu"],
 		[31, 12, 53.34428, -6.25626, "evidence/31_axel_waking_email.html", imageIcon, "email about Axel waking up"],
 		[32, 12, 53.34436, -6.25626, "evidence/32_medCert.html", imageIcon, "medical certificate"],
-		[33, 14, 53.34287, -6.2552, "evidence/14_testing_results_phase4.html", imageIcon, "flu photos"],
+		[33, 14, 53.34287, -6.2552, "evidence/33_flue.html", imageIcon, "flu photos"],
 		[34, 14, 53.34332, -6.25425, "evidence/34_Faulkner1.html", imageIcon, "Axel medical report 1"],
 		[35, 16, 53.34435, -6.25316, "evidence/35_ny_newspaper.html", imageIcon, "NYU newspaper"],
 		[36, 13, 53.34441, -6.25517, "evidence/36_newspaper_martial_law.html", imageIcon, "martial law headline"],
@@ -381,13 +381,13 @@ var featureLayer = new L.GeoJSON();
 //Add explanation 	
 //What to do when get to stage5
 
-//for testing
-		var popup = L.popup();
-		function onMapClick(e) {
-			popup
-				.setLatLng(e.latlng)
-				.setContent("You clicked at " + e.latlng.toString())
-				.openOn(map);
-		}
-		map.on('click', onMapClick);
-//end of for testing
+//for development
+//		var popup = L.popup();
+//		function onMapClick(e) {
+//			popup
+//				.setLatLng(e.latlng)
+//				.setContent("You clicked at " + e.latlng.toString())
+//				.openOn(map);
+//		}
+//		map.on('click', onMapClick);
+//end of for development
