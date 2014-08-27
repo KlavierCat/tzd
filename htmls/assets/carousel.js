@@ -12,6 +12,7 @@ $(function(){
     $timeline = $('#timeline li'),
     $even = $('#carousel li:even'),
     $odd = $('#carousel li:odd'),
+    $quicknav = $('#quicknav a'),
     $itemWidth = $elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
@@ -22,7 +23,7 @@ $(function(){
 	$odd.css({'z-index' : '2',
 								'opacity' : '0.7'});
 
-	
+
 
 
 if(window.location.hash){
@@ -68,15 +69,14 @@ function updateElement(key, value)
 									'background-size' : '110%'} );
 
 		}else{
-			$elems.eq(key).css({'background-image' : 'url("timeline-previews/lock_v2.png"' + ')',
+			$elems.eq(key)
+			.css({'background-image' : 'url("timeline-previews/lock_v2.png"' + ')',
 								'background-size' : '100%',
 								'background-repeat' : 'repeat-x',
 								'background-position' : 'center'} ).addClass('locked');
 		}	
 
 }
-
-
 
 
 function panCarousel(e){
@@ -124,48 +124,53 @@ $('#navPrev').bind('click', {direction: 'backward',
 								 type: 'standardnav'}, panCarousel);
 
 
-$('#quicknav a li').bind('mouseover', changeYear);
+$quicknav.bind('mouseover', changeYear);
 
-$carousel.bind('mouseover', changeYear);
+$quicknav.click(function(){
+	$(this).children('li').toggleClass('clicked').end()
+	.siblings('a').children('li').removeClass('clicked');
+});
 
+$elems.bind('mouseover', changeIndex);
+
+/*
 function filter(e){
 
 	var locked = document.querySelectorAll('.locked');
+}*/
+
+function changeIndex(e){
+
+	var temp = e.target.id,
+	el = temp.substring(1,3);
+	var inject = document.getElementById("evidenceIndex");
+	$(inject).text('Evidence #' + el);
 }
 
 
 function changeYear(e){
 
 	switch(e.target.className){
-		case '2015':
+		case '0-14':
 			timelineSelection = 0;
 			break;
-		case '2018-a':
+		case '15-29':
 			timelineSelection = 1;
 			break;
-		case '2018-b':
+		case '30-44':
 			timelineSelection = 2;
 			break;
-		case '2019':
+		case '45-59':
 			timelineSelection = 3;
 			break;
-		case 'disaster':
+		case '60-74':
 			timelineSelection = 4;
 			break;
-		case 'IDM':
+		case '75-89':
 			timelineSelection = 5;
 			break;
-		case 'Outbreak':
+		case '90-94':
 			timelineSelection = 6;
-			break;
-		case 'Quarantine':
-			timelineSelection = 7;
-			break;
-		case 'Evac':
-			timelineSelection = 8;
-			break;
-		case 'End':
-			timelineSelection = 9;
 			break;
 		default:
 			break;

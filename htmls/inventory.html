@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang=en>
 
 <head>
-	<meta charset=utf-8 />
-	<title>Inventory - TZD</title>
-	<meta name='viewport' content='initial-scale=1,maximum-scale=1.2'/>
+  <meta charset=utf-8 />
+  <title>Inventory - TZD</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1.2'/>
     <meta name="description" content="Trinity Zombie Dublin - Inventory"/>
     <meta name="Keywords" content="TCD, Zombie, TZD, Trinity, Trinity College Dublin"/>
     <meta name="author" content="Kenny Fergus, Ben Hardy, Panpan Lin, Kyle Murphy, Ryan Yates"/>
@@ -12,33 +13,33 @@
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <script src="assets/jquery-1.11.1.min.js"></script>
     <link rel="icon" type="image/png" href="images/favicon.png">
-	<link href='assets/site.css' rel="stylesheet"/>
+  <link href='assets/site.css' rel="stylesheet"/>
   <script src="assets/datastore.js"></script>
-	<script src="assets/carousel.js"></script>
+  <script src="assets/carousel.js"></script>
 </head>
 
 <body onunload="resume()">
-<!--beginning of header and footer in template-->		
-	<div id="corner-logo-container">
+<!--beginning of header and footer in template-->   
+  <div id="corner-logo-container">
         <a href="#">
             <div id="corner-logo"></div>
         </a>
     </div>
-	  
-	<div id="corner-mute" onclick="toggleMuteAudio()">
+    
+  <div id="corner-mute" onclick="toggleMuteAudio()">
         <div id="corner-mute-false"  ></div>
       <!--<img src="images/icon-mute-false.png" alt="sound control">-->
       <div id="corner-mute-true" ></div>
     </div>
 
-	<div class="corner" id="corner-footer">
-	  <footer>
-		<a href="https://www.facebook.com/trinityzombiedublin"><div class="footer-icon" id="icon-facebook"></div></a>
-		&nbsp;
-		<a href="https://twitter.com/TZDwebsite"><div class="footer-icon" id="icon-twitter"></div></a>
-	  </footer>
-	</div>
-	
+  <div class="corner" id="corner-footer">
+    <footer>
+    <a href="https://www.facebook.com/trinityzombiedublin"><div class="footer-icon" id="icon-facebook"></div></a>
+    &nbsp;
+    <a href="https://twitter.com/TZDwebsite"><div class="footer-icon" id="icon-twitter"></div></a>
+    </footer>
+  </div>
+  
 
 <div id="timeline_container">
 
@@ -46,153 +47,46 @@
 
 <ul id="timeline">
 
-      <li class="selected">
-        
-        <div class="flag 2015">A New Discovery</div>
-      <div class="desc">
-   <h2>2015</h2>
-      <!--
-      <p>In 2015, a new species of honey badger is discovered. Research into its biological properties finds that it holds an outstanding capacity to fend off numerous life threatening illnesses.</p>
-      <p>
-       A decision is made and an initiative established to analyse the badger's genetic structure in an effort to forward research into a potential cure for numerous terminal illnesses, among them cancer. 
-       </p>
-       -->
-       
-      </div>
-      </li>
-
-      <li>
-        
-        <div class="flag 2018-a">Research Commences</div>
-        <!--<span class="time">2018 - 2019</span>-->
-      
-      <div class="desc">
-
-      <h2>2018</h2>
-      <h1>April/May</h1>
-      <!--
-      <p>An application is made by bio-immunologist Axel Faulkner to lead research into cures for cancer and other illnesses. IDM Pharmaceuticals fund research into the cure, but this decision is motivated not out of altruism but by IDM's recent financial woes. </p>
-      <p>Nevertheless, research commences in July of 2018 with Axel taking the position of lead researcher. Research continues into 2019.</p>
-      -->
-      
-      </div>
-
-      <li>
-        
-          <div class="flag 2018-b">A Rocky Start</div>
-        <div class="desc">
-      <h2>2018</h2> 
-      <h1>May-November</h1></div>
-      </li>
-
-      </li>
-      <li>
-        
-        <div class="flag 2019">Breaking Point</div>
-        <!--<span class="time">March 2020</span>-->
-      <div class="desc">
-      <h2>2019 - Early 2020</h2>
-      
-      </div>
-      </li>
-    
-     
-      <li>
-        
-        <div class="flag disaster">Unforseen Consequences</div>
-        <!--<span class="time">March 2020</span>-->
-      <div class="desc">
-      <h2>2020</h2>
-      <h1>February 29th</h1>
-      
-      
-      </div>
-
-      </li>
-
-
-
-      <li>
-        
-        <div class="flag IDM">IDM Liquidation</div>
-        <!--<span class="time">2013 - present</span>-->
-      <div class="desc">
-      <h2>2020</h2>
-      <h1>February/March</h1>
-      <!--
-      <p>A flu-like virus spreads throughout campus. It proves extremely contagious and soon quarantine is set up to prevent further contamination until additional research into the character of the illness can be taken.</p>
-      <p>
-Overtime, more people become infected and violent upheavals breakout. Trinity College is put under military lockdown, but...
-</p>
--->
-
-      </div>
-      </li>
-
-
-
-      <li>
-        
-        <div class="flag Outbreak">The Virus Spreads</div>
-        <!--<span class="time">2013 - present</span>-->
-      <div class="desc">
-      <h2>2020</h2>
-      <h1>February-April</h1>
-      <!--
-      <p>A flu-like virus spreads throughout campus. It proves extremely contagious and soon quarantine is set up to prevent further contamination until additional research into the character of the illness can be taken.</p>
-      <p>
-Overtime, more people become infected and violent upheavals breakout. Trinity College is put under military lockdown, but...
-</p>
--->
-
-      </div>
-      </li>
-
-
-      <li>
-        
-        <div class="flag Quarantine">Quarantine and Martial Law</div>
-        <!--<span class="time">2021 - Unknown</span>-->
-    
-      <div class="desc">
-        <h2>2020</h2>
-        <h1>March-April</h1>
-      </div>
-      
-      </li>
-
-
-       <li>
-        
-        <div class="flag Evac">Evacuation</div>
-        <!--<span class="time">2021 - Unknown</span>-->
-      <div class="desc">
-        <h2>Late 2020 to 2021</h2>
-      </div>
-      
-      </li>
-
-       <li>
-        
-        <div class="flag End">Worldwide contamination</div>
-        <!--<span class="time">2021 - Unknown</span>-->
-      <div class="desc">
-        <h2>???????????</h2>
-      </div>
-      
+      <li class="selected flag">
+      #0-14
       </li>
       
 
+      <li class="flag">
+      #15-29
+      </li>
+
+      <li class="flag">#30-44
+      </li>
+
+      <li class="flag">#45-59
+      </li>
+
+
+      <li class="flag">#60-74
+      </li>
+
+
+      <li class="flag">#75-89
+      </li>
+
+
+      <li class="flag">#90-94
+      </li>
     </ul>
 
+    <div id="evidenceIndex">
+      Evidence #
+    </div>
+
 <ul id="quicknav">
-  <a href="#0"><li class="2015"></li></a>
-  <a href="#15"><li class="2018-b"></li></a>
-  <a href="#30"><li class="IDM"></li></a>
-  <a href="#45"><li class="Quarantine"></li></a>
-  <a href="#60"><li class="Evac"></li></a>
-  <a href="#75"><li class="End"></li></a>
-  <a href="#90"><li class="End"></li></a>
+  <a href="#0"><li class="0-14"></li></a>
+  <a href="#15"><li class="15-29"></li></a>
+  <a href="#30"><li class="30-44"></li></a>
+  <a href="#45"><li class="45-59"></li></a>
+  <a href="#60"><li class="60-74"></li></a>
+  <a href="#75"><li class="75-89"></li></a>
+  <a href="#90"><li class="90-94"></li></a>
 </ul>
 
 
@@ -500,22 +394,22 @@ Overtime, more people become infected and violent upheavals breakout. Trinity Co
 
 
 
-	<div class="corner" id="corner-view">
-		<div id="view">
+  <div class="corner" id="corner-view">
+    <div id="view">
             View:
-			<select id="filter" name="filter">
+      <select id="filter" name="filter">
                 <option value="0" selected="selected">All</option>
                 <option value="1">Unlocked</option>
                 <option value="2">Locked</option>
             </select>
-		</div>
+    </div>
         <a href="about.html"><div class="footer-icon" id="icon-about"></div></a>
-	</div>
+  </div>
 
     <div class="footer-wrapper">
      <div class="icon-menu-background">    
         
-	  <div class="middle">
+    <div class="middle">
 
         <a href="map.html">
             <div id="map-corner"></div>  
@@ -525,20 +419,20 @@ Overtime, more people become infected and violent upheavals breakout. Trinity Co
             <div id="inventory-corner"></div>
         </a>
           
-	  </div>
+    </div>
          
      </div>
     </div>    
 
-	<div class="diagonal-line" id="southWest"></div>
-	<div class="diagonal-line" id="southEastFilter"></div>
+  <div class="diagonal-line" id="southWest"></div>
+  <div class="diagonal-line" id="southEastFilter"></div>
     <div class="nav-arrow" id="nav-arrow-left-filter"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
-<!--end of header and footer in template-->	
-<script src='assets/audiostore.js'></script>	  
+<!--end of header and footer in template--> 
+<script src='assets/audiostore.js'></script>    
 <audio id = "song" loop >
-<source  src="evidence/items/zombie.ogg" type="audio/ogg""></source>
-<source  src="evidence/items/zombie.mp3" type="audio/mp3""></source>
+<source  src="evidence/items/zombie.ogg" type="audio/ogg"></source>
+<source  src="evidence/items/zombie.mp3" type="audio/mp3"></source>
 </audio>
 </body>
 
