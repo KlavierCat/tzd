@@ -798,81 +798,6 @@ animation-fill-mode:forwards;
       }
 
 
-@media all and (min-height: 1024px) and (max-height: 1200px){
-
- #carousel_container{
-  margin: 10% auto 0;
- }
-
- .nav-buttons{
-  margin: 10% auto 0;
-  width: 90px;
-  height: 90px;
- }
-
-
- .nav-buttons img{
-  margin: 5% auto 0;
-  width: 45px;
-  height: 45px;
- }
-
- #quicknav{
-  margin: 5% 0 auto;
- }
-}      
-
-@media all and (min-height: 768px) and (max-height: 1024px){
-
-  #timeline_container{
-  margin: 0 auto 0;
-  height: 180px;
-  width: 400px;
-
-}
-
-.flag{
-	margin: 0 auto 0;
-	font-color: white;
-}
-
-#carousel_container {
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  overflow: hidden;
-  z-index: 0;
-  }
-
-     #carousel{
-      height: 400px;
-      list-style-type: none;
-      float: left;
-      width: 2000em;
-      overflow: hidden;
-      position: absolute; 
-
-      }
-
- #carousel li {
-        width: 100px;
-        height: 250px;
-        float: left;
-        border-radius: 5px;
-        margin-right: 0.5em;
-        cursor: pointer;
-        background: #34495e;
-        }
-
-
- .nav-buttons img{
-  margin: 0 auto 0;
-  width: 40px;
-  height: 40px;
- }
-
-}
-
 
 
 @-webkit-keyframes glow {
@@ -949,11 +874,7 @@ animation-fill-mode:forwards;
 }
 
 
-
-
-@media all and (max-width: 519px) and (min-width: 300px)
-{
-
+@media all and (max-width: 519px) and (min-width: 300px){
 	#carousel_container {
   width: 100%;
   height: 300px;
@@ -1010,17 +931,18 @@ animation-fill-mode:forwards;
 
 
   .flag{
-    font-size: 18px;
-    padding: 0.5em;
-    color: white;
-  }
-  #evidenceIndex{
-  	margin: 3em auto 0;
-  	font-weight: 600;
-  	display: block;
-  	position: relative;
-  	color: white;
-  }
+  font-size: 12px;
+  width: 150px;
+  margin: 0 auto 0;
+  font-color: white;
+  display: block;
+}
+
+#evidenceIndex{
+	margin: 0 auto 0;
+	display: block;
+	width: 150px;
+}
 
 }
 
@@ -1055,6 +977,7 @@ animation-fill-mode:forwards;
 
 .flag{
   font-size: 12px;
+  width: 150px;
   margin: 0 auto 0;
   font-color: white;
   display: block;
@@ -1063,6 +986,7 @@ animation-fill-mode:forwards;
 #evidenceIndex{
 	margin: 0 auto 0;
 	display: block;
+	width: 150px;
 }
 
 #carousel_container {
@@ -1095,7 +1019,7 @@ animation-fill-mode:forwards;
 
 }
 
-@media all and (max-width: 1000px) and (min-width: 700px){
+@media all and (max-width: 999px) and (min-width: 700px){
   #quicknav
   {
   width: auto;
@@ -1107,11 +1031,40 @@ animation-fill-mode:forwards;
   z-index: 4;
 }
 
-	#timeline_container{
-		margin: 0 auto 0;
-		height: 150px;
-		width: 300px;
-	}
+#evidenceIndex{
+  display: block;
+  margin: 0 auto 0;
+  font-size: 18px;
+  color: #ccc;
+  width: 160px;
+  z-index: 4;
+  font-family: "Helvetica", Serif;
+  position: relative;
+  top: 1px;
+  border-radius: 5px;
+  font-weight: 600;
+ }
+
+  #timeline_container{
+  margin: 0 auto 0;
+  height: 140px;
+  width: 300px;
+  position: relative;
+}
+
+.flag{
+    display: block;
+  margin: 0 auto 0;
+  top: 1px;
+  font-size: 20px;
+  color: white;
+  width: 180px;
+  z-index: 4;
+   font-family: "helvetica", Serif;
+  position: relative;
+  border-radius: 5px;
+  font-weight: 600;
+}
 
  .nav-buttons img{
   margin: 0 auto 0;
@@ -1148,8 +1101,221 @@ animation-fill-mode:forwards;
 }
 
 
-@media all and (min-height: 640px) and (max-height: 768px){
 
+@media all and (max-width: 1366px) and (min-width: 1000px){
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
+#evidenceIndex{
+  display: block;
+  margin: 0 auto 0;
+  font-size: 18px;
+  top: 1em;
+  font-color: #ccc;
+  width: 160px;
+  z-index: 4;
+   font-family: "Helvetica", Serif;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+ }
+
+  #timeline_container{
+  margin: 0 auto 0;
+  height: 180px;
+  width: 300px;
+  position: relative;
+}
+
+.flag{
+    display: block;
+  margin: 0 auto 0;
+  top: 3em;
+  font-size: 20px;
+  color: white;
+  width: 180px;
+  z-index: 4;
+   font-family: "helvetica", Serif;
+  position: relative;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+	#carousel_container {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  top: 10em;
+  }
+
+   #carousel{
+      height: 400px;
+      list-style-type: none;
+      float: left;
+      width: 2000em;
+      overflow: hidden;
+      position: absolute; 
+      }
+
+ #carousel li {
+        width: 80px;
+        height: 200px;
+        float: left;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+        }
+
+
+#timeline{
+    height: 160px;
+    overflow:hidden;
+    list-style-type:none;
+    width: 400px;
+    position: absolute;
+    pointer-events: none;
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+  }
+
+  #quicknav{
+  width: auto;
+  margin: 0 auto 0;
+  top: 6.5em;
+  position: relative;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  }
+}
+
+
+@media all and (max-width: 1600px) and (min-width: 1367px){
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
+#evidenceIndex{
+  display: block;
+  margin: 0 auto 0;
+  font-size: 18px;
+  top: 1em;
+  font-color: #ccc;
+  width: 160px;
+  z-index: 4;
+   font-family: "Helvetica", Serif;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+ }
+
+  #timeline_container{
+  margin: 0 auto 0;
+  height: 180px;
+  width: 300px;
+  position: relative;
+}
+
+.flag{
+    display: block;
+  margin: 0 auto 0;
+  top: 3em;
+  font-size: 20px;
+  color: white;
+  width: 180px;
+  z-index: 4;
+   font-family: "helvetica", Serif;
+  position: relative;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+	#carousel_container {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  top: 10em;
+  }
+
+   #carousel{
+      height: 400px;
+      list-style-type: none;
+      float: left;
+      width: 2000em;
+      overflow: hidden;
+      position: absolute; 
+      }
+
+ #carousel li {
+        width: 80px;
+        height: 200px;
+        float: left;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+        }
+
+
+#timeline{
+    height: 160px;
+    overflow:hidden;
+    list-style-type:none;
+    width: 400px;
+    position: absolute;
+    pointer-events: none;
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+  }
+
+  #quicknav{
+  width: auto;
+  margin: 0 auto 0;
+  top: 6.5em;
+  position: relative;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  }
+}
+
+@media all and (max-width: 2000px) and (min-width: 1600px){
 
  .nav-buttons img{
   margin: 0 auto 0;
