@@ -1317,7 +1317,7 @@ animation-fill-mode:forwards;
 
 @media all and (max-width: 2000px) and (min-width: 1600px){
 
- .nav-buttons img{
+  .nav-buttons img{
   margin: 0 auto 0;
   width: 40px;
   height: 40px;
@@ -1341,8 +1341,8 @@ animation-fill-mode:forwards;
 
   #timeline_container{
   margin: 0 auto 0;
-  height: 180px;
-  width: 300px;
+  height: 300px;
+  width: 500px;
   position: relative;
 }
 
@@ -1368,15 +1368,15 @@ animation-fill-mode:forwards;
  }
 	#carousel_container {
   width: 100%;
-  height: 400px;
+  height: 800px;
   position: absolute;
   overflow: hidden;
   z-index: 0;
-  top: 10em;
+  top: 20em;
   }
 
    #carousel{
-      height: 400px;
+      height: 800px;
       list-style-type: none;
       float: left;
       width: 2000em;
@@ -1385,8 +1385,8 @@ animation-fill-mode:forwards;
       }
 
  #carousel li {
-        width: 80px;
-        height: 200px;
+        width: 120px;
+        height: 400px;
         float: left;
         border-radius: 5px;
         margin-right: 0.5em;
@@ -1420,6 +1420,114 @@ animation-fill-mode:forwards;
   z-index: 4;
   }
 }
+
+@media all and (max-width: 2560px) and (min-width: 2001px){
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
+#evidenceIndex{
+  display: block;
+  margin: 0 auto 0;
+  font-size: 18px;
+  top: 1em;
+  font-color: #ccc;
+  width: 160px;
+  z-index: 4;
+   font-family: "Helvetica", Serif;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+ }
+
+  #timeline_container{
+  margin: 0 auto 0;
+  height: 300px;
+  width: 500px;
+  position: relative;
+}
+
+.flag{
+    display: block;
+  margin: 0 auto 0;
+  top: 3em;
+  font-size: 20px;
+  color: white;
+  width: 180px;
+  z-index: 4;
+   font-family: "helvetica", Serif;
+  position: relative;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+	#carousel_container {
+  width: 100%;
+  height: 800px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  top: 20em;
+  }
+
+   #carousel{
+      height: 800px;
+      list-style-type: none;
+      float: left;
+      width: 2000em;
+      overflow: hidden;
+      position: absolute; 
+      }
+
+ #carousel li {
+        width: 120px;
+        height: 400px;
+        float: left;
+        border-radius: 5px;
+        margin-right: 0.5em;
+        cursor: pointer;
+        background: #34495e;
+        }
+
+
+#timeline{
+    height: 160px;
+    overflow:hidden;
+    list-style-type:none;
+    width: 400px;
+    position: absolute;
+    pointer-events: none;
+  -webkit-animation:fadein 1s; /*Safari and Chrome*/
+  -moz-animation:fadein 1s; /*Firefox*/
+  -ms-animation:fadein 1s; /*IE*/
+  -o-animation:fadein 1s; /*Opera*/
+  animation:fadein 1s;
+
+  }
+
+  #quicknav{
+  width: auto;
+  margin: 0 auto 0;
+  top: 6.5em;
+  position: relative;
+  list-style-type: circle;
+  display: inline-block;
+  z-index: 4;
+  }
+}
+
+
 
 
 #quicknav li{
