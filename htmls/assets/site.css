@@ -767,11 +767,12 @@ footer{
 }
 
 #timeline{
-    margin: 1.5em auto 0;
+    margin: 0 auto 0;
     height: 160px;
     overflow:hidden;
     list-style-type:none;
     width: 400px;
+    border: 3px solid #ccc;
     position: absolute;
     pointer-events: none;
   -webkit-animation:fadein 1s; /*Safari and Chrome*/
@@ -823,38 +824,6 @@ a.locked {
   cursor: pointer;
 }
 
-.desc{
-  text-align: center;
-  font-family: "Verdana", Serif;
-  font-weight:bold;
-  border:0;
-  margin: 50px auto 0;
-  font-size:15px;
-  text-shadow:2px 2px rgba(217,0,0,0.7);
-}
-
-.desc h2{
-  font-weight: 200;
-  font-size: 15px;
-  margin: 0 auto 0;
-  clear:both;
-  color: #ccc;
-  text-shadow: 2px 2px rgb(0,0,0);
-}
-
-.desc h1{
-  font-weight: 100;
-  font-size: 15px;
-  margin: 20px auto 0;
-  color: #ccc;
-  clear: both;
-  text-shadow: 2px 2px rgb(0,0,0);
-}
-
-.desc h3:hover{
-  cursor: pointer;
-}
-
 #carousel_container {
 
   width: 100%;
@@ -896,6 +865,7 @@ animation-fill-mode:forwards;
 
       }
 
+
 @media all and (min-height: 1024px) and (max-height: 1200px){
 
  #carousel_container{
@@ -908,10 +878,11 @@ animation-fill-mode:forwards;
   height: 90px;
  }
 
+
  .nav-buttons img{
-  margin: 0 auto 0;
-  width: 50px;
-  height: 50px;
+  margin: 5% auto 0;
+  width: 45px;
+  height: 45px;
  }
 
  #quicknav{
@@ -956,15 +927,54 @@ animation-fill-mode:forwards;
         background: #34495e;
         }
 
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
 }
 
 @media all and (min-height: 640px) and (max-height: 768px){
 
+
+#evidenceIndex{
+  display: block;
+  margin: 0 auto 0;
+  top: 10px;
+  font-size: 18px;
+  font-color: #ccc;
+  width: 35%;
+  z-index: 4;
+   font-family: "Verdana", Serif;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+ }
+
   #timeline_container{
-  margin: 0 auto 2em;
+  margin: 0 auto 0;
   height: 180px;
   width: 400px;
 
+}
+
+.flag{
+    display: block;
+  margin: 20% auto 0;
+  font-size: 20px;
+  font-color: #ccc;
+  width: 30%;
+  z-index: 4;
+   font-family: "Verdana", Serif;
+  position: relative;
+  background: rgba(255,255,255,0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
 #carousel_container {
@@ -993,6 +1003,14 @@ animation-fill-mode:forwards;
         cursor: pointer;
         background: #34495e;
         }
+
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
 
 }
 
@@ -1088,13 +1106,19 @@ animation-fill-mode:forwards;
 {
   #quicknav{
   width: auto;
-  left: 18%;
+
   top: 10em;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
   }
+
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
 
   .navButtons{
     border: 3px solid #ccc;
@@ -1104,8 +1128,7 @@ animation-fill-mode:forwards;
   }
 
   #timeline{
-    left: -12em;
-  }
+    margin: 0 auto 0;  }
 
 
   .flag{
@@ -1113,33 +1136,25 @@ animation-fill-mode:forwards;
     padding: 0.5em;
   }
 
-  .desc h3{
-    font-size: 20px;
-  }
-  .desc h2{
-    font-size: 20px;
-  }
 }
 
 @media all and (max-width: 699px) and (min-width: 520px){
 #quicknav{
-  margin: 50px auto 0;
+  margin: 0 auto 0;
   position: absolute;
   list-style-type: circle;
   display: inline-block;
   z-index: 4;
 }
 
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
 #timeline{
   margin: 20px auto 0;
-}
-
-.desc h1{
-  font-size: 14px;
-}
-
-.desc h2{
-  font-size: 14px
 }
 
 .flag{
@@ -1162,28 +1177,25 @@ animation-fill-mode:forwards;
 }
 
 
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
+
+
 }
 
 @media all and (max-width: 1366px) and (min-width: 1001px){
 
 
-.desc h2{
-  margin: 50px auto 0;
-  width: 100%;
-}
+ .nav-buttons img{
+  margin: 0 auto 0;
+  width: 40px;
+  height: 40px;
+ }
 
-.desc h1{
-  margin: 20px auto 0;
-  width: 100%;
-}
 
-.desc{
-  margin: 0 50px 0;
-}
-
-.flag{
-  margin-left: 10%;
-}
 
 #timeline{
     height: 160px;
@@ -1203,7 +1215,6 @@ animation-fill-mode:forwards;
   #quicknav{
   width: auto;
   margin: 4em auto 0;
-  
   position: absolute;
   list-style-type: circle;
   display: inline-block;
@@ -1299,6 +1310,19 @@ color: red;
   pointer-events: none;
   cursor: default;
 }
+
+
+#quicknav li.clicked{
+ border: 7px solid red; 
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+  text-align: left;
+  margin-right: 1em;
+  }
 
 
  .nav-buttons img{
