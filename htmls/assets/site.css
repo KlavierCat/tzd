@@ -1687,8 +1687,10 @@ animation-fill-mode:forwards;
   -ms-animation:fadein 0.5s; /*IE*/
   -o-animation:fadein 0.5s; /*Opera*/
   animation:fadein 0.5s;
-
+  pointer-events:none;
   }
+
+
 
 *:focus {
     outline: 0;

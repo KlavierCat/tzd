@@ -153,7 +153,7 @@ $elems.mouseover(function(e){
 	$inject.text("Evidence #" + el).css({
 		'display':'block',
 		'left': '+=' + mouseX/1.1,
-		'top' : '+=' + mouseY/3
+		'top': '+=' + mouseY/3
 		});
 
 }).mouseout(function(){
