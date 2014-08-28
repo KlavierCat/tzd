@@ -1,4 +1,4 @@
- /*last modified: Aug 06, by Panpan*/
+ /*last modified: Aug 28, by Panpan*/
 /*current support browser size: no smaller than 597 / 686 * 387, 
 which basically means support tablets but not phones */
 
@@ -532,11 +532,11 @@ footer{
 .item-content{
     position:relative;
     width:55%;
-    height:100%;
+    height:auto;/*100%;*/
     float:right;
     border:1px solid white;
     background-color:rgba(88,88,88,0.5);
-	padding-bottom:5px;
+	padding-bottom:10px;
 }
 
 .item-content-holder{
