@@ -36,7 +36,7 @@
 	});
 
 	//Disable zoom handlers, disable dragging function;
-	map.dragging.disable();
+	//map.dragging.disable();
 	map.touchZoom.disable();
 	map.doubleClickZoom.disable();
 	map.scrollWheelZoom.disable();
