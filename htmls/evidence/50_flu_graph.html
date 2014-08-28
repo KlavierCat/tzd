@@ -180,8 +180,8 @@
             ]
             };
              
-           var opts = { pointDot: false, scaleOverride: true,scaleSteps: 6 , scaleStepWidth: 200,scaleStartValue: 0 };
-            var opts1 = { pointDot: false,animationSteps: 1,scaleOverride: true,scaleSteps: 6,scaleStepWidth: 200,scaleStartValue: 0 };
+           var opts = { pointDot: false, scaleOverride: true,scaleSteps: 6 , scaleStepWidth: 200,scaleStartValue: 0,scaleFontColor: "white" };
+            var opts1 = { pointDot: false,animationSteps: 1,scaleOverride: true,scaleSteps: 6,scaleStepWidth: 200,scaleStartValue: 0,scaleFontColor: "white" };
              
              // get line chart canvas
                 var buyer = document.getElementById('buyers').getContext('2d');
@@ -265,8 +265,8 @@
             <div class='item-content-holder'>
 
 			
-		<canvas id="buyers"></canvas>
-        <div id="divlegend"></div>
+		<canvas id="buyers1"></canvas>
+        <div id="divlegend1"></div>
         <!-- pie chart canvas element -->
          <script>
             // line chart data
@@ -400,24 +400,24 @@
             ]
             };
              
-           var opts = { pointDot: false, scaleOverride: true,scaleSteps: 6 , scaleStepWidth: 200,scaleStartValue: 0 };
-            var opts1 = { pointDot: false,animationSteps: 1,scaleOverride: true,scaleSteps: 6,scaleStepWidth: 200,scaleStartValue: 0 };
+           var opts = { pointDot: false, scaleOverride: true,scaleSteps: 6 , scaleStepWidth: 200,scaleStartValue: 0,scaleFontColor: "white" };
+            var opts1 = { pointDot: false,animationSteps: 1,scaleOverride: true,scaleSteps: 6,scaleStepWidth: 200,scaleStartValue: 0,scaleFontColor: "white" };
              
              // get line chart canvas
-                var buyer = document.getElementById('buyers').getContext('2d');
+                var buyer = document.getElementById('buyers1').getContext('2d');
                 // draw line chart
                 new Chart(buyer).Line(buyerData4, opts);
-                legend(document.getElementById("divlegend"), buyerData4);   
+                legend(document.getElementById("divlegend1"), buyerData4);   
              
              
             function drawCanvas(data)
             {
                 
                 // get line chart canvas
-                var buyers = document.getElementById('buyers').getContext('2d');
+                var buyers = document.getElementById('buyers1').getContext('2d');
                 // draw line chart
                 new Chart(buyers).Line(data,opts1);
-                legend(document.getElementById("divlegend"), data);      
+                legend(document.getElementById("divlegend1"), data);      
             }
        
             
@@ -527,7 +527,7 @@
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->   
 	<script src='assets/evidence.js'></script>
-			<script src='../assets/audiostore.js'></script>	  
+	<script src='../assets/audiostore.js'></script>	 
 	<audio id = "song" loop>
 <source  src="items/zombie.ogg" type="audio/ogg""></source>
 <source  src="items/zombie.mp3" type="audio/mp3""></source>
