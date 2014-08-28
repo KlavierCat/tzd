@@ -11,11 +11,11 @@ function updateEvidence()
 		document.getElementById("animation").className += " load";
 		//$("#animation").toggleClass( "load" );
 			
-		setTimeout(function(){flashIcon(false)}, 1500);
-		setTimeout(function(){flashIcon(true)}, 1750);
-		setTimeout(function(){flashIcon(false)}, 2000);
-		setTimeout(function(){flashIcon(true)}, 2250);
-		setTimeout(function(){flashIcon(false)}, 2500);
+		setTimeout(function(){flashIcon(false)}, 1750);
+		setTimeout(function(){flashIcon(true)}, 2000);
+		setTimeout(function(){flashIcon(false)}, 2250);
+		setTimeout(function(){flashIcon(true)}, 2500);
+		setTimeout(function(){flashIcon(false)}, 2750);
 		//setTimeout(function(){flashIcon(true)}, 3000);
 		
 		//document.getElementById("inventory-corner").className += "afteranimation";
