@@ -19,129 +19,7 @@
 	
 </head>
 
-<script>
-function aud_play_pause() {
-  var Audio = document.getElementById("AudioBar");
-  if (Audio.play) {
-    /*document.getElementsByClassName('bar')[0].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[1].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[2].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[3].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[4].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[5].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[6].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[7].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[8].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[9].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[10].style.animationPlayState="running";
-	document.getElementsByClassName('bar')[11].style.animationPlayState="running";
-	//document.getElementsByClassName('bar')[12].style.animationPlayState="running";
-	
-	*/
-	
-	
-	
-	
-	    document.getElementById("barb1").style.animationPlayState = "running";
-		document.getElementById("barb1").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b2').style.animationPlayState="running";
-	    document.getElementById("barb2").style.animationPlayState = "running";
-		document.getElementById("barb2").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b3').style.animationPlayState="running";
-	    document.getElementById("barb3").style.animationPlayState = "running";
-		document.getElementById("barb3").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b4').style.animationPlayState="running";
-	    document.getElementById("barb4").style.animationPlayState = "running";
-		document.getElementById("barb4").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b5').style.animationPlayState="running";
-	    document.getElementById("barb5").style.animationPlayState = "running";
-		document.getElementById("barb5").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b6').style.animationPlayState="running";
-	    document.getElementById("barb6").style.animationPlayState = "running";
-		document.getElementById("barb6").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b7').style.animationPlayState="running";
-	    document.getElementById("barb7").style.animationPlayState = "running";
-		document.getElementById("barb7").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b8').style.animationPlayState="running";
-	    document.getElementById("barb8").style.animationPlayState = "running";
-		document.getElementById("barb8").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b9').style.animationPlayState="running";
-	    document.getElementById("barb9").style.animationPlayState = "running";
-		document.getElementById("barb9").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b10').style.animationPlayState="running";
-	    document.getElementById("barb10").style.animationPlayState = "running";
-		document.getElementById("barb10").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b11').style.animationPlayState="running";
-	    document.getElementById("barb11").style.animationPlayState = "running";
-		document.getElementById("barb11").style.WebkitAnimationPlayState = "running";
-	//document.getElementsByClassName('bar b12').style.animationPlayState="running";
-	    document.getElementById("barb12").style.animationPlayState = "running";
-		document.getElementById("barb12").style.WebkitAnimationPlayState = "running";
-		
-		
-  } 
-}
-  
-function aud_pause() {
-  var Audio = document.getElementById("AudioBar");
-  if (Audio.pause) {
-  
-  /*document.getElementsByClassName('bar')[0].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[1].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[2].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[3].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[4].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[5].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[6].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[7].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[8].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[9].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[10].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[11].style.animationPlayState="paused";
-	document.getElementsByClassName('bar')[12].style.animationPlayState="paused";
-  */
-  
-  
-  
-	    document.getElementById("barb1").style.animationPlayState = "paused";
-		document.getElementById("barb1").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b2').style.animationPlayState="paused";
-	    document.getElementById("barb2").style.animationPlayState = "paused";
-		document.getElementById("barb2").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b3').style.animationPlayState="paused";
-	    document.getElementById("barb3").style.animationPlayState = "paused";
-		document.getElementById("barb3").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b4').style.animationPlayState="paused";
-	    document.getElementById("barb4").style.animationPlayState = "paused";
-		document.getElementById("barb4").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b5').style.animationPlayState="paused";
-	    document.getElementById("barb5").style.animationPlayState = "paused";
-		document.getElementById("barb5").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b6').style.animationPlayState="paused";
-	    document.getElementById("barb6").style.animationPlayState = "paused";
-		document.getElementById("barb6").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b7').style.animationPlayState="paused";
-	    document.getElementById("barb7").style.animationPlayState = "paused";
-		document.getElementById("barb7").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b8').style.animationPlayState="paused";
-	    document.getElementById("barb8").style.animationPlayState = "paused";
-		document.getElementById("barb8").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b9').style.animationPlayState="paused";
-	    document.getElementById("barb9").style.animationPlayState = "paused";
-		document.getElementById("barb9").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b10').style.animationPlayState="paused";
-	    document.getElementById("barb10").style.animationPlayState = "paused";
-		document.getElementById("barb10").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b11').style.animationPlayState="paused";
-	    document.getElementById("barb11").style.animationPlayState = "paused";
-		document.getElementById("barb11").style.WebkitAnimationPlayState = "paused";
-	//document.getElementsByClassName('bar b12').style.animationPlayState="paused";
-	    document.getElementById("barb12").style.animationPlayState = "paused";
-		document.getElementById("barb12").style.WebkitAnimationPlayState = "paused";
-  }
-  }
 
-</script>
 
 <body onunload="resume()">
 
@@ -295,6 +173,129 @@ function aud_pause() {
 <source  src="items/zombie.ogg" type="audio/ogg""></source>
 <source  src="items/zombie.mp3" type="audio/mp3""></source>
 </audio>
+<script>
+function aud_play_pause() {
+  var Audio = document.getElementById("AudioBar");
+  if (Audio.play) {
+    /*document.getElementsByClassName('bar')[0].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[1].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[2].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[3].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[4].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[5].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[6].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[7].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[8].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[9].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[10].style.animationPlayState="running";
+	document.getElementsByClassName('bar')[11].style.animationPlayState="running";
+	//document.getElementsByClassName('bar')[12].style.animationPlayState="running";
+	
+	*/
+	
+	
+	
+	
+	    document.getElementById("barb1").style.animationPlayState = "running";
+		document.getElementById("barb1").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b2').style.animationPlayState="running";
+	    document.getElementById("barb2").style.animationPlayState = "running";
+		document.getElementById("barb2").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b3').style.animationPlayState="running";
+	    document.getElementById("barb3").style.animationPlayState = "running";
+		document.getElementById("barb3").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b4').style.animationPlayState="running";
+	    document.getElementById("barb4").style.animationPlayState = "running";
+		document.getElementById("barb4").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b5').style.animationPlayState="running";
+	    document.getElementById("barb5").style.animationPlayState = "running";
+		document.getElementById("barb5").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b6').style.animationPlayState="running";
+	    document.getElementById("barb6").style.animationPlayState = "running";
+		document.getElementById("barb6").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b7').style.animationPlayState="running";
+	    document.getElementById("barb7").style.animationPlayState = "running";
+		document.getElementById("barb7").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b8').style.animationPlayState="running";
+	    document.getElementById("barb8").style.animationPlayState = "running";
+		document.getElementById("barb8").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b9').style.animationPlayState="running";
+	    document.getElementById("barb9").style.animationPlayState = "running";
+		document.getElementById("barb9").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b10').style.animationPlayState="running";
+	    document.getElementById("barb10").style.animationPlayState = "running";
+		document.getElementById("barb10").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b11').style.animationPlayState="running";
+	    document.getElementById("barb11").style.animationPlayState = "running";
+		document.getElementById("barb11").style.WebkitAnimationPlayState = "running";
+	//document.getElementsByClassName('bar b12').style.animationPlayState="running";
+	    document.getElementById("barb12").style.animationPlayState = "running";
+		document.getElementById("barb12").style.WebkitAnimationPlayState = "running";
+		
+		
+  } 
+}
+  
+function aud_pause() {
+  var Audio = document.getElementById("AudioBar");
+  if (Audio.pause) {
+  
+  /*document.getElementsByClassName('bar')[0].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[1].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[2].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[3].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[4].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[5].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[6].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[7].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[8].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[9].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[10].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[11].style.animationPlayState="paused";
+	document.getElementsByClassName('bar')[12].style.animationPlayState="paused";
+  */
+  
+  
+  
+	    document.getElementById("barb1").style.animationPlayState = "paused";
+		document.getElementById("barb1").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b2').style.animationPlayState="paused";
+	    document.getElementById("barb2").style.animationPlayState = "paused";
+		document.getElementById("barb2").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b3').style.animationPlayState="paused";
+	    document.getElementById("barb3").style.animationPlayState = "paused";
+		document.getElementById("barb3").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b4').style.animationPlayState="paused";
+	    document.getElementById("barb4").style.animationPlayState = "paused";
+		document.getElementById("barb4").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b5').style.animationPlayState="paused";
+	    document.getElementById("barb5").style.animationPlayState = "paused";
+		document.getElementById("barb5").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b6').style.animationPlayState="paused";
+	    document.getElementById("barb6").style.animationPlayState = "paused";
+		document.getElementById("barb6").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b7').style.animationPlayState="paused";
+	    document.getElementById("barb7").style.animationPlayState = "paused";
+		document.getElementById("barb7").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b8').style.animationPlayState="paused";
+	    document.getElementById("barb8").style.animationPlayState = "paused";
+		document.getElementById("barb8").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b9').style.animationPlayState="paused";
+	    document.getElementById("barb9").style.animationPlayState = "paused";
+		document.getElementById("barb9").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b10').style.animationPlayState="paused";
+	    document.getElementById("barb10").style.animationPlayState = "paused";
+		document.getElementById("barb10").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b11').style.animationPlayState="paused";
+	    document.getElementById("barb11").style.animationPlayState = "paused";
+		document.getElementById("barb11").style.WebkitAnimationPlayState = "paused";
+	//document.getElementsByClassName('bar b12').style.animationPlayState="paused";
+	    document.getElementById("barb12").style.animationPlayState = "paused";
+		document.getElementById("barb12").style.WebkitAnimationPlayState = "paused";
+  }
+  }
+
+</script>
 </body>
 
 </html>
