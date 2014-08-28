@@ -1,4 +1,4 @@
-//TODO: line 258 / 362 / 363 - 26/08/2014 - Panpan
+//TODO: NONE - 28/08/2014 - Panpan
  
 //set level
 	var level = getStage();
@@ -266,26 +266,6 @@
 				//	});
 				//};
 				//end of providing relevant info for discovered item
-				
-				//solution 2 - not working
-//				evidence = getViewedEvidence();
-//				if (evidence[i] == true){
-//					showText = "Evidence #" + points[i][0].toString() + ": " + points[i][6];					
-//					marker[i].on('mouseover', function(e){
-//						var popup = $("<div></div>", {
-//							id:"popup-evidence",
-//							class:"popup-map",
-//						});	
-//						var hed = $("<div></div>",{
-//							text:showText
-//						}).appendTo(popup);
-//						popup.appendTo("#map");
-//					});
-					
-//					marker[i].on('mouseout', function(e){
-//						$("#popup-evidence").remove();
-//					});
-//				};
 
 				marker[i].on('click',markerClick);
 			};
@@ -378,8 +358,6 @@ var featureLayer = new L.GeoJSON();
 
 	map.addLayer(featureLayer);
 
-//Add explanation 	
-//What to do when get to stage5
 
 //for development
 //		var popup = L.popup();
