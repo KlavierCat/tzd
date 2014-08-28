@@ -5,23 +5,18 @@ $(function(){
 	$carousel = $('#carousel'),
     speed = 400,
     evidence = getViewedEvidence(),
-    diff = 0,
     currentSelection = 0,
     timelineSelection = 0,
     $itemCount = $elems.length,
     $timeline = $('#timeline li'),
     $even = $('#carousel li:even'),
     $odd = $('#carousel li:odd'),
-    $quicknav = $('#quicknav a'),
+    $quicknav = $('#quicknav a')
+	$inject = $('#evidenceIndex'),
     $itemWidth = $elems.css('width').split('px')[0];
     buildCarousel(evidence);
 
-	$even.css({'margin-top' : '120px',
-								'z-index' : '3',
-								'opacity' : '0.7'});
-
-	$odd.css({'z-index' : '2',
-								'opacity' : '0.7'});
+	$even.css('margin-top' , '120px');
 
 
 
@@ -31,8 +26,28 @@ if(window.location.hash){
 	$carousel.animate({
 		left: '-' + (currentSelection*$itemWidth) + 'px'
 	}, 1);
+	var index;
+	if(currentSelection <= 14){
+		index = 0
+	}else if(currentSelection <= 29){
+		index = 1;
+	}else if(currentSelection <= 44){
+		index = 2;
+	}else if(currentSelection <= 59){
+		index = 3;
+	}else if(currentSelection <= 74)
+	{
+		index = 4;
+	}else if(currentSelection <= 89){
+		index = 5;
+	}else{
+		index = 6;
+	}
+
+	$quicknav.eq(index).children('li').toggleClass('clicked').end()
+	.siblings('a').children('li').removeClass('clicked');
 }else{
-//do nothing
+	window.location.hash = '#0';
 }
 
 window.onhashchange = function hashPan(){
@@ -45,8 +60,8 @@ window.onhashchange = function hashPan(){
 		$carousel.animate({
 			left: '-' + (currentSelection*$itemWidth) + 'px'
 		}, 400);
-};
 
+};
 
 
 function buildCarousel(evidence){
@@ -79,8 +94,7 @@ function updateElement(key, value)
 }
 
 
-function panCarousel(e){
-	
+function panCarousel(e){	
 	
 	if(e.data.direction == 'forward'){
 	
@@ -126,19 +140,31 @@ $('#navPrev').bind('click', {direction: 'backward',
 
 $quicknav.bind('mouseover', changeYear);
 
+
 $quicknav.click(function(){
 	$(this).children('li').toggleClass('clicked').end()
 	.siblings('a').children('li').removeClass('clicked');
 });
 
-$elems.bind('mouseover', changeIndex);
+$elems.mouseover(function(e){
 
-function changeIndex(e){
+	var el = e.target.id.substring(1,3),
+	mouseX = e.screenX.toString(),
+	mouseY = e.screenY.toString();
+	$inject.text("Evidence #" + el).css({
+		'display':'block',
+		'left': '+=' + mouseX/1.1,
+		'top' : '+=' + mouseY/3
+		});
 
-	var temp = e.target.id,
-	el = temp.substring(1,3);
-	
-}
+}).mouseout(function(){
+
+	$inject.css({
+		'display':'none',
+		'left':'0',
+		'top':'0'
+		});
+});
 
 
 function changeYear(e){
