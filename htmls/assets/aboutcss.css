@@ -18,3 +18,7 @@ body{
   background: -webkit-radial-gradient(circle at 50%-100%, white 20%, black, black);
 }
 
+a{
+	text-decoration: underline;
+	color: white;
+}
