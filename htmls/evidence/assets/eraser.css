@@ -13,22 +13,25 @@
 #robot {
     z-index: 1;
  position: absolute;
-    top: -2.5%;
-    left: 0%;
+    top: 2.5%;
+    margin-left: 10%;
+    
     
 }
 #redux {
   position: absolute;
   top:2.5%;
-  left: 0%; 
+  
     z-index: 2;
+    margin-left: 10%;
+    
 }
 
 .item-content{
     position:relative;
     width:55%;
     height:100%;
-    float:right;
+    
     border:1px solid white;
     background-color:rgba(88,88,88,0.5);
 }

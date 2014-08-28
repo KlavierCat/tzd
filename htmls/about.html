@@ -15,16 +15,19 @@
 	<link href='assets/aboutcss.css' rel="stylesheet"/>
 </head>
 
-<body>
+<body onunload="resume()">
 
 <div class="item-wrapper" style='overflow:hidden'>
         
         <div class="item-content" style="width:100%;">
             <div class='item-content-holder' >
-            <h3>User Guide</h3>
-         <p>  </p> 
+          
            
-           
+           <h3>User Guide</h3>
+         <p>
+         The user discovers pieces of evidence through exploring the campus map. When the user has discovered every piece of evidence in a building new areas can be accessed. Unlocked evidence can be accessed later on the inventory page, where it is arranged chronologically.
+          </p>     
+
            
            
            <h3>About</h3>
@@ -33,14 +36,8 @@
 		   <p>TZD is a collaborative final project assembled by a sub-group of the MSc Interactive Digital Media in Trinity College Dublin for the academic year of 2013/14. The aim of the class as a whole was to explore the concept “Reflections of Trinity” through a distinct assortment of digital media. Team TZD focused on examining the idea of “reflections” through a web based interactive narrative. We wanted to incorporate the idea of reflection in terms of looking back upon events past. The history of trinity is well documented so Team TCD decided to focus on a futuristic fictional narrative in which the user explores the Trinity campus and pieces together the story. Through assembling the story the user encounters a rich array of media, created by Team TZD in order to bring the narrative to life. The futuristic user interface and sombre audio landscape immerses the user in the fictional narrative, while evoking a varied range of emotions throughout the journey.  </p>     
            
            
-<<<<<<< HEAD
-              
-=======
-           <h3>User Guide</h3>
-         <p>
-         The user discovers pieces of evidence through exploring the campus map. When the user has discovered every piece of evidence in a building new areas can be accessed. Unlocked evidence can be accessed later on the inventory page, where it is arranged chronologically.
-          </p>     
->>>>>>> FETCH_HEAD
+
+           
            
            <h3>Team TZD</h3>
            <h4>Panpan Lin</h4>
@@ -48,10 +45,11 @@
            <h4>Ryan Patrick Yates</h4>
            <h4>Fergus Kenny</h4>
            <h4>Ben Hardy</h4>
-           <img src='evidence/items/polaroid2.png' style='width:150px; height:180px'/>
+           
            <p>Having completed a degree in Transport Operations and Technology from D.I.T. I felt  needed a change in direction.
            This MSc in Interactive digital Media seemed appropriate for the career path I was seeking. Throughout the academic year developed a number of skills 
            in web development and audio/video production.</p>
+           <img src='evidence/items/polaroid2.png' style='width:150px; height:180px'/>
             </div>            
         </div>
         </div>
@@ -68,10 +66,11 @@
         </a>
     </div>
 	  
-	<div id="corner-mute">
-        <div id="corner-mute-false"></div>
-	  <!--<img src="images/icon-mute-false.png" alt="sound control">-->
-	</div>
+	<div id="corner-mute" onclick="toggleMuteAudio()">
+        <div id="corner-mute-false"  ></div>
+      <!--<img src="images/icon-mute-false.png" alt="sound control">-->
+      <div id="corner-mute-true" ></div>
+    </div>
 
 	<div class="corner" id="corner-footer">
 	  <footer>
@@ -108,7 +107,12 @@
     <div class="nav-arrow" id="nav-arrow-left"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
 <!--end of header and footer in template-->	    
-    
+   <script src='assets/audiostore1.js'></script>	  
+<audio id = "song" loop >
+<source  src="evidence/items/zombie.ogg" type="audio/ogg""></source>
+<source  src="evidence/zombie.mp3" type="audio/mp3""></source>
+</audio>
+</body> 
 </body>
 
 </html>
