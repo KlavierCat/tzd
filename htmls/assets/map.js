@@ -49,7 +49,7 @@
 		[53.345484,-6.249404]
 	]);
 	
-	var imageUrl='https://www.scss.tcd.ie/~plin/map-big-new-black.jpg',
+	var imageUrl='images/map.jpg',
 	imageBounds = [[53.346836,-6.262141],[53.340691,-6.247056]]; //northWest, southEast
 	
 	L.imageOverlay(imageUrl,imageBounds).addTo(map);
