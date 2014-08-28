@@ -35,8 +35,7 @@ if(window.location.hash){
 		index = 2;
 	}else if(currentSelection <= 59){
 		index = 3;
-	}else if(currentSelection <= 74)
-	{
+	}else if(currentSelection <= 74){
 		index = 4;
 	}else if(currentSelection <= 89){
 		index = 5;
