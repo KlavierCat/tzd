@@ -1,21 +1,19 @@
 
 function play(){
 
-
-
-
-
-
 //console.log(sessionStorage.getItem("mute"))
 console.log(sessionStorage.getItem("mute"))
 var song = document.getElementById("song");
+var duration = song.duration
+console.log(duration)
 var mute =	sessionStorage.getItem("mute");
 if(mute === "false" || mute === false){
 	song.muted=true}else{song.muted=false};	
 //sessionStorage.removeItem("mute")
+if(duration){
 song.currentTime = sessionStorage.getItem("store")
 $("#song")[0].volume = 0;
-$("#song").animate({volume: 0.2}, 0);
+$("#song").animate({volume: 0.2}, 0);}
 console.log(mute)
 song.play();
 
