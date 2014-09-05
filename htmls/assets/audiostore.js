@@ -1,74 +1,57 @@
+$(document).ready(function(){
+var song = document.getElementById('song');
+var mute = sessionStorage.getItem('mute');
+if(mute == 'true'){
+	song.muted = true;}else{song.muted = false;};
+$('#corner-mute-true').hide();
 
-function play(){
-//audio left out of pages for faster loading speeds
+$('#corner-mute-true, #corner-mute-false').click(function(){
+  $(this).toggle().siblings().toggle();  
+});
 
-//console.log(sessionStorage.getItem("mute"))
-//console.log(sessionStorage.getItem("mute"))
-//var song = document.getElementById("song");
-//var duration = song.duration
-//var mute =	sessionStorage.getItem("mute");
-//if(mute === "false" || mute === false){
-//	song.muted=true}else{song.muted=false};	
-//sessionStorage.removeItem("mute")
-//if(duration){
-//song.currentTime = sessionStorage.getItem("store")
-//$("#song")[0].volume = 0;
-//$("#song").animate({volume: 0.2}, 0);}
-//console.log(mute)
-//song.play();
-updateEvidence();
-}
 
-window.onload= play;
+song.addEventListener('canplay', function playSong()
+{
+ 
+  song.currentTime = sessionStorage.getItem('store');
+  song.volume = 0.2;
+  song.play();
+  updateEvidence();
+
+}, false);
+
+$('#corner-mute').click(function(){
+  if(!song.muted){
+    sessionStorage.setItem('store', song.currentTime);
+	sessionStorage.setItem('mute', 'true');
+    song.muted = true;
+  }
+  else{
+    song.currentTime = sessionStorage.getItem('store');
+	sessionStorage.setItem('mute', 'false');
+    song.muted = false;
+  }
+});
 
 
 function resume(){
 
-var song = document.getElementById("song");
-
-
-
-if (typeof(Storage) != "undefined") {
+if (typeof(Storage) != 'undefined') {
     // Store
-    sessionStorage.setItem("store", song.currentTime);
-    $("#song").animate({volume: 0}, 100);
-    
-    console.log(sessionStorage.getItem("store"))
-} else {
-    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    song.currentTime = sessionStorage.getItem('store');
+    song.volume = 0.2;
+    song.play();
+    updateEvidence();
+
+    } else {
+    document.getElementById('result').innerHTML = 'Sorry, your browser does not support Web Storage...';
+  }
+
+
 }
+});
 
-}
-
-//mute and unmute evidence and map page
-$( document ).ready(function() {
-var soundOn = false
-var soundOff = true
-$("#corner-mute-true").hide();
-
-$('#corner-mute-true, #corner-mute-false').on('click',
-                          function() 
-                       {
-                          $('#corner-mute-true, #corner-mute-false').toggle();   
-                         //console.log(document.getElementById("song").muted)
-                         sessionStorage.setItem("mute", document.getElementById("song").muted);
-                         console.log(sessionStorage.getItem("mute"))
-                         
-                       }
-                       
-                       );});
-                       
-function toggleMuteAudio(){
-   $("#song").prop("muted",!$("#song").prop("muted")); 
-  
-   
-   
-}
-
-
-	
-//console.log(mute)
-	
-
-
-
+$(window).unload(function(){
+  var song = document.getElementById('song');
+  sessionStorage.setItem('store', song.currentTime)
+});
