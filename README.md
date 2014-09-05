@@ -1,17 +1,9 @@
 tzd
 ===
-Important notice:
-
-1. Do not change the CSS before chatting with me, except Kyle.
-2. Do not change any URL within the html pages.
-3. When inserting item, use the file template-item.html. Do not overwrite it!
-4. consult item-01.html and item-02.html when inserting item into the item template.
-5. Kyle: template-with-filter.html is for you, not the inventory.html! Don't touch the inventory.html
-6. In the template-item, I have commented out the jQuery API in the header. If there is a need to use it, just uncomment it will do.
 
 Things to be changed when marking up individual item page:
 1.	<title>Evidence #00</title>
-	Please insert item number - consult Fergus about this (how do we number the item? random string to avoid "cheating"?)
+	Please insert item number
 
 2.	<meta name="description" content="Trinity Zombie Dublin - Evidence #00"/>
 	Same with above, item number - consult Fergus.
