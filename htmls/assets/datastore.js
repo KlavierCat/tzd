@@ -60,39 +60,46 @@ function setStage()
 	var stage = getStage();
 	var evidence = getViewedEvidence();
 	
+	var trueCounter = 0;
+	
+	for(i=0; i<95; i++){
+		if (evidence[i]==true){
+			trueCounter = trueCounter + 1;
+		}
+	}
+	
 	switch (stage)
 	{
 		case 0:
-			if(evidence[83] == true)
+			if(trueCounter >= 1 && trueCounter <= 2)
 			{
 				stage = 1;
 				localStorage["stage"] = JSON.stringify(stage);
 			}
 			break;
 		case 1:
-			if(evidence[92]==true && evidence[78]==true && evidence[73]==true)
+			if(trueCounter >= 3 && trueCounter <=5)
 			{
 				stage = 2;
 				localStorage["stage"] = JSON.stringify(stage);
 			}
 			break;
 		case 2:
-			if(evidence[40]==true && evidence[9]==true && evidence[28]==true && evidence[0]==true && evidence[50]==true)
+			if(trueCounter >= 6 && trueCounter <=9)
 			{
 				stage = 3;
 				localStorage["stage"] = JSON.stringify(stage);
 			}
 			break;
 		case 3:
-			if(evidence[22]==true && evidence[34]==true && evidence[59]==true && evidence[16]==true && evidence[52]==true
-			&& evidence[21]==true && evidence[53]==true && evidence[38]==true && evidence[63]==true && evidence[84]==true)
+			if(trueCounter >= 10 && trueCounter <= 15)
 			{
 				stage = 4;
 				localStorage["stage"] = JSON.stringify(stage);
 			}
 			break;
 		case 4:
-			if(evidence[75]==true && evidence[13]==true && evidence[64]==true)
+			if(trueCounter >= 16)
 			{
 				stage = 5;
 				localStorage["stage"] = JSON.stringify(stage);
