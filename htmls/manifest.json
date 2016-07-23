@@ -1,0 +1,13 @@
+{
+  "name": "Trinity Zombie Dublin",
+  "short_name": "TZD",
+  "icons": [{
+    "src": "images/manifest_icon_256.png",
+      "sizes": "293x256",
+      "type": "image/png"
+    }],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FFF",
+  "theme_color": "#2F3BA2"
+}
