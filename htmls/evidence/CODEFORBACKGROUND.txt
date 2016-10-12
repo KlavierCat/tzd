@@ -1,87 +1,87 @@
 	<style>
-	body {background-image: url("U.jpg");} 
+	body {background-image: url("u.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Tennis.jpg");} 
+	body {background-image: url("tennis.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("SamuelBeckett.jpg");} 
+	body {background-image: url("samuelbeckett.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Rubric.jpg");} 
+	body {background-image: url("rubric.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Reading.jpg");} 
+	body {background-image: url("reading.jpg");}
 	</style>
-	
+
 			<style>
-	body {background-image: url("PubTheatre.jpg");} 
+	body {background-image: url("pubtheatre.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Provost.jpg");} 
+	body {background-image: url("provost.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Pav.jpg");} 
+	body {background-image: url("pav.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("FrontGate.jpg");} 
+	body {background-image: url("frontgate.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Arts.jpg");} 
+	body {background-image: url("arts.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Buttery.jpg");} 
+	body {background-image: url("buttery.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Chapel.jpg");} 
+	body {background-image: url("chapel.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("CivilEng.jpg");} 
+	body {background-image: url("civileng.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("CollegePark.jpg");} 
+	body {background-image: url("collegepark.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Hamilton.jpg");} 
+	body {background-image: url("hamilton.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Lloyd.jpg");} 
+	body {background-image: url("lloyd.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Luce.jpg");} 
+	body {background-image: url("luce.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Moyne.jpg");} 
+	body {background-image: url("moyne.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("NewSquare.jpg");} 
+	body {background-image: url("newsquare.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("OldLibrary.jpg");} 
+	body {background-image: url("oldlibrary.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Panoz.jpg");} 
+	body {background-image: url("panoz.jpg");}
 	</style>
-	
+
 		<style>
-	body {background-image: url("Parliament.jpg");} 
+	body {background-image: url("parliament.jpg");}
 	</style>
