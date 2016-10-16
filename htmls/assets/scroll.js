@@ -1,5 +1,5 @@
 $(function(){
-    $('.item-content').slimScroll({
-        height: '100%'
-    });
+  $('.item-content').slimScroll({
+    height: '100%'
+  });
 });
