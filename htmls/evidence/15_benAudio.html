@@ -51,8 +51,8 @@
   <div id='barb10'></div>
   <div id='barb11'></div>
   <div id='barb12'></div>
-  </div>                   
-  <audio id = "AudioBar" src="items/benAudio.mp3" style="position:relative; margin-top:5%; margin-left:10%"></audio>
+  </div>
+  <audio id = "AudioBar" src="items/benaudio.mp3" style="position:relative; margin-top:5%; margin-left:10%"></audio>
   <div id = "buttons">
   <button class="button" onclick="document.getElementById('AudioBar').play();aud_play_pause();">Play</button>
   <button class="button" onclick="document.getElementById('AudioBar').pause();aud_pause();">Pause</button>
@@ -62,10 +62,10 @@
 
 <!-- lightbox container hidden with CSS -->
 
-      </div>            
+      </div>
         </div>
     </div>
-<!-- end of the item part in tempalte-->    
+<!-- end of the item part in tempalte-->
 
 
 	<div class="item-wrapper" id="animation">
@@ -86,7 +86,7 @@
         <div class="item-content">
             <div class='item-content-holder'>
 
-                   
+
 	  <div id ='audioanimation'>
   <div id='barb1'></div>
   <div id='barb2'></div>
@@ -100,30 +100,30 @@
   <div id='barb10'></div>
   <div id='barb11'></div>
   <div id='barb12'></div>
-  </div>                   
-  <audio id = "AudioBar" src="items/benAudio.mp3" style="position:relative; margin-top:5%; margin-left:10%"></audio>
+  </div>
+  <audio id = "AudioBar" src="items/benaudio.mp3" style="position:relative; margin-top:5%; margin-left:10%"></audio>
   <div id = "buttons">
   <button class="button" onclick="document.getElementById('AudioBar').play();aud_play_pause();">Play</button>
   <button class="button" onclick="document.getElementById('AudioBar').pause();aud_pause();">Pause</button>
   <button class="button" onclick="document.getElementById('AudioBar').volume+=0.1">+</button>
   <button class="button" onclick="document.getElementById('AudioBar').volume-=0.1">-</button>
   </div>
-  
-      </div>            
+
+      </div>
         </div>
     </div>
-	
-	
-	
-<!--beginning of header and footer in template-->		
+
+
+
+<!--beginning of header and footer in template-->
 	<div id="corner-logo-container">
         <a href="../index.html">
             <div id="corner-logo"></div>
         </a>
     </div>
-	  
+
 	<div id="corner-mute" >
-       
+
       <!--<img src="images/icon-mute-false.png" alt="sound control">-->
       <div id="corner-mute-true" ></div>
     </div>
@@ -135,36 +135,36 @@
 		<a href="https://twitter.com/TZDwebsite"><div class="footer-icon" id="icon-twitter"></div></a>
 	  </footer>
 	</div>
-	
+
 	<div class="corner" id="corner-about-only">
         <a href="../about.html"><div class="footer-icon" id="icon-about"></div></a>
 	</div>
 
     <div class="footer-wrapper">
-     <div class="icon-menu-background">    
-        
+     <div class="icon-menu-background">
+
 	  <div class="middle">
-        
+
         <a href="../map.html">
-            <div id="map-corner"></div>  
+            <div id="map-corner"></div>
         </a>
-          
+
         <a href="../inventory.html#15">
             <div id="inventory-corner"></div>
         </a>
-          
+
 	  </div>
-         
+
      </div>
-    </div>    
+    </div>
 
 	<div class="diagonal-line" id="southWest"></div>
 	<div class="diagonal-line" id="southEast"></div>
     <div class="nav-arrow" id="nav-arrow-left"></div>
     <div class="nav-arrow" id="nav-arrow-right"></div>
-<!--end of header and footer in template-->	  
+<!--end of header and footer in template-->
 	<script src='assets/evidence.js'></script>
-				<script src='../assets/audiostorevideo.js'></script>	  
+				<script src='../assets/audiostorevideo.js'></script>
 <audio id = "song" loop>
 <source  src="items/zombie.ogg" type="audio/ogg""></source>
 <source  src="items/zombie.mp3" type="audio/mp3""></source>
@@ -186,12 +186,12 @@ function aud_play_pause() {
 	document.getElementsByClassName('bar')[10].style.animationPlayState="running";
 	document.getElementsByClassName('bar')[11].style.animationPlayState="running";
 	//document.getElementsByClassName('bar')[12].style.animationPlayState="running";
-	
+
 	*/
-	
-	
-	
-	
+
+
+
+
 	    document.getElementById("barb1").style.animationPlayState = "running";
 		document.getElementById("barb1").style.WebkitAnimationPlayState = "running";
 	//document.getElementsByClassName('bar b2').style.animationPlayState="running";
@@ -227,15 +227,15 @@ function aud_play_pause() {
 	//document.getElementsByClassName('bar b12').style.animationPlayState="running";
 	    document.getElementById("barb12").style.animationPlayState = "running";
 		document.getElementById("barb12").style.WebkitAnimationPlayState = "running";
-		
-		
-  } 
+
+
+  }
 }
-  
+
 function aud_pause() {
   var Audio = document.getElementById("AudioBar");
   if (Audio.pause) {
-  
+
   /*document.getElementsByClassName('bar')[0].style.animationPlayState="paused";
 	document.getElementsByClassName('bar')[1].style.animationPlayState="paused";
 	document.getElementsByClassName('bar')[2].style.animationPlayState="paused";
@@ -250,9 +250,9 @@ function aud_pause() {
 	document.getElementsByClassName('bar')[11].style.animationPlayState="paused";
 	document.getElementsByClassName('bar')[12].style.animationPlayState="paused";
   */
-  
-  
-  
+
+
+
 	    document.getElementById("barb1").style.animationPlayState = "paused";
 		document.getElementById("barb1").style.WebkitAnimationPlayState = "paused";
 	//document.getElementsByClassName('bar b2').style.animationPlayState="paused";
